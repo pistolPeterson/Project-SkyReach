@@ -16,6 +16,10 @@ MonoBehaviour:
   templateName: Default Scene w/ FMOD, Lighting, UI & Input
   description: 
   preview: {fileID: 0}
-  dependencies: []
+  dependencies:
+  - dependency: {fileID: 2800000, guid: 3028dc075ba8c584d9bc7d1e0255e038, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: -944628639613478452, guid: 95aab404c1ca65041b3121bfc3c980b3, type: 3}
+    instantiationMode: 1
   templatePipeline: {fileID: 0}
   addToDefaults: 1
