@@ -428,9 +428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f620c656aabc9c4aabb8525772a724d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeSlide: 1
+  isSlippery: 0
   speed: 10
-  jumpSpeed: 10
+  jumpSpeed: 100000
 --- !u!212 &198321922
 SpriteRenderer:
   m_ObjectHideFlags: 0
