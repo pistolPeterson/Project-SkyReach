@@ -430,7 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSlippery: 0
   speed: 10
-  jumpSpeed: 100000
+  jumpSpeed: 10
 --- !u!212 &198321922
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -581,7 +581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
 --- !u!114 &1209992831
 MonoBehaviour:
   m_ObjectHideFlags: 0
