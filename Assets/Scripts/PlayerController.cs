@@ -9,8 +9,6 @@ namespace SkyReach
     /// This is a physics based player controller that uses the new Input System.
     /// This works best with frictionless colliders, as it has its own implemented horizontal friction that also acts in mid-air.
     /// Rigidbody2D.drag is not used because it acts on the vertical axis as well, which slows down the player when jumping.
-    /// 
-    /// For a simpler, kinematic controller, check the KinematicPlayerController script.
     /// </summary>
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour, Input.IPlayerActions
