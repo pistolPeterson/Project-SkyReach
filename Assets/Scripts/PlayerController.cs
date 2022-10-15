@@ -68,10 +68,8 @@ namespace SkyReach
             rigidBody.gravityScale = localGravity * originalGravityScale;
             // =================================================================
 
-            // Horizontal drag should slow down a player by some multiple of the player's speed per second.
-            // To implement this, we raise the multiplier to the power of the time since the last frame.
-            // While there is no explicit speed cap, this will create an artificial one.
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x * Mathf.Pow(1.0f - horizontalDrag, Time.fixedDeltaTime), rigidBody.velocity.y);
+            // While there is no explicit speed cap, horizontal drag will create an artificial one.
+            rigidBody.velocity = new Vector2(rigidBody.velocity.x * (1.0f - horizontalDrag), rigidBody.velocity.y);
 
             // Horizontal movement
             rigidBody.AddForce(moveDirection.x * Vector2.right * speed);
