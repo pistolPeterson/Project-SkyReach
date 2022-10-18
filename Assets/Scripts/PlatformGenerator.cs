@@ -6,6 +6,7 @@ public class PlatformGenerator : MonoBehaviour
 {
     public GameObject Platform;
     public GameObject BasePlatform;
+    public GameObject CeilingPlatform;
     //This is from the scene
     private float startY = 0.0f;
      
@@ -35,6 +36,9 @@ public class PlatformGenerator : MonoBehaviour
         //Makes keyboard key K spawn platforms
         if (Input.GetKeyDown(KeyCode.K)){
             RandomPlatformGenerator();
+        }
+        if (Input.GetKeyDown(KeyCode.L)){
+            Instantiate(Platform, new Vector3(Random.Range(platXOffsetMin,platXOffsetMax), Random.Range(startY+heightIncrement, CeilingPlatform.gameObject.transform.position.x), 0),  Quaternion.identity);
         }
     }
 }
