@@ -26,7 +26,7 @@ namespace SkyReach
     ""name"": ""Input"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""Movement"",
             ""id"": ""bbb458c7-418e-4f16-b435-85a9d812b2ff"",
             ""actions"": [
                 {
@@ -167,6 +167,65 @@ namespace SkyReach
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Hook"",
+            ""id"": ""1874c78c-018f-4a8e-8595-de4495f2085e"",
+            ""actions"": [
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""afc5f607-7a6c-43de-b363-ef6d9579494a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""288649a9-8ab0-4841-99dc-f5bae9a34886"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""9ee3071f-795c-4f6d-b9a6-04f44dc13f4b"",
+                    ""path"": ""<Pointer>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c828a30-11ad-4e06-b5d3-d295716bb8d1"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b69c8e87-c33b-444c-8dbb-d37c93be2e89"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -419,10 +478,14 @@ namespace SkyReach
         }
     ]
 }");
-            // Player
-            m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-            m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-            m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+            // Movement
+            m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
+            m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
+            m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
+            // Hook
+            m_Hook = asset.FindActionMap("Hook", throwIfNotFound: true);
+            m_Hook_Aim = m_Hook.FindAction("Aim", throwIfNotFound: true);
+            m_Hook_Use = m_Hook.FindAction("Use", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
@@ -487,34 +550,34 @@ namespace SkyReach
             return asset.FindBinding(bindingMask, out action);
         }
 
-        // Player
-        private readonly InputActionMap m_Player;
-        private IPlayerActions m_PlayerActionsCallbackInterface;
-        private readonly InputAction m_Player_Move;
-        private readonly InputAction m_Player_Jump;
-        public struct PlayerActions
+        // Movement
+        private readonly InputActionMap m_Movement;
+        private IMovementActions m_MovementActionsCallbackInterface;
+        private readonly InputAction m_Movement_Move;
+        private readonly InputAction m_Movement_Jump;
+        public struct MovementActions
         {
             private @Input m_Wrapper;
-            public PlayerActions(@Input wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Move => m_Wrapper.m_Player_Move;
-            public InputAction @Jump => m_Wrapper.m_Player_Jump;
-            public InputActionMap Get() { return m_Wrapper.m_Player; }
+            public MovementActions(@Input wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Move => m_Wrapper.m_Movement_Move;
+            public InputAction @Jump => m_Wrapper.m_Movement_Jump;
+            public InputActionMap Get() { return m_Wrapper.m_Movement; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
             public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-            public void SetCallbacks(IPlayerActions instance)
+            public static implicit operator InputActionMap(MovementActions set) { return set.Get(); }
+            public void SetCallbacks(IMovementActions instance)
             {
-                if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+                if (m_Wrapper.m_MovementActionsCallbackInterface != null)
                 {
-                    @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                    @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                    @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                    @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                    @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                    @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                    @Move.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
+                    @Move.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
+                    @Move.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
+                    @Jump.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnJump;
+                    @Jump.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnJump;
+                    @Jump.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnJump;
                 }
-                m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+                m_Wrapper.m_MovementActionsCallbackInterface = instance;
                 if (instance != null)
                 {
                     @Move.started += instance.OnMove;
@@ -526,7 +589,48 @@ namespace SkyReach
                 }
             }
         }
-        public PlayerActions @Player => new PlayerActions(this);
+        public MovementActions @Movement => new MovementActions(this);
+
+        // Hook
+        private readonly InputActionMap m_Hook;
+        private IHookActions m_HookActionsCallbackInterface;
+        private readonly InputAction m_Hook_Aim;
+        private readonly InputAction m_Hook_Use;
+        public struct HookActions
+        {
+            private @Input m_Wrapper;
+            public HookActions(@Input wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Aim => m_Wrapper.m_Hook_Aim;
+            public InputAction @Use => m_Wrapper.m_Hook_Use;
+            public InputActionMap Get() { return m_Wrapper.m_Hook; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(HookActions set) { return set.Get(); }
+            public void SetCallbacks(IHookActions instance)
+            {
+                if (m_Wrapper.m_HookActionsCallbackInterface != null)
+                {
+                    @Aim.started -= m_Wrapper.m_HookActionsCallbackInterface.OnAim;
+                    @Aim.performed -= m_Wrapper.m_HookActionsCallbackInterface.OnAim;
+                    @Aim.canceled -= m_Wrapper.m_HookActionsCallbackInterface.OnAim;
+                    @Use.started -= m_Wrapper.m_HookActionsCallbackInterface.OnUse;
+                    @Use.performed -= m_Wrapper.m_HookActionsCallbackInterface.OnUse;
+                    @Use.canceled -= m_Wrapper.m_HookActionsCallbackInterface.OnUse;
+                }
+                m_Wrapper.m_HookActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @Aim.started += instance.OnAim;
+                    @Aim.performed += instance.OnAim;
+                    @Aim.canceled += instance.OnAim;
+                    @Use.started += instance.OnUse;
+                    @Use.performed += instance.OnUse;
+                    @Use.canceled += instance.OnUse;
+                }
+            }
+        }
+        public HookActions @Hook => new HookActions(this);
 
         // UI
         private readonly InputActionMap m_UI;
@@ -609,10 +713,15 @@ namespace SkyReach
                 return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
             }
         }
-        public interface IPlayerActions
+        public interface IMovementActions
         {
             void OnMove(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
+        }
+        public interface IHookActions
+        {
+            void OnAim(InputAction.CallbackContext context);
+            void OnUse(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

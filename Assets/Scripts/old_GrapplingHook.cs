@@ -11,7 +11,7 @@ public class grapplingHook : MonoBehaviour
     public float moveSpeed = 2;
     public float grappleLength = 10;
 
-    public int maxPoints = 3;
+    public int totalHooks = 3;
 
     private Rigidbody2D rig;
     private List<Vector2> points = new List<Vector2>();
@@ -38,7 +38,7 @@ public class grapplingHook : MonoBehaviour
                 Vector2 hitPoint = hit.point;
                 points.Add(hitPoint);
 
-                if (points.Count > maxPoints)
+                if (points.Count > totalHooks)
                 {
                     points.RemoveAt(0);
                 }
