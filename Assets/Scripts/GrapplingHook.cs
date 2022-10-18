@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace SkyReach
 {
-    public class GrapplingHook: MonoBehaviour, Input.IHookActions
+    public class GrapplingHook : MonoBehaviour, Input.IHookActions
     {
         [SerializeField] private Camera cam;
         private Vector2 hookScreenTarget;
@@ -13,23 +13,38 @@ namespace SkyReach
         private bool isAttached = false;
         [SerializeField] private float speed = 10.0f;
         [SerializeField] private float maxDistance = 10.0f;
-        private LayerMask hookMask;
-        private LayerMask playerMask;
+        [SerializeField] private float finishRetractDistance = 1.0f;
+        [SerializeField] private LayerMask hookMask;
         private Collider2D hookCollider;
         private Rigidbody2D hookBody;
-        private Rigidbody2D playerBody;
+        [SerializeField] private Rigidbody2D playerBody;
+
+        private Input input;
 
         public void Awake()
         {
             hookCollider = GetComponent<Collider2D>();
             hookBody = GetComponent<Rigidbody2D>();
-            playerBody = GetComponentInParent<Rigidbody2D>();
+            playerBody = transform.parent.GetComponent<Rigidbody2D>();
+
+            transform.parent = null; // Hook moves independently of player
+        }
+
+        public void Start()
+        {
+            if (input == null)
+            {
+                input = new Input();
+                input.Hook.SetCallbacks(this);
+            }
+            input.Enable();
+            
         }
 
         public void Hook()
         {
             // reset hook position
-            hookBody.position = transform.position;
+            hookBody.position = playerBody.position;
 
             // get aim direction
             Vector2 aimDirection = (cam.ScreenToWorldPoint(hookScreenTarget) - transform.position).normalized;
@@ -39,34 +54,46 @@ namespace SkyReach
 
         public void FixedUpdate()
         {
-            if(isHooking)
+            if (isHooking)
             {
-                if(hookBody.IsTouchingLayers(hookMask))
+                Vector2 playerToHook = hookBody.position - playerBody.position;
+
+                Debug.Log(playerToHook.magnitude);
+
+                if (hookBody.IsTouchingLayers(hookMask))
                 {
                     isRetracting = false; // stop retracting if we hit something
                     isAttached = true;
                     hookBody.velocity = Vector2.zero;
                 }
-                else if((hookBody.position - (Vector2)transform.position).magnitude > maxDistance)
+                else if (playerToHook.magnitude > maxDistance)
                 {
+                    Debug.Log("Retracting");
                     isRetracting = true;
                 }
 
-                Vector2 directionToHook = (hookBody.position - (Vector2)transform.position).normalized;
-
-                if(isRetracting)
+                if (isRetracting)
                 {
                     // move hook towards player
-                    hookBody.AddForce(-directionToHook * speed);
+                    hookBody.velocity = -playerToHook.normalized * speed;
+
+                    if(playerToHook.magnitude < finishRetractDistance)
+                    {
+                        isHooking = false;
+                        isRetracting = false;
+                        isAttached = false;
+                        hookBody.velocity = Vector2.zero;
+                        hookBody.position = playerBody.position;
+                    }
                 }
 
-                if(isAttached)
+                if (isAttached)
                 {
                     // move player towards hook
-                    playerBody.AddForce(directionToHook * speed);
+                    playerBody.AddForce(playerToHook.normalized * speed);
 
                     // if player collides with hook, end grappling, maintain momentum
-                    if(playerBody.IsTouching(hookCollider))
+                    if (playerBody.IsTouching(hookCollider))
                     {
                         isHooking = false;
                         isAttached = false;
@@ -74,12 +101,18 @@ namespace SkyReach
                     }
                 }
             }
+            else
+            {
+                hookBody.velocity = Vector2.zero;
+                hookBody.position = playerBody.position;
+            }
         }
 
         void Input.IHookActions.OnUse(InputAction.CallbackContext context)
         {
-            if(context.performed)
+            if (context.performed)
             {
+                Debug.Log("Hooking");
                 isHooking = true;
                 Hook();
             }
