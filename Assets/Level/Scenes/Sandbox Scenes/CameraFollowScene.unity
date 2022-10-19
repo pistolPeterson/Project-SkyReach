@@ -1128,7 +1128,7 @@ MonoBehaviour:
   fireSpeed: 50
   retractForce: 150
   maxDistance: 10
-  finishRetractDistance: 1
+  destinationThreshold: 5
   hookMask:
     serializedVersion: 2
     m_Bits: 8
