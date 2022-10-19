@@ -11,9 +11,10 @@ namespace SkyReach
         private bool isHooking = false;
         private bool isRetracting = false;
         private bool isAttached = false;
-        [SerializeField] private float speed = 10.0f;
+        [SerializeField] private float fireSpeed = 10.0f;
+        [SerializeField] private float retractForce = 10.0f;
         [SerializeField] private float maxDistance = 10.0f;
-        [SerializeField] private float finishRetractDistance = 1.0f;
+        [SerializeField] private float destinationThreshold = 1.0f;
         [SerializeField] private LayerMask hookMask;
         private Collider2D hookCollider;
         private Rigidbody2D hookBody;
@@ -38,18 +39,17 @@ namespace SkyReach
                 input.Hook.SetCallbacks(this);
             }
             input.Enable();
-            
+
         }
 
         public void Hook()
         {
-            // reset hook position
-            hookBody.position = playerBody.position;
+            isHooking = true;
 
             // get aim direction
-            Vector2 aimDirection = (cam.ScreenToWorldPoint(hookScreenTarget) - transform.position).normalized;
+            Vector2 aimDirection = ((Vector2)cam.ScreenToWorldPoint(hookScreenTarget) - hookBody.position).normalized;
 
-            hookBody.velocity = aimDirection * speed;
+            hookBody.velocity = aimDirection * fireSpeed;
         }
 
         public void FixedUpdate()
@@ -57,8 +57,6 @@ namespace SkyReach
             if (isHooking)
             {
                 Vector2 playerToHook = hookBody.position - playerBody.position;
-
-                Debug.Log(playerToHook.magnitude);
 
                 if (hookBody.IsTouchingLayers(hookMask))
                 {
@@ -68,36 +66,32 @@ namespace SkyReach
                 }
                 else if (playerToHook.magnitude > maxDistance)
                 {
-                    Debug.Log("Retracting");
                     isRetracting = true;
                 }
 
                 if (isRetracting)
                 {
                     // move hook towards player
-                    hookBody.velocity = -playerToHook.normalized * speed;
+                    hookBody.velocity = -playerToHook.normalized * fireSpeed;
 
-                    if(playerToHook.magnitude < finishRetractDistance)
+                    if (playerToHook.magnitude < destinationThreshold)
                     {
-                        isHooking = false;
-                        isRetracting = false;
-                        isAttached = false;
-                        hookBody.velocity = Vector2.zero;
-                        hookBody.position = playerBody.position;
+                        ResetHook();
                     }
                 }
 
                 if (isAttached)
                 {
-                    // move player towards hook
-                    playerBody.AddForce(playerToHook.normalized * speed);
+                    // move player towards hook linearly
+                    //playerBody.AddForce(playerToHook.normalized * retractForce);
+
+                    // move player towards hook with spring force
+                    playerBody.AddForce(playerToHook.normalized * retractForce * playerToHook.magnitude / maxDistance);
 
                     // if player collides with hook, end grappling, maintain momentum
-                    if (playerBody.IsTouching(hookCollider))
+                    if (playerToHook.magnitude < destinationThreshold)
                     {
-                        isHooking = false;
-                        isAttached = false;
-                        isRetracting = false;
+                        ResetHook();
                     }
                 }
             }
@@ -112,10 +106,21 @@ namespace SkyReach
         {
             if (context.performed)
             {
-                Debug.Log("Hooking");
-                isHooking = true;
+                if(isHooking)
+                {
+                    ResetHook();
+                }
                 Hook();
             }
+        }
+
+        void ResetHook()
+        {
+            isHooking = false;
+            isRetracting = false;
+            isAttached = false;
+            hookBody.velocity = Vector2.zero;
+            hookBody.position = playerBody.position;
         }
 
         // Keep track of the mouse position, but don't get aim direction here
