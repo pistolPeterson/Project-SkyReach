@@ -14,11 +14,11 @@ namespace SkyReach
         [SerializeField] private float fireSpeed = 10.0f;
         [SerializeField] private float retractForce = 10.0f;
         [SerializeField] private float maxDistance = 10.0f;
-        [SerializeField] private float destinationThreshold = 1.0f;
         [SerializeField] private LayerMask hookMask;
         private Collider2D hookCollider;
         private Rigidbody2D hookBody;
         [SerializeField] private Rigidbody2D playerBody;
+        [SerializeField] private Collider2D playerCollider;
 
         private Input input;
 
@@ -27,6 +27,7 @@ namespace SkyReach
             hookCollider = GetComponent<Collider2D>();
             hookBody = GetComponent<Rigidbody2D>();
             playerBody = transform.parent.GetComponent<Rigidbody2D>();
+            playerCollider = transform.parent.GetComponent<Collider2D>();
 
             transform.parent = null; // Hook moves independently of player
         }
@@ -39,11 +40,11 @@ namespace SkyReach
                 input.Hook.SetCallbacks(this);
             }
             input.Enable();
-
         }
 
         public void Hook()
         {
+            ResetHook();
             isHooking = true;
 
             // get aim direction
@@ -60,7 +61,7 @@ namespace SkyReach
 
                 if (hookBody.IsTouchingLayers(hookMask))
                 {
-                    isRetracting = false; // stop retracting if we hit something
+                    isRetracting = true;
                     isAttached = true;
                     hookBody.velocity = Vector2.zero;
                 }
@@ -71,34 +72,22 @@ namespace SkyReach
 
                 if (isRetracting)
                 {
-                    // move hook towards player
-                    hookBody.velocity = -playerToHook.normalized * fireSpeed;
+                    if (isAttached)
+                    {
+                        // move player towards hook
+                        playerBody.velocity = playerToHook.normalized * retractForce;
+                    }
+                    else
+                    {
+                        // move hook towards player
+                        hookBody.velocity = -playerToHook.normalized * fireSpeed;
+                    }
 
-                    if (playerToHook.magnitude < destinationThreshold)
+                    if (hookCollider.IsTouching(playerCollider))
                     {
                         ResetHook();
                     }
                 }
-
-                if (isAttached)
-                {
-                    // move player towards hook linearly
-                    //playerBody.AddForce(playerToHook.normalized * retractForce);
-
-                    // move player towards hook with spring force
-                    playerBody.AddForce(playerToHook.normalized * retractForce * playerToHook.magnitude / maxDistance);
-
-                    // if player collides with hook, end grappling, maintain momentum
-                    if (playerToHook.magnitude < destinationThreshold)
-                    {
-                        ResetHook();
-                    }
-                }
-            }
-            else
-            {
-                hookBody.velocity = Vector2.zero;
-                hookBody.position = playerBody.position;
             }
         }
 
@@ -106,7 +95,7 @@ namespace SkyReach
         {
             if (context.performed)
             {
-                if(isHooking)
+                if (isHooking)
                 {
                     ResetHook();
                 }

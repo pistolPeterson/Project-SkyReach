@@ -14,7 +14,7 @@ namespace SkyReach
     public class PlayerController : MonoBehaviour, Input.IMovementActions
     {
         private Rigidbody2D rigidBody;
-        private new Collider2D collider;
+        [HideInInspector] public new Collider2D collider;
         private float raycastBuffer = 0.01f; // Used to detect if the player is grounded
         private Vector2 moveDirection;
         [SerializeField] private float speed = 10.0f;
@@ -72,10 +72,13 @@ namespace SkyReach
             // Horizontal movement
             rigidBody.AddForce(moveDirection.x * Vector2.right * speed);
 
-            // check if grounded, raycasts a slightly larger box than the player's collider towards the ground
-            isGrounded = Physics2D.BoxCast(collider.bounds.center, collider.bounds.size, 0f, Vector2.down, raycastBuffer, LayerMask.GetMask("Ground"));
+            Vector2 bottomCenter = new Vector2(collider.bounds.center.x, collider.bounds.min.y);
+            Vector2 bottomSideBox = new Vector2(collider.bounds.extents.x, raycastBuffer);
 
-            if (isJumping && isGrounded)
+            // check if grounded, raycasts a slightly larger box than the player's collider towards the ground
+            isGrounded = Physics2D.BoxCast(bottomCenter, bottomSideBox, 0f, Vector2.down, raycastBuffer, LayerMask.GetMask("Ground"));
+
+            if (isJumping && isGrounded && rigidBody.velocity.y <= 0)
             {
                 rigidBody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
                 isJumping = false; // remove this line to allow for the player to hold jump for repeated jumps
