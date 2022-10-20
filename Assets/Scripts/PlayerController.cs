@@ -11,7 +11,7 @@ namespace SkyReach
     /// Rigidbody2D.drag is not used because it acts on the vertical axis as well, which slows down the player when jumping.
     /// </summary>
     [RequireComponent(typeof(Rigidbody2D))]
-    public class PlayerController : MonoBehaviour, Input.IMovementActions
+    public class PlayerController : MonoBehaviour, Input.IPlayerActions
     {
         private Rigidbody2D rigidBody;
         [HideInInspector] public new Collider2D collider;
@@ -43,7 +43,7 @@ namespace SkyReach
             if (input == null)
             {
                 input = new Input();
-                input.Movement.SetCallbacks(this);
+                input.Player.SetCallbacks(this);
             }
             input.Enable();
         }
@@ -88,7 +88,7 @@ namespace SkyReach
         /// <summary>
         /// Called when the player presses the jump button
         /// </summary>
-        void Input.IMovementActions.OnMove(InputAction.CallbackContext context)
+        void Input.IPlayerActions.OnMove(InputAction.CallbackContext context)
         {
             moveDirection = context.ReadValue<Vector2>();
         }
@@ -96,9 +96,11 @@ namespace SkyReach
         /// <summary>
         /// Called when the player presses the jump button
         /// </summary>
-        void Input.IMovementActions.OnJump(InputAction.CallbackContext context)
+        void Input.IPlayerActions.OnJump(InputAction.CallbackContext context)
         {
             isJumping = context.ReadValueAsButton();
         }
+
+        void Input.IPlayerActions.OnHook(InputAction.CallbackContext context) { } // doesn't need to do anything
     }
 }

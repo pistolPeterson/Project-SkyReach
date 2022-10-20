@@ -2,7 +2,7 @@
     "name": "Input",
     "maps": [
         {
-            "name": "Movement",
+            "name": "Player",
             "id": "bbb458c7-418e-4f16-b435-85a9d812b2ff",
             "actions": [
                 {
@@ -18,6 +18,15 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "50eda7f4-4cee-404a-8b9e-b3e09dbbe77f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hook",
+                    "type": "Button",
+                    "id": "d51290d4-624f-45aa-9d09-b815d0527947",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -145,63 +154,26 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Hook",
-            "id": "1874c78c-018f-4a8e-8595-de4495f2085e",
-            "actions": [
-                {
-                    "name": "Aim",
-                    "type": "Value",
-                    "id": "afc5f607-7a6c-43de-b363-ef6d9579494a",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Use",
-                    "type": "Button",
-                    "id": "288649a9-8ab0-4841-99dc-f5bae9a34886",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "9ee3071f-795c-4f6d-b9a6-04f44dc13f4b",
-                    "path": "<Pointer>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3c828a30-11ad-4e06-b5d3-d295716bb8d1",
+                    "id": "27068365-da6f-438e-b747-c0c99c436177",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Use",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Hook",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "b69c8e87-c33b-444c-8dbb-d37c93be2e89",
+                    "id": "9e69424f-6c3f-44f6-be99-2e99732bbcf2",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Use",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Hook",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

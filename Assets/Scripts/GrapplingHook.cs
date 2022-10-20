@@ -4,120 +4,137 @@ using UnityEngine.InputSystem;
 
 namespace SkyReach
 {
-    public class GrapplingHook : MonoBehaviour, Input.IHookActions
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class GrapplingHook : MonoBehaviour, Input.IPlayerActions
     {
-        [SerializeField] private Camera cam;
-        private Vector2 hookScreenTarget;
-        private bool isHooking = false;
-        private bool isRetracting = false;
-        private bool isAttached = false;
-        [SerializeField] private float fireSpeed = 10.0f;
-        [SerializeField] private float retractForce = 10.0f;
-        [SerializeField] private float maxDistance = 10.0f;
+        [Header("Hook Properties")]
+        [SerializeField] private float fireForce;
+        [SerializeField] private float retractForce;
+        [SerializeField] private float maxDistance;
         [SerializeField] private LayerMask hookMask;
-        private Collider2D hookCollider;
-        private Rigidbody2D hookBody;
-        [SerializeField] private Rigidbody2D playerBody;
-        [SerializeField] private Collider2D playerCollider;
 
+        [Header("Physics References")]
+        [SerializeField] private Rigidbody2D playerBody;
+
+        // internal variables
+        private Vector2 aimDirection;
+        private bool isHooking;
+        private bool isRetracting;
+        private bool isAttached;
+        private Rigidbody2D hookBody;
+        private Collider2D hookCollider;
         private Input input;
 
         public void Awake()
         {
-            hookCollider = GetComponent<Collider2D>();
+            // warn if playerBody or hookBody is not set
+            if (playerBody == null)
+            {
+                Debug.LogWarning("Player Rigidbody2D not set in GrapplingHook.cs");
+                enabled = false;
+            }
             hookBody = GetComponent<Rigidbody2D>();
-            playerBody = transform.parent.GetComponent<Rigidbody2D>();
-            playerCollider = transform.parent.GetComponent<Collider2D>();
-
-            transform.parent = null; // Hook moves independently of player
+            hookCollider = GetComponent<Collider2D>();
+            // warn if hookCollider is not set
+            if (hookCollider == null)
+            {
+                Debug.LogWarning("GrapplingHook GameObject does not have a Collider2D");
+                enabled = false;
+            }
         }
 
         public void Start()
         {
+            // init variables
+            aimDirection = Vector2.zero;
+            isAttached = false;
+
+            // init input
             if (input == null)
             {
                 input = new Input();
-                input.Hook.SetCallbacks(this);
+                input.Player.SetCallbacks(this);
             }
             input.Enable();
-        }
-
-        public void Hook()
-        {
-            ResetHook();
-            isHooking = true;
-
-            // get aim direction
-            Vector2 aimDirection = ((Vector2)cam.ScreenToWorldPoint(hookScreenTarget) - hookBody.position).normalized;
-
-            hookBody.velocity = aimDirection * fireSpeed;
+            hookBody.simulated = false;
         }
 
         public void FixedUpdate()
         {
             if (isHooking)
             {
-                Vector2 playerToHook = hookBody.position - playerBody.position;
-
-                if (hookBody.IsTouchingLayers(hookMask))
+                // if hook is not attached to anything
+                if (!isAttached)
                 {
-                    isRetracting = true;
-                    isAttached = true;
-                    hookBody.velocity = Vector2.zero;
-                }
-                else if (playerToHook.magnitude > maxDistance)
-                {
-                    isRetracting = true;
-                }
-
-                if (isRetracting)
-                {
-                    if (isAttached)
+                    if (!isRetracting)
                     {
-                        // move player towards hook
-                        playerBody.velocity = playerToHook.normalized * retractForce;
+                        if (Vector2.Distance(hookBody.position, playerBody.position) < maxDistance)
+                        {
+                            hookBody.AddForce(aimDirection * fireForce);
+                        }
+                        else // retract if hook reaches max distance
+                        {
+                            isRetracting = true;
+                        }
                     }
                     else
                     {
-                        // move hook towards player
-                        hookBody.velocity = -playerToHook.normalized * fireSpeed;
+                        if (!playerBody.IsTouching(hookCollider))
+                        {
+                            // move hook towards player
+                            hookBody.AddForce((playerBody.position - hookBody.position).normalized * fireForce);
+                        }
+                        else // stop hooking if hook touches player when retracting
+                        {
+                            isHooking = false;
+                            isRetracting = false;
+                            hookBody.simulated = false;
+                        }
                     }
 
-                    if (hookCollider.IsTouching(playerCollider))
+                    // check if hook can attach to something
+                    if (hookBody.IsTouchingLayers(hookMask))
                     {
-                        ResetHook();
+                        isAttached = true;
+                        hookBody.velocity = Vector2.zero;
+                    }
+                }
+                else
+                {
+                    if (!playerBody.IsTouching(hookCollider))
+                    {
+                        // move player towards hook
+                        playerBody.AddForce((hookBody.position - playerBody.position).normalized * retractForce);
+                    }
+                    else // stop hooking if hook touches player when retracting
+                    {
+                        isHooking = false;
+                        isRetracting = false;
+                        hookBody.simulated = false;
                     }
                 }
             }
         }
 
-        void Input.IHookActions.OnUse(InputAction.CallbackContext context)
+        void Input.IPlayerActions.OnHook(InputAction.CallbackContext context)
         {
-            if (context.performed)
+            if (context.started && !isHooking) // can only hook if not already hooking
             {
-                if (isHooking)
-                {
-                    ResetHook();
-                }
-                Hook();
+                hookBody.simulated = true;
+                isHooking = true;
+                isAttached = false;
             }
         }
 
-        void ResetHook()
+        void Input.IPlayerActions.OnMove(InputAction.CallbackContext context)
         {
-            isHooking = false;
-            isRetracting = false;
-            isAttached = false;
-            hookBody.velocity = Vector2.zero;
-            hookBody.position = playerBody.position;
+            Vector2 input = context.ReadValue<Vector2>();
+            if (input.magnitude > 0.1f) // omits small input values, keeps track of last direction
+            {
+                aimDirection = input;
+            }
         }
 
-        // Keep track of the mouse position, but don't get aim direction here
-        // because the player transform updates at a different rate than this method
-        void Input.IHookActions.OnAim(InputAction.CallbackContext context)
-        {
-            hookScreenTarget = context.ReadValue<Vector2>();
-        }
-
+        void Input.IPlayerActions.OnJump(InputAction.CallbackContext context) { }
     }
 }
