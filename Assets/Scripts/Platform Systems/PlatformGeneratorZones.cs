@@ -8,7 +8,6 @@ public class PlatformGeneratorZones :MonoBehaviour
     public GameObject BasePlatform;
     public GameObject CeilingPlatform; 
     //This is from the scene
-    private float startY = 0.0f;
      
     //public float heightIncrement = 2.0f;
     private int numOfRegions =8;
