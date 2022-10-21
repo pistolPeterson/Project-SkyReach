@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class startCutscene : MonoBehaviour
+public class StartCutscene : MonoBehaviour
 {
     public static bool isCutsceneOn;
     public Animator cameraAnimator;
