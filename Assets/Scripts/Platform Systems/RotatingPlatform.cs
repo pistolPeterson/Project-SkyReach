@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class RotatingPlatform : BasePlatform 
+public class RotatingPlatform : MonoBehaviour
 {
     public GameObject rotatingPlatform;
     public Vector3 startRotation;
@@ -24,13 +24,15 @@ public class RotatingPlatform : BasePlatform
 
     }
 
-    private void RotateClockwise(){
-        
+    private void RotateClockwise()
+    {
+
         transform.Rotate(Vector3.back, speed * Time.deltaTime);
     }
-        
-    private void RotateCounterClockwise(){
-        
+
+    private void RotateCounterClockwise()
+    {
+
         transform.Rotate(Vector3.forward, speed * Time.deltaTime);
     }
 }
