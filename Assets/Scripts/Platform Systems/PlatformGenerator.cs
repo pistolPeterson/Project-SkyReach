@@ -27,7 +27,7 @@ namespace SkyReach
                 GameObject platform = availablePlatforms[Random.Range(0, availablePlatforms.Count)];
 
                 // get random position
-                Vector2 position = new Vector2(Random.Range(spawnArea.xMin, spawnArea.xMax), Random.Range(spawnArea.yMin, spawnArea.yMax));
+                Vector2 position = new Vector2(Random.Range(spawnArea.xMin, spawnArea.xMax), Random.Range(spawnArea.yMin, spawnArea.yMax)) + (Vector2)spawnedPlatforms[^0]?.transform.position;
 
                 // instantiate platform
                 GameObject newPlatform = Instantiate(platform, position, Quaternion.identity, transform); // parents to the generator object
