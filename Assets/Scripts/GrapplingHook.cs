@@ -110,7 +110,7 @@ namespace SkyReach
 
         void Input.IHookActions.OnFire(InputAction.CallbackContext context)
         {
-            if (context.started) StartHook();
+            if (context.started && !hookBody.simulated) StartHook();
         }
     }
 }
