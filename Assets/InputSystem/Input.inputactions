@@ -2,7 +2,7 @@
     "name": "Input",
     "maps": [
         {
-            "name": "Player",
+            "name": "Movement",
             "id": "bbb458c7-418e-4f16-b435-85a9d812b2ff",
             "actions": [
                 {
@@ -25,61 +25,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "WASD",
-                    "id": "26624921-f256-40cc-a829-0b378d5e1e1a",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "316592ce-573d-4ffa-b750-2de46c18bb0e",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "4cad8be4-0920-4bd0-90d0-d408149707be",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "a7bb3f5c-77e2-4da9-baf6-5393c0bf506b",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "c9e118b5-72e7-422f-9b22-2f76bfedeeac",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
                 {
                     "name": "Arrow Keys",
                     "id": "4ffaaa05-ac64-404c-be45-f082b48a15d2",
@@ -137,12 +82,40 @@
                 },
                 {
                     "name": "",
-                    "id": "18c1a327-286d-47cc-bec5-b30b998407cf",
-                    "path": "<Keyboard>/space",
+                    "id": "637022da-e0dc-424b-aacb-db01c37da856",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Hook",
+            "id": "5c2dd108-3b66-4c16-a9c5-fdb2463ef223",
+            "actions": [
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "bf0d2601-9911-4840-8446-e2129331dc85",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0b6f1c22-305d-4e12-9508-e51fb2e1303b",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
