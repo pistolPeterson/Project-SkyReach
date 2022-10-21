@@ -11,39 +11,38 @@ namespace SkyReach
     /// Rigidbody2D.drag is not used because it acts on the vertical axis as well, which slows down the player when jumping.
     /// </summary>
     [RequireComponent(typeof(Rigidbody2D))]
-    public class PlayerController : MonoBehaviour, Input.IPlayerActions
+    public class PlayerController : MonoBehaviour, Input.IMovementActions
     {
-        private Rigidbody2D rigidBody;
-        [HideInInspector] public new Collider2D collider;
-        private float raycastBuffer = 0.01f; // Used to detect if the player is grounded
-        private Vector2 moveDirection;
+        [Header("Movement Properties")]
         [SerializeField] private float speed = 10.0f;
         [SerializeField] private float jumpSpeed = 100.0f;
         [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag = 0.1f;
+        private float groundRaycastBuffer = 0.05f;
 
-        // ===== temporary until we decide on a specific gravity value =====
-        [SerializeField] private float localGravity = 10f;
-        private float originalGravityScale;
-        // =================================================================
 
+        // exposed properties
+        public Rigidbody2D Body { get; private set; }
+        public Collider2D Collider { get; private set; }
+        public Vector2 FacingDirection { get; private set; }
+        public Vector2 LastHorizontalFacingDirection { get; private set; } = Vector2.right;
+
+        // internal variables
         private bool isGrounded = false;
         private bool isJumping = false;
-
         private Input input;
 
         public void Awake()
         {
-            rigidBody = GetComponent<Rigidbody2D>();
-            collider = GetComponent<Collider2D>();
+            Body = GetComponent<Rigidbody2D>();
+            Collider = GetComponent<Collider2D>();
         }
 
-        // Hooks to the input system when the object is enabled
         public void OnEnable()
         {
             if (input == null)
             {
                 input = new Input();
-                input.Player.SetCallbacks(this);
+                input.Movement.SetCallbacks(this);
             }
             input.Enable();
         }
@@ -53,54 +52,39 @@ namespace SkyReach
             input.Disable();
         }
 
-        public void Start()
-        {
-            // ===== temporary until we decide on a specific gravity value =====
-            originalGravityScale = rigidBody.gravityScale;
-            // =================================================================
-        }
-
         public void FixedUpdate()
         {
-            // ===== temporary until we decide on a specific gravity value =====
-            rigidBody.gravityScale = localGravity * originalGravityScale;
-            // =================================================================
-
             // While there is no explicit speed cap, horizontal drag will create an artificial one.
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x * (1.0f - horizontalDrag), rigidBody.velocity.y);
+            Body.velocity = new Vector2(Body.velocity.x * (1.0f - horizontalDrag), Body.velocity.y);
 
             // Horizontal movement
-            rigidBody.AddForce(moveDirection.x * Vector2.right * speed);
+            Body.AddForce(FacingDirection.x * Vector2.right * speed);
 
-            Vector2 bottomCenter = new Vector2(collider.bounds.center.x, collider.bounds.min.y);
-            Vector2 bottomSideBox = new Vector2(collider.bounds.extents.x, raycastBuffer);
+            Vector2 bottomCenter = new Vector2(Collider.bounds.center.x, Collider.bounds.min.y);
+            Vector2 bottomSideBox = new Vector2(Collider.bounds.extents.x * 2, groundRaycastBuffer);
 
-            // check if grounded, raycasts a slightly larger box than the player's collider towards the ground
-            isGrounded = Physics2D.BoxCast(bottomCenter, bottomSideBox, 0f, Vector2.down, raycastBuffer, LayerMask.GetMask("Ground"));
+            // check if grounded, raycasts a thin box at the bottom of the player towards the ground
+            isGrounded = Physics2D.OverlapBox(bottomCenter, bottomSideBox, 0.0f, LayerMask.GetMask("Ground")) != null;
 
-            if (isJumping && isGrounded && rigidBody.velocity.y <= 0)
+            if (isJumping && isGrounded && Body.velocity.y <= 0)
             {
-                rigidBody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+                Body.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
                 isJumping = false; // remove this line to allow for the player to hold jump for repeated jumps
             }
         }
 
-        /// <summary>
-        /// Called when the player presses the jump button
-        /// </summary>
-        void Input.IPlayerActions.OnMove(InputAction.CallbackContext context)
+        void Input.IMovementActions.OnMove(InputAction.CallbackContext context)
         {
-            moveDirection = context.ReadValue<Vector2>();
+            FacingDirection = context.ReadValue<Vector2>();
+            if (FacingDirection.x != 0)
+            {
+                LastHorizontalFacingDirection = new Vector2(FacingDirection.x, 0).normalized;
+            }
         }
 
-        /// <summary>
-        /// Called when the player presses the jump button
-        /// </summary>
-        void Input.IPlayerActions.OnJump(InputAction.CallbackContext context)
+        void Input.IMovementActions.OnJump(InputAction.CallbackContext context)
         {
             isJumping = context.ReadValueAsButton();
         }
-
-        void Input.IPlayerActions.OnHook(InputAction.CallbackContext context) { } // doesn't need to do anything
     }
 }
