@@ -1,56 +1,40 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformGenerator : MonoBehaviour
+namespace SkyReach
 {
-    public GameObject platform;
-    public GameObject basePlatform;
-    //This is from the scene
-    private float startY = 0.0f;
-    public List<GameObject> listOfPlatforms = new List<GameObject>();
-    public int i =0;
-    public float heightIncrement = 2.0f;
-    public float numOfPlats =6;
-    public float platXOffsetMax;
-    public float platXOffsetMin;
-    public float platHeightIncrementMin;
-    public float platHeightIncrementMax;
-    // Start is called before the first frame update
-    
-    void Start(){      
-        RandomPlatformGenerator();
-    }
-    void RandomPlatformGenerator() {
-        startY = basePlatform.gameObject.transform.position.y+heightIncrement; 
-        //Creates numofPlats number of platforms
-        for(int i=0; i< numOfPlats; i++){
-            //GameObject p = ReturnPlatform();
+    public class PlatformGenerator : MonoBehaviour
+    {
+        [SerializeField] private GameObject platformPrefab;
+        [SerializeField] private Transform basePlatform;
+        [SerializeField] private Rect spawnArea;
+        [SerializeField] private List<GameObject> availablePlatforms;
+        public int spawnCount;
 
-            var pObj = Instantiate(ReturnPlatform(), new Vector3(Random.Range(platXOffsetMin,platXOffsetMax), startY, 0),  Quaternion.identity);
-        //Increases vertial spawn point of the next platform
-        startY= startY +heightIncrement + Random.Range(platHeightIncrementMin,platHeightIncrementMax);
+        // internal variables
+        private List<GameObject> spawnedPlatforms;
 
-
-            if(pObj != null){
-                 Debug.Log(i);
-                pObj.GetComponent<BasePlatform>().Spawn();
-            }
-            else
-                Debug.Log("no pobj");
-
+        void Start()
+        {
+            Generate(spawnCount);
         }
-    }
-    //Returns random platform from a list
-    GameObject ReturnPlatform() {
-        return listOfPlatforms[Random.Range(0, listOfPlatforms.Count)];
-    }
-    // Update is called once per frame
-    void Update()
-    {   
-        //Makes keyboard key K spawn platforms
-        if (Input.GetKeyDown(KeyCode.K)){
-            RandomPlatformGenerator();
+
+        void Generate(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                // get random platform
+                GameObject platform = availablePlatforms[Random.Range(0, availablePlatforms.Count)];
+
+                // get random position
+                Vector2 position = new Vector2(Random.Range(spawnArea.xMin, spawnArea.xMax), Random.Range(spawnArea.yMin, spawnArea.yMax));
+
+                // instantiate platform
+                GameObject newPlatform = Instantiate(platform, position, Quaternion.identity, transform); // parents to the generator object
+
+                // add to list
+                spawnedPlatforms.Add(newPlatform);
+            }
         }
     }
 }
