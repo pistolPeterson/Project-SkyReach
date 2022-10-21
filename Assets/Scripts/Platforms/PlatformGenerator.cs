@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SkyReach
+namespace SkyReach.Platforms
 {
     public class PlatformGenerator : MonoBehaviour
     {
