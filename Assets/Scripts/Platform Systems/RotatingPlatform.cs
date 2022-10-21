@@ -5,7 +5,6 @@ using DG.Tweening;
 
 public class RotatingPlatform : MonoBehaviour
 {
-    public GameObject rotatingPlatform;
     public Vector3 startRotation;
     public int speed;
     public bool counterClockwise;
