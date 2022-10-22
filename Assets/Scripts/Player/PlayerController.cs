@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace SkyReach
+namespace SkyReach.Player
 {
     /// <summary>
     /// This is a physics based player controller that uses the new Input System.

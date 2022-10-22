@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace SkyReach
+namespace SkyReach.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class GrapplingHook : MonoBehaviour, Input.IHookActions
