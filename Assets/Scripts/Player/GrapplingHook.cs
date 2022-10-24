@@ -8,9 +8,9 @@ namespace SkyReach.Player
     public class GrapplingHook : MonoBehaviour, Input.IHookActions
     {
         [Header("Hook Properties")]
-        [SerializeField] private float fireSpeed;
-        [SerializeField] private float retractForce;
-        [SerializeField] private float maxDistance;
+        [SerializeField] private float fireSpeed = 40f;
+        [SerializeField] private float retractForce = 250f;
+        [SerializeField] private float maxDistance = 15f;
         [SerializeField] private LayerMask hookMask;
 
         [Header("Player Reference")]
