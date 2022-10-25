@@ -4,6 +4,10 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+/// <summary>
+/// This class is used to provide feedback to the player when they are knocked back.
+/// </summary>
 public class KnockbackFeedback : MonoBehaviour
 {
     [SerializeField] 
