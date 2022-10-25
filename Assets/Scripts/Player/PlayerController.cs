@@ -14,10 +14,11 @@ namespace SkyReach.Player
     public class PlayerController : MonoBehaviour, Input.IMovementActions
     {
         [Header("Movement Properties")]
-        [SerializeField] private float speed = 100.0f;
-        [SerializeField] private float jumpSpeed = 40.0f;
-        [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag = 0.2f;
-        private float groundRaycastBuffer = 0.05f;
+        [SerializeField] private float speed;
+        [SerializeField] private float jumpSpeed;
+        [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag;
+        [SerializeField] private float gravityScale;
+        private float groundRaycastBuffer;
 
 
         // exposed properties
@@ -54,6 +55,10 @@ namespace SkyReach.Player
 
         public void FixedUpdate()
         {
+            // set gravity scale.
+            // this can be removed later when we decide on a gravity value, but for now it helps testing.
+            Body.gravityScale = gravityScale;
+
             // While there is no explicit speed cap, horizontal drag will create an artificial one.
             Body.velocity = new Vector2(Body.velocity.x * (1.0f - horizontalDrag), Body.velocity.y);
 
