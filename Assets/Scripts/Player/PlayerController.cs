@@ -104,7 +104,7 @@ namespace SkyReach.Player
             }
 
             // if the player was grounded and is no longer grounded, start the coyote time
-            if (groundCollider == null)
+            if (!isJumping && groundCollider == null)
             {
                 if (coyoteTimer <= 0.0f)
                 {
