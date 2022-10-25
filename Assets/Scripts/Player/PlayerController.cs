@@ -35,6 +35,7 @@ namespace SkyReach.Player
         private Collider2D groundCollider = null;
         private bool isJumping = false;
         private float jumpBufferTimer = 0.0f;
+        private float coyoteTimer = 0.0f;
         private Input input;
 
         public void Awake()
@@ -64,40 +65,35 @@ namespace SkyReach.Player
             // this can be removed later when we decide on a gravity value, but for now it helps testing.
             Body.gravityScale = gravityScale;
 
-            // While there is no explicit speed cap, horizontal drag will create an artificial one.
-            Body.velocity = new Vector2(Body.velocity.x * (1.0f - horizontalDrag), Body.velocity.y);
-
-            // Horizontal movement
-            Body.AddForce(FacingDirection.x * Vector2.right * speed);
-
             Vector2 bottomCenter = new Vector2(Collider.bounds.center.x, Collider.bounds.min.y);
             Vector2 bottomSideBox = new Vector2(Collider.bounds.extents.x * 2, groundRaycastDistance);
 
             // check if grounded, raycasts a thin box at the bottom of the player towards the ground
             groundCollider = Physics2D.OverlapBox(bottomCenter, bottomSideBox, 0.0f, LayerMask.GetMask("Ground"));
 
-            float relativeVerticalVelocity = Body.velocity.y;
+            Vector2 relativeVelocity = Body.velocity;
             // if grounded on a rigidbody, add rigidbody's velocity to player's velocity
-            if(Body.velocity.y <= 0 && groundCollider != null)
+            if (Body.velocity.y <= 0 && groundCollider != null)
             {
                 Rigidbody2D groundBody = groundCollider.GetComponent<Rigidbody2D>();
-                if(groundBody != null)
+                if (groundBody != null)
                 {
-                    Body.velocity = groundBody.velocity;
-                    relativeVerticalVelocity -= groundBody.velocity.y;
+                    relativeVelocity -= groundBody.velocity;
+                    Body.position += groundBody.velocity * Time.fixedDeltaTime;
                 }
             }
 
-            if (isJumping && groundCollider && relativeVerticalVelocity <= 0)
+            if (isJumping && ((groundCollider && relativeVelocity.y <= 0) || coyoteTimer > 0.0f))
             {
                 Body.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
                 isJumping = false; // remove this line to allow for the player to hold jump for repeated jumps
+                coyoteTimer = 0.0f;
             }
 
             // if the player is not grounded and trying to jump, buffer the jump
-            if(isJumping && !groundCollider)
+            if (isJumping && !groundCollider)
             {
-                if(jumpBufferTimer > 0.0f)
+                if (jumpBufferTimer > 0.0f)
                 {
                     jumpBufferTimer -= Time.deltaTime;
                 }
@@ -106,6 +102,25 @@ namespace SkyReach.Player
                     isJumping = false;
                 }
             }
+
+            // if the player was grounded and is no longer grounded, start the coyote time
+            if (groundCollider == null)
+            {
+                if (coyoteTimer <= 0.0f)
+                {
+                    coyoteTimer = coyoteTime;
+                }
+                else
+                {
+                    coyoteTimer -= Time.deltaTime;
+                }
+            }
+
+            // While there is no explicit speed cap, horizontal drag will create an artificial one.
+            Body.velocity = new Vector2(Body.velocity.x * (1.0f - horizontalDrag), Body.velocity.y);
+
+            // Horizontal movement
+            Body.AddForce(FacingDirection.x * Vector2.right * speed);
         }
 
         void Input.IMovementActions.OnMove(InputAction.CallbackContext context)
