@@ -28,7 +28,7 @@ namespace SkyReach
 
         private bool isGrounded = false;
         private bool isJumping = false;
-
+        public int timesJumped = 0; // counter to track each jump
         private Input input;
 
         public void Awake()
@@ -78,6 +78,7 @@ namespace SkyReach
             if (isJumping && isGrounded)
             {
                 rigidBody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+                timesJumped++;
                 isJumping = false; // remove this line to allow for the player to hold jump for repeated jumps
             }
         }
