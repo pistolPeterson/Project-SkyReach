@@ -269,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2415942532920955549, guid: b0f34d5ce22b34f499f8c223fd0641b5, type: 3}
       propertyPath: m_SurfaceArc
-      value: 180
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -2415942532920955549, guid: b0f34d5ce22b34f499f8c223fd0641b5, type: 3}
       propertyPath: m_UseOneWayGrouping
@@ -281,11 +281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 656914086830532024, guid: b0f34d5ce22b34f499f8c223fd0641b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.711787
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 656914086830532024, guid: b0f34d5ce22b34f499f8c223fd0641b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4001966
+      value: 9.36
       objectReference: {fileID: 0}
     - target: {fileID: 656914086830532024, guid: b0f34d5ce22b34f499f8c223fd0641b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -485,9 +485,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e5858d47ec5c0449c253db537762e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpSpeed: 100
+  speed: 100
+  jumpSpeed: 50
   horizontalDrag: 0.1
+  gravityScale: 10
+  groundRaycastDistance: 0.05
+  jumpBufferTime: 0.5
+  coyoteTime: 0
 --- !u!1 &1209992826
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +820,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2706600300211737297, guid: b0f34d5ce22b34f499f8c223fd0641b5, type: 3}
   m_PrefabInstance: {fileID: 168121439}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1915521406
+--- !u!114 &1915521402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -825,24 +829,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1915521401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fbb3766117ab794eb4789d216ccee28, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fb1d351d3bebde418f1b1bee857ea9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   platformSpeed: 2
-  height: 2
---- !u!114 &1915521407
-MonoBehaviour:
+  path:
+  - {x: -5, y: 0}
+  - {x: 5, y: 0}
+  targetDistanceThreshold: 0.1
+--- !u!50 &1915521403
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915521401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d871042c9448330479802e29139e0c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToAttach: {fileID: 990589347}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1945471974
 GameObject:
   m_ObjectHideFlags: 3

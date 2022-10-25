@@ -32,7 +32,7 @@ namespace SkyReach.Player
         public Vector2 LastHorizontalFacingDirection { get; private set; } = Vector2.right;
 
         // internal variables
-        private bool isGrounded = false;
+        private Collider2D groundCollider = null;
         private bool isJumping = false;
         private float jumpBufferTimer = 0.0f;
         private Input input;
@@ -74,16 +74,28 @@ namespace SkyReach.Player
             Vector2 bottomSideBox = new Vector2(Collider.bounds.extents.x * 2, groundRaycastDistance);
 
             // check if grounded, raycasts a thin box at the bottom of the player towards the ground
-            isGrounded = Physics2D.OverlapBox(bottomCenter, bottomSideBox, 0.0f, LayerMask.GetMask("Ground")) != null;
+            groundCollider = Physics2D.OverlapBox(bottomCenter, bottomSideBox, 0.0f, LayerMask.GetMask("Ground"));
 
-            if (isJumping && isGrounded && Body.velocity.y <= 0)
+            float relativeVerticalVelocity = Body.velocity.y;
+            // if grounded on a rigidbody, add rigidbody's velocity to player's velocity
+            if(Body.velocity.y <= 0 && groundCollider != null)
+            {
+                Rigidbody2D groundBody = groundCollider.GetComponent<Rigidbody2D>();
+                if(groundBody != null)
+                {
+                    Body.velocity = groundBody.velocity;
+                    relativeVerticalVelocity -= groundBody.velocity.y;
+                }
+            }
+
+            if (isJumping && groundCollider && relativeVerticalVelocity <= 0)
             {
                 Body.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
                 isJumping = false; // remove this line to allow for the player to hold jump for repeated jumps
             }
 
             // if the player is not grounded and trying to jump, buffer the jump
-            if(isJumping && !isGrounded)
+            if(isJumping && !groundCollider)
             {
                 if(jumpBufferTimer > 0.0f)
                 {
