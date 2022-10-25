@@ -18,7 +18,11 @@ namespace SkyReach.Player
         [SerializeField] private float jumpSpeed;
         [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag;
         [SerializeField] private float gravityScale;
-        private float groundRaycastBuffer;
+
+        [Header("Advanced Movement Properties")]
+        [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
+        [SerializeField] private float jumpBufferTime;
+        [Range(0.0f, 1.0f), SerializeField] private float coyoteTime;
 
 
         // exposed properties
@@ -30,6 +34,7 @@ namespace SkyReach.Player
         // internal variables
         private bool isGrounded = false;
         private bool isJumping = false;
+        private float jumpBufferTimer = 0.0f;
         private Input input;
 
         public void Awake()
@@ -66,7 +71,7 @@ namespace SkyReach.Player
             Body.AddForce(FacingDirection.x * Vector2.right * speed);
 
             Vector2 bottomCenter = new Vector2(Collider.bounds.center.x, Collider.bounds.min.y);
-            Vector2 bottomSideBox = new Vector2(Collider.bounds.extents.x * 2, groundRaycastBuffer);
+            Vector2 bottomSideBox = new Vector2(Collider.bounds.extents.x * 2, groundRaycastDistance);
 
             // check if grounded, raycasts a thin box at the bottom of the player towards the ground
             isGrounded = Physics2D.OverlapBox(bottomCenter, bottomSideBox, 0.0f, LayerMask.GetMask("Ground")) != null;
@@ -75,6 +80,19 @@ namespace SkyReach.Player
             {
                 Body.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
                 isJumping = false; // remove this line to allow for the player to hold jump for repeated jumps
+            }
+
+            // if the player is not grounded and trying to jump, buffer the jump
+            if(isJumping && !isGrounded)
+            {
+                if(jumpBufferTimer > 0.0f)
+                {
+                    jumpBufferTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    isJumping = false;
+                }
             }
         }
 
