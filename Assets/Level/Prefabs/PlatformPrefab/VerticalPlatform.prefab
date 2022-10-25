@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 656914086830532024}
   - component: {fileID: 8222056571730495723}
   - component: {fileID: 2795831522004610736}
-  - component: {fileID: 242169076415002096}
+  - component: {fileID: -2415942532920955549}
   m_Layer: 3
-  m_Name: Platform 1
+  m_Name: VerticalPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.72948694, g: 0.09852261, b: 0.7735849, a: 1}
+  m_Color: {r: 0.8980392, g: 0.8481884, b: 0.17254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -112,7 +112,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!251 &242169076415002096
+--- !u!251 &-2415942532920955549
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,7 +127,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 135
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
