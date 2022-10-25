@@ -357,7 +357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 1248214100}
-  forceStrength: 1000
+  playerObject: {fileID: 1248214095}
+  forceStrength: 75
   delay: 0.15
   OnBegin:
     m_PersistentCalls:
@@ -542,12 +543,17 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1248214095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8212793963272193469, guid: 6ac20aaf05718bd4881520f63bf2dade, type: 3}
+  m_PrefabInstance: {fileID: 1508194997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1248214098 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8212793963272193088, guid: 6ac20aaf05718bd4881520f63bf2dade, type: 3}
   m_PrefabInstance: {fileID: 1508194997}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1248214095}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05e5858d47ec5c0449c253db537762e5, type: 3}
@@ -783,6 +789,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8212793963272193469, guid: 6ac20aaf05718bd4881520f63bf2dade, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ac20aaf05718bd4881520f63bf2dade, type: 3}
 --- !u!1 &1945471974
@@ -980,6 +990,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1216845231914441818, guid: 662b3809b7cba84469e71166870fecd1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3885388065559320266, guid: 662b3809b7cba84469e71166870fecd1, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1042,11 +1056,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5734630683917828778, guid: 662b3809b7cba84469e71166870fecd1, type: 3}
       propertyPath: m_Constraints
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5734630683917828778, guid: 662b3809b7cba84469e71166870fecd1, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5243089047874352507, guid: 662b3809b7cba84469e71166870fecd1, type: 3}
