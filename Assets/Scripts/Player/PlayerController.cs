@@ -128,13 +128,17 @@ namespace SkyReach.Player
                 // if the player is not grounded and the coyote timer expired but the player is holding jump, buffer the jump
                 if (!groundCollider && coyoteTimeExpired && jumpHoldTimer <= 0.0f)
                 {
-                    if (jumpBufferTimer > 0.0f)
+                    if (jumpBufferTimer <= 0.0f)
                     {
-                        jumpBufferTimer -= Time.deltaTime;
+                        jumpBufferTimer = jumpBufferTime;
                     }
                     else
                     {
-                        isJumping = false;
+                        jumpBufferTimer -= Time.deltaTime;
+                        if (jumpBufferTimer <= 0.0f)
+                        {
+                            isJumping = false;
+                        }
                     }
                 }
             }
