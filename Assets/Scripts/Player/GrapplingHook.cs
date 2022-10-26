@@ -110,7 +110,17 @@ namespace SkyReach.Player
 
         void Input.IHookActions.OnFire(InputAction.CallbackContext context)
         {
-            if (context.started && !hookBody.simulated) StartHook();
+            if (context.started)
+            {
+                if (!hookBody.simulated)
+                {
+                    StartHook();
+                }
+                else
+                {
+                    StopHook();
+                }
+            }
         }
     }
 }
