@@ -951,6 +951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8608747138036683415, guid: 6ac20aaf05718bd4881520f63bf2dade, type: 3}
+      propertyPath: coyoteTime
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ac20aaf05718bd4881520f63bf2dade, type: 3}
 --- !u!1 &1999847407
