@@ -256,8 +256,8 @@ MonoBehaviour:
   horizontalDrag: 0.2
   gravityScale: 10
   groundRaycastDistance: 0.05
-  jumpBufferTime: 0.5
-  coyoteTime: 0.25
+  jumpBufferTime: 0.25
+  coyoteTime: 0.1
 --- !u!1 &8212793963944896679
 GameObject:
   m_ObjectHideFlags: 0
