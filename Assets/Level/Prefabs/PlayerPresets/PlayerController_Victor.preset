@@ -29,8 +29,16 @@ Preset:
     value: 100
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: jumpSpeed
-    value: 40
+    propertyPath: initialJumpForce
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: jumpHoldForce
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxJumpTime
+    value: 0.15
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: horizontalDrag

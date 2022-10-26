@@ -15,7 +15,9 @@ namespace SkyReach.Player
     {
         [Header("Movement Properties")]
         [SerializeField] private float speed;
-        [SerializeField] private float jumpSpeed;
+        [SerializeField] private float initialJumpForce;
+        [SerializeField] private float jumpHoldForce;
+        [SerializeField] private float maxJumpTime;
         [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag;
         [SerializeField] private float gravityScale;
 
@@ -34,6 +36,7 @@ namespace SkyReach.Player
         // internal variables
         private Collider2D groundCollider = null;
         private bool isJumping = false;
+        private float jumpHoldTimer = 0.0f;
         private float jumpBufferTimer = 0.0f;
         private float coyoteTimer = 0.0f;
         private bool coyoteTimeExpired = false;
@@ -105,13 +108,25 @@ namespace SkyReach.Player
                 if ((groundCollider && relativeVelocity.y <= 0) || (coyoteTimer > 0.0f && !coyoteTimeExpired))
                 {
                     Body.velocity = new Vector2(Body.velocity.x, 0.0f);
-                    Body.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-                    isJumping = false;
+                    Body.AddForce(Vector2.up * initialJumpForce, ForceMode2D.Impulse);
                     coyoteTimeExpired = true;
+                    jumpHoldTimer = maxJumpTime;
+                }
+
+                // handle jump hold
+                if (jumpHoldTimer > 0.0f)
+                {
+                    Body.AddForce(Vector2.up * jumpHoldForce);
+                    jumpHoldTimer -= Time.fixedDeltaTime;
+                    if (jumpHoldTimer <= 0.0f)
+                    {
+                        jumpHoldTimer = 0.0f;
+                        isJumping = false;
+                    }
                 }
 
                 // if the player is not grounded and the coyote timer expired but the player is holding jump, buffer the jump
-                if (!groundCollider)
+                if (!groundCollider && coyoteTimeExpired && jumpHoldTimer <= 0.0f)
                 {
                     if (jumpBufferTimer > 0.0f)
                     {
@@ -122,6 +137,10 @@ namespace SkyReach.Player
                         isJumping = false;
                     }
                 }
+            }
+            else
+            {
+                jumpHoldTimer = 0.0f;
             }
 
             // While there is no explicit speed cap, horizontal drag will create an artificial one.

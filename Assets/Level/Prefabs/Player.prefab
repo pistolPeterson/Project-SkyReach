@@ -252,7 +252,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  jumpSpeed: 40
+  initialJumpForce: 20
+  jumpHoldForce: 100
+  maxJumpTime: 0.15
   horizontalDrag: 0.2
   gravityScale: 10
   groundRaycastDistance: 0.05
