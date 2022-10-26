@@ -101,6 +101,7 @@ namespace SkyReach.Player
 
             if (isJumping)
             {
+                // if the player is grounded or the coyote timer is still running, jump
                 if ((groundCollider && relativeVelocity.y <= 0) || (coyoteTimer > 0.0f && !coyoteTimeExpired))
                 {
                     Body.velocity = new Vector2(Body.velocity.x, 0.0f);
@@ -109,6 +110,7 @@ namespace SkyReach.Player
                     coyoteTimeExpired = true;
                 }
 
+                // if the player is not grounded and the coyote timer expired but the player is holding jump, buffer the jump
                 if (!groundCollider)
                 {
                     if (jumpBufferTimer > 0.0f)
@@ -121,8 +123,6 @@ namespace SkyReach.Player
                     }
                 }
             }
-
-
 
             // While there is no explicit speed cap, horizontal drag will create an artificial one.
             Body.velocity = new Vector2(Body.velocity.x * (1.0f - horizontalDrag), Body.velocity.y);
