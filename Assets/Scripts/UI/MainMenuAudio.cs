@@ -31,12 +31,16 @@ namespace SkyReach.UI
 
         public void PlayHoverSfx()
         {
+            if (audioSource == null) Debug.Log("audiosource is still null tho");
             audioSource.PlayOneShot(hoverSfx);
+            Debug.Log("playin hover");
         }
 
         public void PlayClickSfx()
         {
             audioSource.PlayOneShot(clickSfx);
+            Debug.Log("playin click");
+
         }
 
         private void RandomizeSfx() // put this in a global audio manager
