@@ -16,6 +16,15 @@ namespace SkyReach.Player
         [Header("Player Reference")]
         [SerializeField] private PlayerController player;
 
+        // exposed properties
+        public bool IsAttached
+        {
+            get
+            {
+                return isAttached;
+            }
+        }
+
         // internal variables
         private Vector2 aimDirection;
         private Vector2 lastHorizontalFacingDirection;
