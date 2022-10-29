@@ -158,6 +158,11 @@ namespace SkyReach.Player
             Body.AddForce(FacingDirection.x * Vector2.right * speed);
         }
 
+        public bool IsGrounded()
+        {
+            return groundCollider != null;
+        }
+
         void Input.IMovementActions.OnMove(InputAction.CallbackContext context)
         {
             FacingDirection = context.ReadValue<Vector2>();
