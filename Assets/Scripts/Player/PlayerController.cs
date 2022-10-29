@@ -63,6 +63,10 @@ namespace SkyReach.Player
             input.Disable();
         }
 
+        public void debugshow() {
+            Debug.Log("Print this");
+        }
+
         public void FixedUpdate()
         {
             // set gravity scale.
