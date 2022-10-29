@@ -36,6 +36,7 @@ namespace SkyReach.Player
         // internal variables
         private Collider2D groundCollider = null;
         private bool isJumping = false;
+        private bool didJump = false;
         private float jumpHoldTimer = 0.0f;
         private float jumpBufferTimer = 0.0f;
         private float coyoteTimer = 0.0f;
@@ -105,12 +106,13 @@ namespace SkyReach.Player
             if (isJumping)
             {
                 // if the player is grounded or the coyote timer is still running, jump
-                if ((groundCollider && relativeVelocity.y <= 0) || (coyoteTimer > 0.0f && !coyoteTimeExpired))
+                if (!didJump && (groundCollider && relativeVelocity.y <= 0) || (coyoteTimer > 0.0f && !coyoteTimeExpired))
                 {
                     Body.velocity = new Vector2(Body.velocity.x, 0.0f);
                     Body.AddForce(Vector2.up * initialJumpForce, ForceMode2D.Impulse);
                     coyoteTimeExpired = true;
                     jumpHoldTimer = maxJumpTime;
+                    didJump = true;
                 }
 
                 // handle jump hold
@@ -145,6 +147,8 @@ namespace SkyReach.Player
             else
             {
                 jumpHoldTimer = 0.0f;
+                jumpBufferTimer = 0.0f;
+                didJump = false;
             }
 
             // While there is no explicit speed cap, horizontal drag will create an artificial one.
