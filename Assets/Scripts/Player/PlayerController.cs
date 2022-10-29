@@ -57,6 +57,7 @@ namespace SkyReach.Player
                 input.Movement.SetCallbacks(this);
             }
             input.Enable();
+
         }
 
         public void OnDisable()
