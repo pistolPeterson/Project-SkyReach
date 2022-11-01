@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumps: 0
+  playerDeath: 0
 --- !u!1 &51911315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1121,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 12700243}
         m_TargetAssemblyTypeName: SkyReach.Player.SaveDataSystem, Assembly-CSharp
-        m_MethodName: LoadData
+        m_MethodName: LoadDataV2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
