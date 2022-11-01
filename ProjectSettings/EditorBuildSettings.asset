@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Level/Scenes/Gameplay Scenes/MainMenu.unity
+    path: Assets/Level/Scenes/Sandbox Scenes/Statistics Feature Scene 1.unity
+    guid: 326bba3c29a84654a9a961e5cee7f16a
+  - enabled: 1
+    path: Assets/Level/Scenes/MainMenu.unity
     guid: e6389798d8dbcef459484369db19b71f
   - enabled: 1
     path: Assets/Level/Scenes/Gameplay Scenes/TestLevel.unity
