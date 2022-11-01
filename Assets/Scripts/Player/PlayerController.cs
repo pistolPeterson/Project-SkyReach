@@ -31,6 +31,9 @@ namespace SkyReach.Player
         private bool isGrounded = false;
         private bool isJumping = false;
         private Input input;
+        public int timesJumped = 0;
+        public delegate void Action();
+        public static event Action jump; //delegate instance
 
         public void Awake()
         {
@@ -74,6 +77,7 @@ namespace SkyReach.Player
             if (isJumping && isGrounded && Body.velocity.y <= 0)
             {
                 Body.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+                jump?.Invoke();
                 isJumping = false; // remove this line to allow for the player to hold jump for repeated jumps
             }
         }

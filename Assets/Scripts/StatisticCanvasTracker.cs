@@ -3,41 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
-namespace SkyReach
+namespace SkyReach.Player
 {
     public class StatisticCanvasTracker : MonoBehaviour
     {
         public TextMeshProUGUI JumpNumber;
-        private GameObject player;
-        private PlayerController con;
-        //private GameObject saveBttn;
-        private SaveDataSystem saveData;
+        public StatisticsData playerData;
+        private int temp = 0;
+        //private SaveDataSystem saveData;
+
         // Start is called before the first frame update
         void Start()
         {
-            
-            //saveBttn = GameObject.Find("Save");
             JumpNumber.text = "0";
+            if (playerData == null)
+            {
+                Debug.Log("playerData is null!");
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
-            //Button saveBttn = tempBttn.GetComponent<Button>();
-            player = GameObject.Find("Player");
-            con = player.GetComponent<PlayerController>();
-            int temp = con.timesJumped;
+            temp = playerData.getJumps();
             JumpNumber.text = temp.ToString();
-            //saveBttn.OnClick.AddListener(TaskOnClick);
+            //Debug.Log("number of jumps: " + playerData.getJumps());
         }
 
-        // Save Player data once the save button is clicked
-        void TaskOnClick()
+        /*public void SetData()
         {
-            saveData = new SaveDataSystem();
-            saveData.SaveData();
-        }
+            saveData = FindObjectOfType<SaveDataSystem>();
+            JumpNumber.text = saveData.LoadData();
+            Console.WriteLine("Hello!");
+        }*/
     }
 }
 
