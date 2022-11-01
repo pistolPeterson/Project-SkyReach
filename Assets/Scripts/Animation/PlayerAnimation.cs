@@ -5,18 +5,19 @@ using UnityEngine;
 //This script handles animations
 namespace SkyReach.Player 
 {
-    public class AnimationScript : MonoBehaviour
+    public class PlayerAnimation : MonoBehaviour
     {
-        Animator animator;
+        private Animator animator;
         private string currentState;
+        private float facing;
         const string playerIdleRight = "PlayerIdleRight";
         const string playerIdleLeft = "PlayerIdleLeft";
         const string playerRunRight = "PlayerRunRight";
         const string playerRunLeft = "PlayerRunLeft";
         const string playerJumpingRight = "PlayerJumpingRight";
         const string playerJumpingLeft = "PlayerJumpingLeft";
-        [SerializeField] private PlayerController playerOne;
-        private float facing;
+        
+        [SerializeField] private PlayerController playerController; 
         private Vector2 zeroVector = new Vector2(0,0);
 
         void Start()
@@ -26,19 +27,24 @@ namespace SkyReach.Player
 
         void Update()
         {
+            controlAnimation();
+        }
+
+        void controlAnimation()
+        {
             //Gets the player facing from the player controller
-            facing = playerOne.LastHorizontalFacingDirection.x;        
+            facing = playerController.LastHorizontalFacingDirection.x;        
             
                 //Plays walk right animation when player is moving right
                 if (facing > 0) 
                 {
                     //Plays idle animation if the player is not moving, if the player is moving plays the appropriate facing animation
-                    if (!playerOne.IsGrounded())
+                    if (!playerController.IsGrounded())
                     {
                        //ChangeAnimationState(playerJumpingRight); 
                        Debug.Log("right jumping anim plays here"); 
                     }
-                    else if (playerOne.FacingDirection == zeroVector) 
+                    else if (playerController.FacingDirection == zeroVector) 
                     {                   
                         ChangeAnimationState(playerIdleRight);
                     }
@@ -50,12 +56,12 @@ namespace SkyReach.Player
                 }
                 else if (facing < 0){
                    
-                   if (!playerOne.IsGrounded())
+                   if (!playerController.IsGrounded())
                     {
                        //ChangeAnimationState(playerJumpingLeft); 
                        Debug.Log("left jumping anim plays here"); 
                     }                   
-                    else if (playerOne.FacingDirection == zeroVector) 
+                    else if (playerController.FacingDirection == zeroVector) 
                     {                        
                         ChangeAnimationState(playerIdleLeft);                    
                     }
@@ -63,7 +69,7 @@ namespace SkyReach.Player
                     {
                         ChangeAnimationState(playerRunLeft);
                     }
-                }    
+                }                
         }
                 
         void ChangeAnimationState(string newState)
