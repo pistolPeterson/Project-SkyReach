@@ -114,6 +114,8 @@ namespace SkyReach.Player
                     coyoteTimeExpired = true;
                     jumpHoldTimer = maxJumpTime;
                     didJump = true;
+                    FindObjectOfType<PlayerFootAudio>().PlayJumpSfx();
+                   
                 }
 
                 // handle jump hold
@@ -171,6 +173,11 @@ namespace SkyReach.Player
         void Input.IMovementActions.OnJump(InputAction.CallbackContext context)
         {
             isJumping = context.ReadValueAsButton();
+        }
+
+        public bool IsGrounded()
+        {
+            return groundCollider != null;
         }
     }
 }
