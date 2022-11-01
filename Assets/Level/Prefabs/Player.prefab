@@ -101,6 +101,7 @@ Transform:
   m_Children:
   - {fileID: 8212793964107849155}
   - {fileID: 8212793963272193470}
+  - {fileID: 8212793963053413138}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -360,7 +361,7 @@ GameObject:
   - component: {fileID: 8212793964107849157}
   - component: {fileID: 8212793964107849156}
   - component: {fileID: 8212793964107849159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
