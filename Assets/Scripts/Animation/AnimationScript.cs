@@ -13,6 +13,8 @@ namespace SkyReach.Player
         const string playerIdleLeft = "PlayerIdleLeft";
         const string playerRunRight = "PlayerRunRight";
         const string playerRunLeft = "PlayerRunLeft";
+        const string playerJumpingRight = "PlayerJumpingRight";
+        const string playerJumpingLeft = "PlayerJumpingLeft";
         [SerializeField] private PlayerController playerOne;
         private float facing;
         private Vector2 zeroVector = new Vector2(0,0);
@@ -25,15 +27,19 @@ namespace SkyReach.Player
         void Update()
         {
             //Gets the player facing from the player controller
-            facing = playerOne.LastHorizontalFacingDirection.x;
+            facing = playerOne.LastHorizontalFacingDirection.x;        
             
                 //Plays walk right animation when player is moving right
                 if (facing > 0) 
                 {
-                    //Plays idle animation if the player is not moving
-                    if (playerOne.Body.velocity == zeroVector) 
+                    //Plays idle animation if the player is not moving, if the player is moving plays the appropriate facing animation
+                    if (!playerOne.IsGrounded())
                     {
-                        
+                       //ChangeAnimationState(playerJumpingRight); 
+                       Debug.Log("right jumping anim plays here"); 
+                    }
+                    else if (playerOne.FacingDirection == zeroVector) 
+                    {                   
                         ChangeAnimationState(playerIdleRight);
                     }
                     else 
@@ -43,10 +49,15 @@ namespace SkyReach.Player
                     
                 }
                 else if (facing < 0){
-                    if (playerOne.Body.velocity == zeroVector) 
+                   
+                   if (!playerOne.IsGrounded())
+                    {
+                       //ChangeAnimationState(playerJumpingLeft); 
+                       Debug.Log("left jumping anim plays here"); 
+                    }                   
+                    else if (playerOne.FacingDirection == zeroVector) 
                     {                        
-                        ChangeAnimationState(playerIdleLeft);
-                        
+                        ChangeAnimationState(playerIdleLeft);                    
                     }
                     else
                     {
