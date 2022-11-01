@@ -29,11 +29,35 @@ Preset:
     value: 100
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: jumpSpeed
-    value: 40
+    propertyPath: initialJumpForce
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: jumpHoldForce
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxJumpTime
+    value: 0.15
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: horizontalDrag
     value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gravityScale
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: groundRaycastDistance
+    value: 0.05
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: jumpBufferTime
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: coyoteTime
+    value: 0.1
     objectReference: {fileID: 0}
   m_ExcludedProperties: []

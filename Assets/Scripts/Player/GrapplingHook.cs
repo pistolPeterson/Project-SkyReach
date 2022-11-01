@@ -4,6 +4,17 @@ using UnityEngine.InputSystem;
 
 namespace SkyReach.Player
 {
+    /// <summary>
+    /// This is a grappling hook addition to the Player Controller that allows the player to attach to and pull itself towards a target.
+    /// It works under Unity's Physics2D system, and fires a moving hook head that will attach to the first object it collides with.
+    /// If it collides with a target, it will pull the player towards it.
+    /// If not, it will simply retract back to the player.
+    ///
+    /// IMPORTANT NOTE: This script MODIFIES the Layer property of the Player Controller for ease of use with effectors. If you encounter
+    /// issues with the Player Controller not interacting with objects while hooking, it is likely due to the Layer property being changed.
+    ///
+    /// - Victor (10/19/2022)
+    /// </summary>
     [RequireComponent(typeof(Rigidbody2D))]
     public class GrapplingHook : MonoBehaviour, Input.IHookActions
     {
@@ -16,13 +27,24 @@ namespace SkyReach.Player
         [Header("Player Reference")]
         [SerializeField] private PlayerController player;
 
+        // exposed properties
+        public bool IsAttached
+        {
+            get
+            {
+                return isAttached;
+            }
+        }
+
         // internal variables
-        private Vector2 aimDirection;
+        private Vector2 aimTarget;
         private Vector2 lastHorizontalFacingDirection;
         private bool isRetracting;
         private bool isAttached;
         private Rigidbody2D hookBody;
         private Input input;
+        private int hookingLayer;
+
 
         public void Awake()
         {
@@ -47,6 +69,9 @@ namespace SkyReach.Player
 
             // hide hook until fired
             hookBody.simulated = false;
+
+            // set hooking layer
+            hookingLayer = LayerMask.NameToLayer("HookingPlayer");
         }
 
         public void FixedUpdate()
@@ -76,6 +101,7 @@ namespace SkyReach.Player
                 {
                     isAttached = true;
                     hookBody.velocity = Vector2.zero;
+                    player.gameObject.layer = hookingLayer;
                 }
             }
             else
@@ -91,14 +117,14 @@ namespace SkyReach.Player
 
         public void StartHook()
         {
-            // get aim direction from player, if zero, use last horizontal facing direction
-            aimDirection = player.FacingDirection == Vector2.zero ? player.LastHorizontalFacingDirection : player.FacingDirection;
+            // get aim direction by converting screen position to world position
+            Vector2 aimDirection = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) - player.Body.position;
 
             isRetracting = false;
             isAttached = false;
             hookBody.simulated = true;
             hookBody.position = player.Body.position;
-            hookBody.velocity = aimDirection * fireSpeed;
+            hookBody.velocity = aimDirection.normalized * fireSpeed;
         }
 
         public void StopHook()
@@ -106,11 +132,27 @@ namespace SkyReach.Player
             isRetracting = false;
             isAttached = false;
             hookBody.simulated = false;
+            player.gameObject.layer = 0; // default layer
         }
 
         void Input.IHookActions.OnFire(InputAction.CallbackContext context)
         {
-            if (context.started && !hookBody.simulated) StartHook();
+            if (context.started)
+            {
+                if (!hookBody.simulated)
+                {
+                    StartHook();
+                }
+                else
+                {
+                    StopHook();
+                }
+            }
+        }
+
+        void Input.IHookActions.OnAim(InputAction.CallbackContext context)
+        {
+            aimTarget = context.ReadValue<Vector2>();
         }
     }
 }

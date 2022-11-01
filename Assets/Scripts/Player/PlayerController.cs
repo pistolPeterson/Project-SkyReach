@@ -15,10 +15,16 @@ namespace SkyReach.Player
     {
         [Header("Movement Properties")]
         [SerializeField] private float speed;
-        [SerializeField] private float jumpSpeed;
+        [SerializeField] private float initialJumpForce;
+        [SerializeField] private float jumpHoldForce;
+        [SerializeField] private float maxJumpTime;
         [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag;
         [SerializeField] private float gravityScale;
-        private float groundRaycastBuffer;
+
+        [Header("Advanced Movement Properties")]
+        [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
+        [SerializeField] private float jumpBufferTime;
+        [Range(0.0f, 1.0f), SerializeField] private float coyoteTime;
 
 
         // exposed properties
@@ -28,12 +34,14 @@ namespace SkyReach.Player
         public Vector2 LastHorizontalFacingDirection { get; private set; } = Vector2.right;
 
         // internal variables
-        private bool isGrounded = false;
+        private Collider2D groundCollider = null;
         private bool isJumping = false;
+        private bool didJump = false;
+        private float jumpHoldTimer = 0.0f;
+        private float jumpBufferTimer = 0.0f;
+        private float coyoteTimer = 0.0f;
+        private bool coyoteTimeExpired = false;
         private Input input;
-        public int timesJumped = 0;
-        public delegate void Action();
-        public static event Action jump; //delegate instance
 
         public void Awake()
         {
@@ -49,11 +57,16 @@ namespace SkyReach.Player
                 input.Movement.SetCallbacks(this);
             }
             input.Enable();
+
         }
 
         public void OnDisable()
         {
             input.Disable();
+        }
+
+        public void debugshow() {
+            Debug.Log("Print this");
         }
 
         public void FixedUpdate()
@@ -62,24 +75,97 @@ namespace SkyReach.Player
             // this can be removed later when we decide on a gravity value, but for now it helps testing.
             Body.gravityScale = gravityScale;
 
+            Vector2 bottomCenter = new Vector2(Collider.bounds.center.x, Collider.bounds.min.y);
+            Vector2 bottomSideBox = new Vector2(Collider.bounds.extents.x * 2, groundRaycastDistance);
+
+            // check if grounded, raycasts a thin box at the bottom of the player towards the ground
+            groundCollider = Physics2D.OverlapBox(bottomCenter, bottomSideBox, 0.0f, LayerMask.GetMask("Ground"));
+
+            Vector2 relativeVelocity = Body.velocity;
+
+            // if grounded, reset coyote timer
+            // if grounded on a rigidbody, move the player with the rigidbody
+            if (Body.velocity.y <= 0 && groundCollider != null)
+            {
+                coyoteTimeExpired = false;
+                coyoteTimer = 0.0f;
+
+                Rigidbody2D groundBody = groundCollider.GetComponent<Rigidbody2D>();
+                if (groundBody != null)
+                {
+                    relativeVelocity -= groundBody.velocity;
+                    Body.position += groundBody.velocity * Time.fixedDeltaTime;
+                }
+            }
+
+            // if the player isn't grounded and coyoteTimeExpired is false, start the coyote timer
+            if (groundCollider == null && !coyoteTimeExpired)
+            {
+                coyoteTimer += Time.fixedDeltaTime;
+                if (coyoteTimer >= coyoteTime)
+                {
+                    coyoteTimeExpired = true;
+                }
+            }
+
+            if (isJumping)
+            {
+                // if the player is grounded or the coyote timer is still running, jump
+                if (!didJump && (groundCollider && relativeVelocity.y <= 0) || (coyoteTimer > 0.0f && !coyoteTimeExpired))
+                {
+                    Body.velocity = new Vector2(Body.velocity.x, 0.0f);
+                    Body.AddForce(Vector2.up * initialJumpForce, ForceMode2D.Impulse);
+                    coyoteTimeExpired = true;
+                    jumpHoldTimer = maxJumpTime;
+                    didJump = true;
+                }
+
+                // handle jump hold
+                if (jumpHoldTimer > 0.0f)
+                {
+                    Body.AddForce(Vector2.up * jumpHoldForce);
+                    jumpHoldTimer -= Time.fixedDeltaTime;
+                    if (jumpHoldTimer <= 0.0f)
+                    {
+                        jumpHoldTimer = 0.0f;
+                        isJumping = false;
+                    }
+                }
+
+                // if the player is not grounded and the coyote timer expired but the player is holding jump, buffer the jump
+                if (!groundCollider && coyoteTimeExpired && jumpHoldTimer <= 0.0f)
+                {
+                    if (jumpBufferTimer <= 0.0f)
+                    {
+                        jumpBufferTimer = jumpBufferTime;
+                    }
+                    else
+                    {
+                        jumpBufferTimer -= Time.deltaTime;
+                        if (jumpBufferTimer <= 0.0f)
+                        {
+                            isJumping = false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                jumpHoldTimer = 0.0f;
+                jumpBufferTimer = 0.0f;
+                didJump = false;
+            }
+
             // While there is no explicit speed cap, horizontal drag will create an artificial one.
             Body.velocity = new Vector2(Body.velocity.x * (1.0f - horizontalDrag), Body.velocity.y);
 
             // Horizontal movement
             Body.AddForce(FacingDirection.x * Vector2.right * speed);
+        }
 
-            Vector2 bottomCenter = new Vector2(Collider.bounds.center.x, Collider.bounds.min.y);
-            Vector2 bottomSideBox = new Vector2(Collider.bounds.extents.x * 2, groundRaycastBuffer);
-
-            // check if grounded, raycasts a thin box at the bottom of the player towards the ground
-            isGrounded = Physics2D.OverlapBox(bottomCenter, bottomSideBox, 0.0f, LayerMask.GetMask("Ground")) != null;
-
-            if (isJumping && isGrounded && Body.velocity.y <= 0)
-            {
-                Body.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-                jump?.Invoke();
-                isJumping = false; // remove this line to allow for the player to hold jump for repeated jumps
-            }
+        public bool IsGrounded()
+        {
+            return groundCollider != null;
         }
 
         void Input.IMovementActions.OnMove(InputAction.CallbackContext context)

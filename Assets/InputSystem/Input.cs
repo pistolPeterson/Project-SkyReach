@@ -105,9 +105,75 @@ namespace SkyReach
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""WASD"",
+                    ""id"": ""5d2767b0-3501-40cf-b691-6ac5ba235049"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""71c2ba00-f6f6-455e-a71f-0bde70918c84"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""e240026c-9880-4266-b942-53c17ea6fad8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""72f913ab-2755-4e0d-ac91-ee00e0752aea"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""91d37036-5d88-4deb-a7bf-402854356b9b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""637022da-e0dc-424b-aacb-db01c37da856"",
                     ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb551e93-ca87-4cf3-90bf-c8bdc0d1ffa7"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
@@ -129,6 +195,15 @@ namespace SkyReach
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""ce772161-eb1f-4518-a371-f395965fcb29"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -140,6 +215,28 @@ namespace SkyReach
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7bd09699-dbb0-46ff-86a8-a28035b3bcbf"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9751cb37-72a5-4129-b4f0-34d9823571c9"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -399,6 +496,7 @@ namespace SkyReach
             // Hook
             m_Hook = asset.FindActionMap("Hook", throwIfNotFound: true);
             m_Hook_Fire = m_Hook.FindAction("Fire", throwIfNotFound: true);
+            m_Hook_Aim = m_Hook.FindAction("Aim", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
@@ -508,11 +606,13 @@ namespace SkyReach
         private readonly InputActionMap m_Hook;
         private IHookActions m_HookActionsCallbackInterface;
         private readonly InputAction m_Hook_Fire;
+        private readonly InputAction m_Hook_Aim;
         public struct HookActions
         {
             private @Input m_Wrapper;
             public HookActions(@Input wrapper) { m_Wrapper = wrapper; }
             public InputAction @Fire => m_Wrapper.m_Hook_Fire;
+            public InputAction @Aim => m_Wrapper.m_Hook_Aim;
             public InputActionMap Get() { return m_Wrapper.m_Hook; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -525,6 +625,9 @@ namespace SkyReach
                     @Fire.started -= m_Wrapper.m_HookActionsCallbackInterface.OnFire;
                     @Fire.performed -= m_Wrapper.m_HookActionsCallbackInterface.OnFire;
                     @Fire.canceled -= m_Wrapper.m_HookActionsCallbackInterface.OnFire;
+                    @Aim.started -= m_Wrapper.m_HookActionsCallbackInterface.OnAim;
+                    @Aim.performed -= m_Wrapper.m_HookActionsCallbackInterface.OnAim;
+                    @Aim.canceled -= m_Wrapper.m_HookActionsCallbackInterface.OnAim;
                 }
                 m_Wrapper.m_HookActionsCallbackInterface = instance;
                 if (instance != null)
@@ -532,6 +635,9 @@ namespace SkyReach
                     @Fire.started += instance.OnFire;
                     @Fire.performed += instance.OnFire;
                     @Fire.canceled += instance.OnFire;
+                    @Aim.started += instance.OnAim;
+                    @Aim.performed += instance.OnAim;
+                    @Aim.canceled += instance.OnAim;
                 }
             }
         }
@@ -626,6 +732,7 @@ namespace SkyReach
         public interface IHookActions
         {
             void OnFire(InputAction.CallbackContext context);
+            void OnAim(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {
