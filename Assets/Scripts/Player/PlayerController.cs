@@ -65,6 +65,10 @@ namespace SkyReach.Player
             input.Disable();
         }
 
+        public void debugshow() {
+            Debug.Log("Print this");
+        }
+
         public void FixedUpdate()
         {
             // set gravity scale.
@@ -157,6 +161,11 @@ namespace SkyReach.Player
 
             // Horizontal movement
             Body.AddForce(FacingDirection.x * Vector2.right * speed);
+        }
+
+        public bool IsGrounded()
+        {
+            return groundCollider != null;
         }
 
         void Input.IMovementActions.OnMove(InputAction.CallbackContext context)
