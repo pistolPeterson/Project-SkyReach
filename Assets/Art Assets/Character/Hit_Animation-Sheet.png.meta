@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cec9fb0d9c46ab14aba782a8cef50351
+guid: 1943709917149f9469d48d811bec8b3c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,18 +102,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_facingLeft_mc-Sheet_0
+      name: Hit_Animation-Sheet_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
+        x: 17
+        y: 4
         width: 26
-        height: 26
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8ffae02d7b399c45ae5bd99da07c5de
-      internalID: 1762665486
+      spriteID: f073075f672edcb4cbbcb3c9cfa857b1
+      internalID: 1661801813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_facingLeft_mc-Sheet_1
+      name: Hit_Animation-Sheet_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 0
-        width: 26
-        height: 26
+        x: 65
+        y: 4
+        width: 29
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11c8f0d7d61617e4ab6034316e82217d
-      internalID: -1651148636
+      spriteID: 402dac90d18bb314199ad84bd86800da
+      internalID: -458868039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_facingLeft_mc-Sheet_2
+      name: Hit_Animation-Sheet_2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 0
+        x: 113
+        y: 4
         width: 26
-        height: 26
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7b3867b8343ee5448736b23c05474a5
-      internalID: -1789214484
+      spriteID: 44fc2af9be7fc0244a00817c39345906
+      internalID: 1544381912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_facingLeft_mc-Sheet_3
+      name: Hit_Animation-Sheet_3
       rect:
         serializedVersion: 2
-        x: 99
-        y: 0
-        width: 26
-        height: 26
+        x: 161
+        y: 4
+        width: 29
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +194,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3504d82b02fdfc346852208c394eb49b
-      internalID: -1792352038
+      spriteID: 99070391219e8e642b0db1e3390548e3
+      internalID: -2077119338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 4
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9b1903df976c74ba61128f6ca23dd0
+      internalID: 1773091081
       vertices: []
       indices: 
       edges: []
@@ -223,10 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_facingLeft_mc-Sheet_1: -1651148636
-      idle_facingLeft_mc-Sheet_2: -1789214484
-      idle_facingLeft_mc-Sheet_3: -1792352038
-      idle_facingLeft_mc-Sheet_0: 1762665486
+      Hit_Animation-Sheet_3: -2077119338
+      Hit_Animation-Sheet_2: 1544381912
+      Hit_Animation-Sheet_4: 1773091081
+      Hit_Animation-Sheet_0: 1661801813
+      Hit_Animation-Sheet_1: -458868039
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -37,7 +37,7 @@ namespace SkyReach.Player
         }
 
         // internal variables
-        private Vector2 aimDirection;
+        private Vector2 aimTarget;
         private Vector2 lastHorizontalFacingDirection;
         private bool isRetracting;
         private bool isAttached;
@@ -117,14 +117,14 @@ namespace SkyReach.Player
 
         public void StartHook()
         {
-            // get aim direction from player, if zero, use last horizontal facing direction
-            aimDirection = player.FacingDirection == Vector2.zero ? player.LastHorizontalFacingDirection : player.FacingDirection;
+            // get aim direction by converting screen position to world position
+            Vector2 aimDirection = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) - player.Body.position;
 
             isRetracting = false;
             isAttached = false;
             hookBody.simulated = true;
             hookBody.position = player.Body.position;
-            hookBody.velocity = aimDirection * fireSpeed;
+            hookBody.velocity = aimDirection.normalized * fireSpeed;
         }
 
         public void StopHook()
@@ -148,6 +148,11 @@ namespace SkyReach.Player
                     StopHook();
                 }
             }
+        }
+
+        void Input.IHookActions.OnAim(InputAction.CallbackContext context)
+        {
+            aimTarget = context.ReadValue<Vector2>();
         }
     }
 }

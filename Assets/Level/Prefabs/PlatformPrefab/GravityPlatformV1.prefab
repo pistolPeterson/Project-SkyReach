@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 550492367814867496}
   - component: {fileID: 8981570627537819515}
   - component: {fileID: 2914576563108081952}
-  - component: {fileID: 2068848758}
-  - component: {fileID: 1092015645}
+  - component: {fileID: 2034445143}
+  - component: {fileID: 2034445142}
   m_Layer: 3
   m_Name: GravityPlatformV1
   m_TagString: Untagged
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2068848758
+--- !u!61 &2034445143
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +139,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 2}
   m_EdgeRadius: 0
---- !u!249 &1092015645
+--- !u!249 &2034445142
 AreaEffector2D:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -151,11 +151,11 @@ AreaEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 1
   m_UseGlobalAngle: 0
   m_ForceAngle: -90
-  m_ForceMagnitude: 1000
+  m_ForceMagnitude: 500
   m_ForceVariation: 0
   m_ForceTarget: 0
-  m_Drag: 0
+  m_Drag: 50
   m_AngularDrag: 0
