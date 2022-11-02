@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,6 +43,8 @@ namespace SkyReach.Player
         private float coyoteTimer = 0.0f;
         private bool coyoteTimeExpired = false;
         private Input input;
+
+        public static event Action jump;
 
         public void Awake()
         {
@@ -184,9 +187,6 @@ namespace SkyReach.Player
             isJumping = context.ReadValueAsButton();
         }
 
-        public bool IsGrounded()
-        {
-            return groundCollider != null;
-        }
+      
     }
 }

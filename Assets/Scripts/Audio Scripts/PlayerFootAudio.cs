@@ -28,17 +28,18 @@ public class PlayerFootAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        footstepCooldown -= Time.deltaTime;
-        if ((playerController.FacingDirection.x != 0) && footstepCooldown < 0f && playerController.IsGrounded())
-        {
-            audioSource.PlayOneShot(walkClipsSfx[0]);
-            footstepCooldown = footstepRate;
-        }
+       
     }
 
     public void PlayJumpSfx()
     {
-        Debug.Log("is we jumping tho?");
+        RandomizeAudio();
         audioSource.PlayOneShot(jumpSfx);
+    }
+
+    private void RandomizeAudio()
+    {
+        audioSource.pitch = Random.Range(0.975f, 1.250f);
+        audioSource.volume = Random.Range(0.95f, 1.0f);
     }
 }

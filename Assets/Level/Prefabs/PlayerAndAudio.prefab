@@ -405,7 +405,8 @@ MonoBehaviour:
   audioSource: {fileID: 4664085304571325708}
   walkClipsSfx:
   - {fileID: 8300000, guid: 3eaee427672a75342ada37c3f93e6908, type: 3}
-  jumpSfx: {fileID: 8300000, guid: a43069ec17615c645ac6ac9dc2105c6d, type: 3}
+  jumpSfx: {fileID: 8300000, guid: 929c73e419467cc43a9075559403349b, type: 3}
+  footstepRate: 0.33
 --- !u!1 &8212793963944896679
 GameObject:
   m_ObjectHideFlags: 0
