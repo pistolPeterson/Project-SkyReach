@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86a25928b5b43b244bd706a678eb21e1
+guid: a1e8675b5226a9a4c935b30bdf4dbdde
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,6 +102,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -117,12 +129,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stun_Animation-Sheet_0
+      name: walking_facingLeft_mc-Sheet_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 2
-        width: 28
+        x: 3
+        y: 0
+        width: 26
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,19 +143,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cc89a49ee190ed4992bd0a424e7b926
-      internalID: 1986380990
+      spriteID: a9a1de97094246c439587f7dad390ede
+      internalID: -1188939409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stun_Animation-Sheet_1
+      name: walking_facingLeft_mc-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 356ca14f35d5b86469e86b8e6b8a45e8
+      internalID: 379488684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_facingLeft_mc-Sheet_2
       rect:
         serializedVersion: 2
         x: 67
-        y: 2
-        width: 28
+        y: 0
+        width: 26
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a91f4c272c77b5f4299be910f31127ae
-      internalID: 127315557
+      spriteID: ccaed08f6589ddd49b1ccd45c68a87ca
+      internalID: 287469331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stun_Animation-Sheet_2
+      name: walking_facingLeft_mc-Sheet_3
       rect:
         serializedVersion: 2
-        x: 113
-        y: 2
-        width: 28
-        height: 26
+        x: 99
+        y: 0
+        width: 26
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,71 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcd6c260d88479843928ed3a31443939
-      internalID: 1180847176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stun_Animation-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 163
-        y: 2
-        width: 28
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43aaa2286c0808f40857680fc00fa3d1
-      internalID: -1855639234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stun_Animation-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 209
-        y: 2
-        width: 28
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8373636c70f71b944b1998976b281644
-      internalID: -1777740019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stun_Animation-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 258
-        y: 2
-        width: 28
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b53114bd37481c642bad6140a0d9779d
-      internalID: -1014299268
+      spriteID: dc71eba620eeff9418efee3dc8700f4d
+      internalID: -229907814
       vertices: []
       indices: 
       edges: []
@@ -253,12 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Stun_Animation-Sheet_3: -1855639234
-      Stun_Animation-Sheet_1: 127315557
-      Stun_Animation-Sheet_4: -1777740019
-      Stun_Animation-Sheet_0: 1986380990
-      Stun_Animation-Sheet_5: -1014299268
-      Stun_Animation-Sheet_2: 1180847176
+      walking_facingLeft_mc-Sheet_0: -1188939409
+      walking_facingLeft_mc-Sheet_2: 287469331
+      walking_facingLeft_mc-Sheet_1: 379488684
+      walking_facingLeft_mc-Sheet_3: -229907814
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

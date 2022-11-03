@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e38b0655c43642449a3b5910e9161bc
+guid: 86a25928b5b43b244bd706a678eb21e1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,18 +102,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GravUpPlat1_0
+      name: Stun_Animation-Sheet_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 29
-        width: 85
-        height: 49
+        x: 17
+        y: 2
+        width: 28
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +131,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6da78437794971946bcd6ae1d08e34b4
-      internalID: -747965142
+      spriteID: 3cc89a49ee190ed4992bd0a424e7b926
+      internalID: 1986380990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_Animation-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91f4c272c77b5f4299be910f31127ae
+      internalID: 127315557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_Animation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 2
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd6c260d88479843928ed3a31443939
+      internalID: 1180847176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_Animation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 2
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43aaa2286c0808f40857680fc00fa3d1
+      internalID: -1855639234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_Animation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 2
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8373636c70f71b944b1998976b281644
+      internalID: -1777740019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stun_Animation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 2
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53114bd37481c642bad6140a0d9779d
+      internalID: -1014299268
       vertices: []
       indices: 
       edges: []
@@ -160,7 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GravUpPlat1_0: -747965142
+      Stun_Animation-Sheet_3: -1855639234
+      Stun_Animation-Sheet_1: 127315557
+      Stun_Animation-Sheet_4: -1777740019
+      Stun_Animation-Sheet_0: 1986380990
+      Stun_Animation-Sheet_5: -1014299268
+      Stun_Animation-Sheet_2: 1180847176
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
