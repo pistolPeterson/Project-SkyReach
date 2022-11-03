@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -44,6 +45,7 @@ namespace SkyReach.Player
         private Rigidbody2D hookBody;
         private Input input;
         private int hookingLayer;
+        public static event Action hook;
 
 
         public void Awake()
@@ -100,6 +102,7 @@ namespace SkyReach.Player
                 if (hookBody.IsTouchingLayers(hookMask))
                 {
                     isAttached = true;
+                    hook?.Invoke();
                     hookBody.velocity = Vector2.zero;
                     player.gameObject.layer = hookingLayer;
                 }
