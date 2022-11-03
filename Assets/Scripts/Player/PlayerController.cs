@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ namespace SkyReach.Player
         [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
         [SerializeField] private float jumpBufferTime;
         [Range(0.0f, 1.0f), SerializeField] private float coyoteTime;
+        public static event Action jump; 
 
 
         // exposed properties
@@ -117,6 +119,7 @@ namespace SkyReach.Player
                     Body.AddForce(Vector2.up * initialJumpForce, ForceMode2D.Impulse);
                     coyoteTimeExpired = true;
                     jumpHoldTimer = maxJumpTime;
+                    jump?.Invoke();
                     didJump = true;
                 }
 
