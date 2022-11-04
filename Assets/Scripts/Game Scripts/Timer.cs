@@ -9,7 +9,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     private bool timerActive = false;
-    private float currentTime;
+    public float currentTime;
 
     private float finalTime;  
     
@@ -31,10 +31,7 @@ public class Timer : MonoBehaviour
             currentTime = currentTime + Time.deltaTime;
            
         } 
-        else
-        {
-           currentTime = currentTime;
-        }
+       
         
     }
 
@@ -51,7 +48,8 @@ public class Timer : MonoBehaviour
         public void StopTimer()
         {
             timerActive = false;
-            currentTime = finalTime;
+            finalTime = currentTime;
+           
         }
     
         public void ResetTimer()

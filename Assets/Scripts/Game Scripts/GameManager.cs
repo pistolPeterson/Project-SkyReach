@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using SkyReach.Player;
 using UnityEngine;
 /// <summary>
 /// The higher level game manager, will set the game flow/states and allow the game to pass any data or info.. 
@@ -11,7 +12,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [SerializeField] private GameState currentGameState;
 
-    [SerializeField] private Timer timer; 
+    [SerializeField] private Timer timer;
+    [SerializeField] private StatisticsData stats;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -35,12 +37,31 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    
+
+
+    public void EndGame()
+    {
+        Debug.Log("In End game state");
+        currentGameState = GameState.EndGame; 
+        //stop timer 
+        timer.StopTimer();
+        //disable movement 
+        //play end game music
+        
+        //in a few seconds go to another scene 
+            //feedback demo = "thanks fro playing, please give feedback on our game" 
+            // main demo = end credits 
+    }
     //states 
     //base 
     //lvl 1 
     //death 
     //end game 
+
+    public GameState GetCurrentGameState()
+    {
+        return currentGameState;
+    }
 }
 
 public enum GameState

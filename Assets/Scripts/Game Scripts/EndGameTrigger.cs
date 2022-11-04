@@ -1,18 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using SkyReach.Player;
 using UnityEngine;
 
 public class EndGameTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private GameManager gameManager;
+
+    private void Start()
     {
-        
+        gameManager = FindObjectOfType<GameManager>();
+        if (!gameManager) Debug.Log("There should be a gamemanager in the scene!");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        PlayerController player = other.GetComponent<PlayerController>(); 
         
+        if(player == null || gameManager.GetCurrentGameState() == GameState.EndGame ) return;
+       
+        GameManager.Instance.EndGame(); 
     }
 }
