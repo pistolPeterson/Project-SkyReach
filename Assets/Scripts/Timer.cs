@@ -7,20 +7,14 @@ using TMPro;
 /// Add a class summary here 
 /// </summary>
 public class Timer : MonoBehaviour
-{   
-    [Header("Component")]
-    public TextMeshProUGUI timerText;
-
-    [Header("Timer Settings")]
+{
     private bool timerActive = false;
     private float currentTime;
 
     private float finalTime;  
     
-    //TODO Reset timer method 
-    //Add a stop button, similar to how I did the start button
-    //add a reset timer UI button
-    //add a pause method. (what would be difference between stopping the time and pausing the time?)
+    
+    
     
 
     // Start is called before the first frame update
@@ -41,16 +35,29 @@ public class Timer : MonoBehaviour
         {
            currentTime = currentTime;
         }
-        TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        timerText.text = time.ToString(@"mm\:ss");
+        
     }
 
-        public void StartTimer() {
+        public void StartTimer() 
+        {
             timerActive = true;
         }
 
-        public void StopTimer() {
+        public void PauseTimer()
+        {
             timerActive = false;
+        }
+
+        public void StopTimer()
+        {
+            timerActive = false;
+            currentTime = finalTime;
+        }
+    
+        public void ResetTimer()
+        {
+            timerActive = false;
+            currentTime = 0;
         }
         
     }

@@ -9,7 +9,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [SerializeField] private GameState currentGameState; 
+    [SerializeField] private GameState currentGameState;
+
+    [SerializeField] private Timer timer; 
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -22,7 +24,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentGameState = GameState.Base; 
-        //start clock 
+        //start timer
+        timer.StartTimer();
         //transition to 'base' level music state if needed 
 
     }
