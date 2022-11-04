@@ -517,6 +517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Felipe
       objectReference: {fileID: 0}
+    - target: {fileID: 1328089125714790664, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7176458093793231733, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: playerOne
       value: 

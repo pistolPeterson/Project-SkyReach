@@ -22,6 +22,7 @@ namespace SkyReach.Player
         [Header("Hook Properties")]
         [SerializeField] private float fireSpeed = 40f;
         [SerializeField] private float retractForce = 250f;
+        [SerializeField] private float baseDistance = 1f;
         [SerializeField] private float maxDistance = 15f;
         [SerializeField] private LayerMask hookMask;
 
@@ -76,6 +77,20 @@ namespace SkyReach.Player
             hookingLayer = LayerMask.NameToLayer("HookingPlayer");
         }
 
+        public void Update()
+        {
+            // rotate hook in a circle around the player
+            // circle is radius baseDistance
+            // rotation is towards aimTarget
+            if (!hookBody.simulated)
+            {
+                Vector2 direction = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(aimTarget) - player.Body.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.position = (Vector2)player.transform.position + direction.normalized * baseDistance;
+            }
+        }
+
         public void FixedUpdate()
         {
             // if hook is not attached to anything
@@ -121,12 +136,12 @@ namespace SkyReach.Player
         public void StartHook()
         {
             // get aim direction by converting screen position to world position
-            Vector2 aimDirection = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) - player.Body.position;
+            Vector2 aimDirection = (Vector2)transform.position - player.Body.position;
 
             isRetracting = false;
             isAttached = false;
             hookBody.simulated = true;
-            hookBody.position = player.Body.position;
+            hookBody.position = transform.position;
             hookBody.velocity = aimDirection.normalized * fireSpeed;
         }
 
