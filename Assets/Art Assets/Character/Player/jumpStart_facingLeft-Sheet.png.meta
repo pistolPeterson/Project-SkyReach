@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dcaa56ca5bf53e34fbbea2e1723616e4
+guid: 54437a63a6046b84480757c26a8799c5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,91 +127,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: walking_facingRight_mc-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 0
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 463fb9c8a847eb94e8366eb509d0e87b
-      internalID: 989233016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking_facingRight_mc-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 0
-        width: 26
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55fba77d2711509479fc7cb256c3e9d2
-      internalID: 430598261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking_facingRight_mc-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 0
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 689b07ab1e201484e9e5b3fa9443375c
-      internalID: 1817021840
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking_facingRight_mc-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 0
-        width: 26
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fee0754ad3eedde4d9ff9be04a8d71d8
-      internalID: -1355127557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -222,11 +138,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      walking_facingRight_mc-Sheet_2: 1817021840
-      walking_facingRight_mc-Sheet_0: 989233016
-      walking_facingRight_mc-Sheet_1: 430598261
-      walking_facingRight_mc-Sheet_3: -1355127557
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

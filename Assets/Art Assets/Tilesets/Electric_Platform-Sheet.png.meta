@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8285f8c91a35ac142a372e27235fa1dc
+guid: 6d3e9acd8da0f7d42b2be8ab6e984603
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,18 +102,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiles-Sheet-decor_0
+      name: Electric_Platform-Sheet_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 133
-        width: 76
-        height: 71
+        x: 15
+        y: 16
+        width: 69
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9f43bcceb8623d49bea025a362d7e63
-      internalID: 212943143
+      spriteID: 5e78238914e7fb74a826456ad3d67225
+      internalID: -690876577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles-Sheet-decor_1
+      name: Electric_Platform-Sheet_1
       rect:
         serializedVersion: 2
-        x: 130
-        y: 133
-        width: 76
-        height: 71
+        x: 122
+        y: 10
+        width: 74
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66daee1c7686d034b8f4161c27e5b78f
-      internalID: 1151646676
+      spriteID: 795c5765b2fedea4caa678502bab5093
+      internalID: 1734339086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles-Sheet-decor_2
+      name: Electric_Platform-Sheet_2
       rect:
         serializedVersion: 2
-        x: 221
-        y: 182
-        width: 66
-        height: 7
+        x: 234
+        y: 10
+        width: 74
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eaff6f2a4ec4f0479fcd48e68bba6c4
-      internalID: 1752357412
+      spriteID: e8a7e8ec87d16da4285d88fc1dcd97f4
+      internalID: 366246197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles-Sheet-decor_3
+      name: Electric_Platform-Sheet_3
       rect:
         serializedVersion: 2
-        x: 221
-        y: 166
-        width: 66
-        height: 7
+        x: 346
+        y: 10
+        width: 79
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21c4fa1785af4ce4b90b995331d2c519
-      internalID: 1196401870
+      spriteID: 264bdc875d5150541942dab45450a043
+      internalID: 1230940047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles-Sheet-decor_4
+      name: Electric_Platform-Sheet_4
       rect:
         serializedVersion: 2
-        x: 178
-        y: 85
-        width: 44
-        height: 41
+        x: 463
+        y: 16
+        width: 69
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b49498a20ccc3c4e80ba31e8cce1e80
-      internalID: -1783861700
+      spriteID: 9dc3f0cf48cb6ed4391de7b6245f27a3
+      internalID: 1493953476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles-Sheet-decor_5
+      name: Electric_Platform-Sheet_5
       rect:
         serializedVersion: 2
-        x: 115
-        y: 85
-        width: 44
-        height: 41
+        x: 569
+        y: 8
+        width: 79
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f282a43d04934947800ec148798fe22
-      internalID: 680910228
+      spriteID: 803032b3a2e668448b2d8b87ffbde06e
+      internalID: -740713339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles-Sheet-decor_6
+      name: Electric_Platform-Sheet_6
       rect:
         serializedVersion: 2
-        x: 50
-        y: 84
-        width: 44
-        height: 41
+        x: 681
+        y: 8
+        width: 79
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dca6bef09452e004fa510f6026f1d7ed
-      internalID: -1064185951
+      spriteID: 0be98d02137d7174d86c41ad20562248
+      internalID: 218802882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles-Sheet-decor_7
+      name: Electric_Platform-Sheet_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 50
-        width: 80
-        height: 27
+        x: 793
+        y: 8
+        width: 79
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02099e9289f6fef4da5b964bd2dcfe2c
-      internalID: -1155926180
+      spriteID: 1b50cf28e7c5bff4c914a97ca262f100
+      internalID: -1149431979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles-Sheet-decor_8
+      name: Electric_Platform-Sheet_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 19
-        width: 80
-        height: 27
+        x: 903
+        y: 6
+        width: 83
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,8 +299,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf2cffe996554214084e2a2f6abb318a
-      internalID: 757851360
+      spriteID: 859399c4979915f478ba0106eef24fd2
+      internalID: 846735980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Electric_Platform-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 6
+        width: 78
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28a7be4b9d19244285c2016018904ce
+      internalID: 1565480373
       vertices: []
       indices: 
       edges: []
@@ -328,15 +337,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tiles-Sheet-decor_0: 212943143
-      Tiles-Sheet-decor_3: 1196401870
-      Tiles-Sheet-decor_8: 757851360
-      Tiles-Sheet-decor_1: 1151646676
-      Tiles-Sheet-decor_2: 1752357412
-      Tiles-Sheet-decor_6: -1064185951
-      Tiles-Sheet-decor_5: 680910228
-      Tiles-Sheet-decor_7: -1155926180
-      Tiles-Sheet-decor_4: -1783861700
+      Electric_Platform-Sheet_0: -690876577
+      Electric_Platform-Sheet_3: 1230940047
+      Electric_Platform-Sheet_7: -1149431979
+      Electric_Platform-Sheet_5: -740713339
+      Electric_Platform-Sheet_6: 218802882
+      Electric_Platform-Sheet_9: 1565480373
+      Electric_Platform-Sheet_4: 1493953476
+      Electric_Platform-Sheet_1: 1734339086
+      Electric_Platform-Sheet_2: 366246197
+      Electric_Platform-Sheet_8: 846735980
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
