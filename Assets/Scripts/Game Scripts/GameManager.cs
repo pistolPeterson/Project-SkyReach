@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Timer timer;
     [SerializeField] private StatisticsData stats;
+    public static event Action endGame;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -45,6 +46,9 @@ public class GameManager : MonoBehaviour
         currentGameState = GameState.EndGame; 
         //stop timer 
         timer.StopTimer();
+       
+        endGame?.Invoke();
+        //record time for statistics 
         //disable movement 
         //play end game music
         
