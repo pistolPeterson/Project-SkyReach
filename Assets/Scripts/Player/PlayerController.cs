@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ namespace SkyReach.Player
         [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
         [SerializeField] private float jumpBufferTime;
         [Range(0.0f, 1.0f), SerializeField] private float coyoteTime;
+        public static event Action jump; 
 
 
         // exposed properties
@@ -36,6 +38,7 @@ namespace SkyReach.Player
         // internal variables
         private Collider2D groundCollider = null;
         private bool isJumping = false;
+        private bool didJump = false;
         private float jumpHoldTimer = 0.0f;
         private float jumpBufferTimer = 0.0f;
         private float coyoteTimer = 0.0f;
@@ -56,11 +59,16 @@ namespace SkyReach.Player
                 input.Movement.SetCallbacks(this);
             }
             input.Enable();
+
         }
 
         public void OnDisable()
         {
             input.Disable();
+        }
+
+        public void debugshow() {
+            Debug.Log("Print this");
         }
 
         public void FixedUpdate()
@@ -105,12 +113,14 @@ namespace SkyReach.Player
             if (isJumping)
             {
                 // if the player is grounded or the coyote timer is still running, jump
-                if ((groundCollider && relativeVelocity.y <= 0) || (coyoteTimer > 0.0f && !coyoteTimeExpired))
+                if (!didJump && (groundCollider && relativeVelocity.y <= 0) || (coyoteTimer > 0.0f && !coyoteTimeExpired))
                 {
                     Body.velocity = new Vector2(Body.velocity.x, 0.0f);
                     Body.AddForce(Vector2.up * initialJumpForce, ForceMode2D.Impulse);
                     coyoteTimeExpired = true;
                     jumpHoldTimer = maxJumpTime;
+                    jump?.Invoke();
+                    didJump = true;
                 }
 
                 // handle jump hold
@@ -145,6 +155,8 @@ namespace SkyReach.Player
             else
             {
                 jumpHoldTimer = 0.0f;
+                jumpBufferTimer = 0.0f;
+                didJump = false;
             }
 
             // While there is no explicit speed cap, horizontal drag will create an artificial one.
@@ -152,6 +164,11 @@ namespace SkyReach.Player
 
             // Horizontal movement
             Body.AddForce(FacingDirection.x * Vector2.right * speed);
+        }
+
+        public bool IsGrounded()
+        {
+            return groundCollider != null;
         }
 
         void Input.IMovementActions.OnMove(InputAction.CallbackContext context)
