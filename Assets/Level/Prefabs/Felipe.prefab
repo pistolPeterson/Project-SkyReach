@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1508582128965813855}
   - component: {fileID: 7176458093793231739}
   - component: {fileID: 1954464518}
+  - component: {fileID: 6908633723696272387}
   m_Layer: 0
   m_Name: Body
   m_TagString: Player
@@ -71,18 +72,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0020799637, y: -0.0020971298}
+  m_Offset: {x: 1.6781435, y: -0.075387955}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.625, y: 1.625}
+    oldSize: {x: 26, y: 26}
     newSize: {x: 10, y: 7.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6396341, y: 1.6488187}
+  m_Size: {x: 18.974909, y: 25.739151}
   m_EdgeRadius: 0
 --- !u!212 &1328089123933327499
 SpriteRenderer:
@@ -148,10 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e5858d47ec5c0449c253db537762e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  initialJumpForce: 20
-  jumpHoldForce: 100
-  maxJumpTime: 0.15
+  speed: 150
+  initialJumpForce: 25
+  jumpHoldForce: 120
+  maxJumpTime: 0.12
   horizontalDrag: 0.2
   gravityScale: 10
   groundRaycastDistance: 0.05
@@ -190,6 +191,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1508582128965813855}
+--- !u!114 &6908633723696272387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328089123933327733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb36c89e2fd63e40bf6cbe7831f08a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7176458093793231739}
 --- !u!1 &1328089124654131163
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +259,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1328089123933327734}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 40
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
