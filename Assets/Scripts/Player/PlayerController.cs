@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 namespace SkyReach.Player
 {
     /// <summary>
@@ -21,12 +22,12 @@ namespace SkyReach.Player
         [SerializeField] private float maxJumpTime;
         [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag;
         [SerializeField] private float gravityScale;
-
+        public static event Action jump; 
+        
         [Header("Advanced Movement Properties")]
         [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
         [SerializeField] private float jumpBufferTime;
         [Range(0.0f, 1.0f), SerializeField] private float coyoteTime;
-        public static event Action jump; 
 
 
         // exposed properties
@@ -65,11 +66,10 @@ namespace SkyReach.Player
         public void OnDisable()
         {
             input.Disable();
+            Debug.Log("Disabled");
         }
 
-        public void debugshow() {
-            Debug.Log("Print this");
-        }
+       
 
         public void FixedUpdate()
         {

@@ -41,8 +41,8 @@ namespace SkyReach.Player
                     //Plays idle animation if the player is not moving, if the player is moving plays the appropriate facing animation
                     if (!playerController.IsGrounded())
                     {
-                       //ChangeAnimationState(playerJumpingRight); 
-                       Debug.Log("right jumping anim plays here"); 
+                       ChangeAnimationState(playerJumpingRight); 
+                       //Debug.Log("right jumping anim plays here"); 
                     }
                     else if (playerController.FacingDirection == zeroVector) 
                     {                   
@@ -58,8 +58,8 @@ namespace SkyReach.Player
                    
                    if (!playerController.IsGrounded())
                     {
-                       //ChangeAnimationState(playerJumpingLeft); 
-                       Debug.Log("left jumping anim plays here"); 
+                       ChangeAnimationState(playerJumpingLeft); 
+                       //Debug.Log("left jumping anim plays here"); 
                     }                   
                     else if (playerController.FacingDirection == zeroVector) 
                     {                        
