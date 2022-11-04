@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dcaa56ca5bf53e34fbbea2e1723616e4
+guid: cec9fb0d9c46ab14aba782a8cef50351
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walking_facingRight_mc-Sheet_0
+      name: idle_facingLeft_mc-Sheet_0
       rect:
         serializedVersion: 2
         x: 3
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 463fb9c8a847eb94e8366eb509d0e87b
-      internalID: 989233016
+      spriteID: b8ffae02d7b399c45ae5bd99da07c5de
+      internalID: 1762665486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_facingRight_mc-Sheet_1
+      name: idle_facingLeft_mc-Sheet_1
       rect:
         serializedVersion: 2
         x: 35
         y: 0
         width: 26
-        height: 27
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55fba77d2711509479fc7cb256c3e9d2
-      internalID: 430598261
+      spriteID: 11c8f0d7d61617e4ab6034316e82217d
+      internalID: -1651148636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_facingRight_mc-Sheet_2
+      name: idle_facingLeft_mc-Sheet_2
       rect:
         serializedVersion: 2
         x: 67
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 689b07ab1e201484e9e5b3fa9443375c
-      internalID: 1817021840
+      spriteID: c7b3867b8343ee5448736b23c05474a5
+      internalID: -1789214484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_facingRight_mc-Sheet_3
+      name: idle_facingLeft_mc-Sheet_3
       rect:
         serializedVersion: 2
         x: 99
         y: 0
         width: 26
-        height: 27
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fee0754ad3eedde4d9ff9be04a8d71d8
-      internalID: -1355127557
+      spriteID: 3504d82b02fdfc346852208c394eb49b
+      internalID: -1792352038
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walking_facingRight_mc-Sheet_2: 1817021840
-      walking_facingRight_mc-Sheet_0: 989233016
-      walking_facingRight_mc-Sheet_1: 430598261
-      walking_facingRight_mc-Sheet_3: -1355127557
+      idle_facingLeft_mc-Sheet_1: -1651148636
+      idle_facingLeft_mc-Sheet_2: -1789214484
+      idle_facingLeft_mc-Sheet_3: -1792352038
+      idle_facingLeft_mc-Sheet_0: 1762665486
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -28,6 +28,7 @@ namespace SkyReach.Player
         [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
         [SerializeField] private float jumpBufferTime;
         [Range(0.0f, 1.0f), SerializeField] private float coyoteTime;
+        public static event Action jump; 
 
 
         // exposed properties
@@ -122,6 +123,7 @@ namespace SkyReach.Player
                     coyoteTimeExpired = true;
                     jump.Invoke();
                     jumpHoldTimer = maxJumpTime;
+                    jump?.Invoke();
                     didJump = true;
                 }
 

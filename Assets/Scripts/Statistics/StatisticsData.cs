@@ -8,6 +8,7 @@ namespace SkyReach.Player
     public class StatisticsData : MonoBehaviour
     {
         public int jumps = 0;
+        public int numHooks = 0;
         public int playerDeath = 0;
 
 
@@ -21,23 +22,30 @@ namespace SkyReach.Player
             return PlayerPrefs.GetInt("Deaths"); ;
         }
 
+        public int getHooks()
+        {
+            return PlayerPrefs.GetInt("Hooks");
+        }
+
         void OnEnable()
         {
             //method that increase jumps
             PlayerController.jump += setJumps;
+            GrapplingHook.hook += setHooks;
         }
 
         void OnDisable()
         {
             //unsubscribe 
             PlayerController.jump -= setJumps;
+            GrapplingHook.hook -= setHooks;
         }
 
         void setJumps()
         {
             jumps++;
             PlayerPrefs.SetInt("Jumps", jumps);
-            //Debug.Log("Jump triggered!");
+            Debug.Log("Jump triggered!");
         }
 
         void setDeaths()
@@ -46,14 +54,11 @@ namespace SkyReach.Player
             PlayerPrefs.SetInt("Deaths", playerDeath);
         }
 
-        public void loadDeaths(string playDeaths)
+        void setHooks()
         {
-            int.TryParse(playDeaths, out playerDeath);
-        }
-
-        public void loadJumps(string x)
-        {
-            int.TryParse(x, out jumps);
+            numHooks++;
+            PlayerPrefs.SetInt("Hooks", numHooks);
+            Debug.Log("Number of times hooked: " + numHooks);
         }
     }
 }
