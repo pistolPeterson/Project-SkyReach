@@ -28,7 +28,6 @@ namespace SkyReach.Player
         [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
         [SerializeField] private float jumpBufferTime;
         [Range(0.0f, 1.0f), SerializeField] private float coyoteTime;
-        public static event Action jump; 
 
 
         // exposed properties
@@ -70,9 +69,7 @@ namespace SkyReach.Player
             Debug.Log("Disabled");
         }
 
-        public void debugshow() {
-            Debug.Log("Print this");
-        }
+       
 
         public void FixedUpdate()
         {
@@ -121,7 +118,6 @@ namespace SkyReach.Player
                     Body.velocity = new Vector2(Body.velocity.x, 0.0f);
                     Body.AddForce(Vector2.up * initialJumpForce, ForceMode2D.Impulse);
                     coyoteTimeExpired = true;
-                    jump.Invoke();
                     jumpHoldTimer = maxJumpTime;
                     jump?.Invoke();
                     didJump = true;

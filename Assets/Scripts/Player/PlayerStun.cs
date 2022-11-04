@@ -25,13 +25,13 @@ public class PlayerStun : MonoBehaviour
         
     }
 
-    void StunPlayer()
+    public void StunPlayer() //will be refactored to have variable stun time depending on severity of damage
     {
         
         //play stun animation 
         animator.Play("StunAnimation");
         //disable movement 
-        controller.OnDisable();
+        //controller.OnDisable();
         //Die = restart level, play death music, play stun sfx 
     }
 }
