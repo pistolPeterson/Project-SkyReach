@@ -45,7 +45,7 @@ namespace SkyReach.Player
         {
             jumps++;
             PlayerPrefs.SetInt("Jumps", jumps);
-            Debug.Log("Jump triggered!");
+            //Debug.Log("Jump triggered!");
         }
 
         void setDeaths()
@@ -58,7 +58,7 @@ namespace SkyReach.Player
         {
             numHooks++;
             PlayerPrefs.SetInt("Hooks", numHooks);
-            Debug.Log("Number of times hooked: " + numHooks);
+            //Debug.Log("Number of times hooked: " + numHooks);
         }
     }
 }

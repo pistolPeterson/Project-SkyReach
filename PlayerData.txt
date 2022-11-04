@@ -1,3 +1,0 @@
-Number of jumps:5
-Number of player deaths:0
-This is the end of the file and its contents!
