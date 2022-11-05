@@ -1,0 +1,1103 @@
+fileFormatVersion: 2
+guid: deeba2a731fe14647bfc06583681091e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Hit_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 337
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a294d0f366a7d40bbf2ab8296f2bbb
+      internalID: -715733414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Hit_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 338
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74813b4c02ae3614ab1bb9380366180a
+      internalID: -201614927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Hit_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 338
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59230071a1a56a45bfaa49140bd0c1a
+      internalID: -86810835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Hit_3
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 338
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5581f023cdb4045a56c58121ed350f
+      internalID: -407926061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Hit_4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 338
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85c3700fff0a2746a38794604884f2d
+      internalID: -1017411234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Hit_5
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 338
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89f37c1ec659514199368028cb9785e
+      internalID: -1163928988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Hit_6
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 338
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905f9ac79730b4840a12ac33b5e97866
+      internalID: 1595868375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Hit_7
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 338
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b231b3e8546c63f4f854d7d10b6cb7b0
+      internalID: -590534727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Hit_8
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 337
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbdbfd914d74ebe489681543d2ebe566
+      internalID: 23869674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Hit_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 281
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e8501b8f54d0e4690cee77be54237d
+      internalID: -1769190735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Hit_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 282
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe85752105a1f54f8ce94e22d951cb1
+      internalID: 1148707407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Hit_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 281
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e369f9a793a05944881c99bb3be6aade
+      internalID: 601075692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Hit_3
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 282
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c8a6a6184bdc940a9ebff4956fd4b8
+      internalID: 187232088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Hit_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 282
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75eb02b427332694f908d55faea2a566
+      internalID: 1376844024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Hit_5
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 282
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd9921bcd5eda8408e3917f87c316cb
+      internalID: -1504965262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Hit_6
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 282
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e75904c786e4c949ae1e4ee0f38663a
+      internalID: 730983057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Hit_7
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 282
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1db46473c5532848a34a0c9e6b3b5f6
+      internalID: 1956219679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Hit_8
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 281
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0055cd74ad541c64c93dbca451e648f9
+      internalID: -44567773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 215
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1cf44cfbef5684ebfd68af19829785
+      internalID: 1672910484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 214
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef3c7783aa984344814e061bab7311c
+      internalID: -175654208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 213
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe08570c0b87c0b4fa601ee747e62e10
+      internalID: 1969585548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 212
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ba88e7513185747b29443f424b8482
+      internalID: 1185331460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 214
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41888b3738604bc409cf51677a915c11
+      internalID: -2118554264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 213
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd543e92a32f45d4cb682478d58f5723
+      internalID: 1892870658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 153
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2028ed8bd1642b4685fd7c8873cf036
+      internalID: 1375558148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 153
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c17a68d5b4a5be4c81ab8344c910ea9
+      internalID: -595134667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 153
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b31b83f0147e66f49b55b733e170940d
+      internalID: 493323149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 153
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3180bf8d484ac324eb2d3002b305e45e
+      internalID: -1777631762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 152
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024087b8ffc48984e886751e58977625
+      internalID: 1141829436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 152
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5331ba9c9de034eb60c331fdedc51a
+      internalID: 447757299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 152
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c3cd9ba49a87c4a8a8cd8beb864126
+      internalID: -1937429125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_ProjecEnemy_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 152
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a700bbc6165e5a45a7039e6c542c4c1
+      internalID: 935002181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Projectile_For_Enemy
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 91
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b37ad1d23b86024e9944976a04e76d3
+      internalID: 613301124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 22
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1460058a4c3ac614ea9de540bcbb850f
+      internalID: -1522556972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 21
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d31687bf7074e4a85eeb3a4ee7c707
+      internalID: 1729055210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 19
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ab3fc7ece73924f91924950857cfb6
+      internalID: -2077621756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 24
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe177d17cc95734292db1bf38e62994
+      internalID: -2043113786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 23
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1698d1bc8324214a8901016bec32f8c
+      internalID: 1094832311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 23
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959fe8fd1fb972948b26fe546a8e8c78
+      internalID: 1368082826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 22
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb9af2b7e6ab5e4f8272242dcb0da39
+      internalID: 1216080146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 21
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05b6b288a8dc9b4ca03c297e4edcd1c
+      internalID: 2091133804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 20
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee67b00cd35fb8648b0b25d4d2859687
+      internalID: -1842729082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 23
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbbef755d20dacc47a87b9d5a9ffba48
+      internalID: 225497015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_ProjecEnemy_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 22
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa17c9a958586c740b5421598a93fe4f
+      internalID: -872619218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      2_ProjecEnemy_Hit_4: 1376844024
+      1_ProjecEnemy_Hit_7: -590534727
+      1_ProjecEnemy_Idle_0: 1672910484
+      1_ProjecEnemy_Hit_1: -201614927
+      1_ProjecEnemy_Idle_5: 1892870658
+      2_ProjecEnemy_Idle_7: 935002181
+      2_ProjecEnemy_Hit_6: 730983057
+      1_ProjecEnemy_Attack_1: 1729055210
+      2_ProjecEnemy_Hit_3: 187232088
+      1_ProjecEnemy_Attack_9: 225497015
+      2_ProjecEnemy_Hit_2: 601075692
+      1_ProjecEnemy_Attack_5: 1368082826
+      2_ProjecEnemy_Hit_5: -1504965262
+      1_ProjecEnemy_Hit_8: 23869674
+      1_ProjecEnemy_Attack_4: 1094832311
+      Projectile_For_Enemy: 613301124
+      2_ProjecEnemy_Idle_5: 447757299
+      1_ProjecEnemy_Attack_8: -1842729082
+      1_ProjecEnemy_Hit_0: -715733414
+      2_ProjecEnemy_Idle_4: 1141829436
+      1_ProjecEnemy_Attack_6: 1216080146
+      1_ProjecEnemy_Attack_7: 2091133804
+      2_ProjecEnemy_Idle_6: -1937429125
+      2_ProjecEnemy_Hit_1: 1148707407
+      2_ProjecEnemy_Hit_8: -44567773
+      1_ProjecEnemy_Idle_2: 1969585548
+      1_ProjecEnemy_Idle_3: 1185331460
+      1_ProjecEnemy_Idle_4: -2118554264
+      1_ProjecEnemy_Attack_3: -2043113786
+      1_ProjecEnemy_Hit_6: 1595868375
+      2_ProjecEnemy_Idle_1: -595134667
+      2_ProjecEnemy_Idle_0: 1375558148
+      1_ProjecEnemy_Attack_10: -872619218
+      2_ProjecEnemy_Hit_0: -1769190735
+      2_ProjecEnemy_Hit_7: 1956219679
+      1_ProjecEnemy_Hit_5: -1163928988
+      1_ProjecEnemy_Attack_0: -1522556972
+      1_ProjecEnemy_Idle_1: -175654208
+      1_ProjecEnemy_Attack_2: -2077621756
+      2_ProjecEnemy_Idle_3: -1777631762
+      2_ProjecEnemy_Idle_2: 493323149
+      1_ProjecEnemy_Hit_3: -407926061
+      1_ProjecEnemy_Hit_2: -86810835
+      1_ProjecEnemy_Hit_4: -1017411234
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
