@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void EndGame()
+    public void EndGame() //victory condition
     {
         Debug.Log("In End game state");
         currentGameState = GameState.EndGame; 
@@ -58,9 +58,34 @@ public class GameManager : MonoBehaviour
     }
     //states 
     //base 
+    //FallAnimState
     //lvl 1 
     //death 
     //end game 
+
+    public void FallingDeath()
+    {
+        //state = death
+        //play falling music and sfx 
+        //start fading out 
+        //reset scene
+        //
+    }
+
+    public void FallingAnimation()
+    {
+        //disable player input 
+        //play falling animation, player splats into ground 
+        //go to lvl 1 state
+        
+    }
+
+    public void Level1State()
+    {
+        //input is back on
+        //starting sfx/UI
+        //turn timer on 
+    }
 
     public GameState GetCurrentGameState()
     {
@@ -71,6 +96,7 @@ public class GameManager : MonoBehaviour
 public enum GameState
 {
     Base,
+    FallAnimationState,
     Level1,
     Death,
     EndGame
