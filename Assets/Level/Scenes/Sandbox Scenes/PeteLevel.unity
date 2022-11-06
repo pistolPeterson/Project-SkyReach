@@ -605,6 +605,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e89d3af65c1aca4387e30d4c8314517, type: 3}
+--- !u!1 &716302522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 716302523}
+  m_Layer: 0
+  m_Name: Initial Fall Animatino Player Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &716302523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716302522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4, y: -2.4, z: -0.16407403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &783090613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -975,6 +1006,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e89d3af65c1aca4387e30d4c8314517, type: 3}
+--- !u!1 &1468749021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8212793963058855817, guid: 6ac20aaf05718bd4881520f63bf2dade, type: 3}
+  m_PrefabInstance: {fileID: 1010550375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1514558113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1690,9 +1726,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLocation: {fileID: 1707768915}
-  currentHeight: 0
   deathHeightDistance: 15
-  currentDeathHeight: 0
+--- !u!114 &2080571660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8608747138036683415, guid: 6ac20aaf05718bd4881520f63bf2dade, type: 3}
+  m_PrefabInstance: {fileID: 1010550375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080571654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e5858d47ec5c0449c253db537762e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2142144191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1805,6 +1850,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1934572866773253370, guid: cc91a630383170748af3b0c28bd8e305, type: 3}
+      propertyPath: playerObj
+      value: 
+      objectReference: {fileID: 1468749021}
+    - target: {fileID: 1934572866773253370, guid: cc91a630383170748af3b0c28bd8e305, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 2080571660}
+    - target: {fileID: 1934572866773253370, guid: cc91a630383170748af3b0c28bd8e305, type: 3}
+      propertyPath: initPlayerFallAnimLocation
+      value: 
+      objectReference: {fileID: 716302523}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc91a630383170748af3b0c28bd8e305, type: 3}
 --- !u!1001 &7470475218922585238

@@ -66,7 +66,6 @@ namespace SkyReach.Player
         public void OnDisable()
         {
             input.Disable();
-            Debug.Log("Disabled");
         }
 
        

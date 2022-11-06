@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Timer timer;
     [SerializeField] private StatisticsData stats;
+
+    [SerializeField] private Transform initPlayerFallAnimLocation;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private GameObject playerObj;
     public static event Action endGame;
     private void Awake()
     {
@@ -26,7 +30,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        currentGameState = GameState.Base; 
+       FallingAnimation();
         //start timer
         timer.StartTimer();
         //transition to 'base' level music state if needed 
@@ -74,17 +78,24 @@ public class GameManager : MonoBehaviour
 
     public void FallingAnimation()
     {
+        currentGameState = GameState.FallAnimationState; 
         //disable player input 
+        playerController.OnDisable();
         //play falling animation, player splats into ground 
+        playerObj.transform.position = initPlayerFallAnimLocation.position;
         //go to lvl 1 state
-        
+        Level1State();
     }
 
     public void Level1State()
     {
+        currentGameState = GameState.Level1; 
+
         //input is back on
+        playerController.OnEnable();
         //starting sfx/UI
         //turn timer on 
+        timer.StartTimer();
     }
 
     public GameState GetCurrentGameState()
