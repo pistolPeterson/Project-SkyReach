@@ -84,14 +84,12 @@ public class GameManager : MonoBehaviour
         //in a few seconds go to another scene 
             //feedback demo = "thanks fro playing, please give feedback on our game" 
             // main demo = end credits 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+           // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+           var lvlChanger = FindObjectOfType<LevelChanger>();
+           if(lvlChanger)
+               lvlChanger.FadeToLevel(2);
     }
-    //states 
-    //base 
-    //FallAnimState
-    //lvl 1 
-    //death 
-    //end game (victory)
+   
 
     public void Death()
     {
@@ -100,8 +98,10 @@ public class GameManager : MonoBehaviour
         currentGameState = GameState.Death;
         
         //start fading out and reset scene 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       var lvlChanger = FindObjectOfType<LevelChanger>();
+       if(lvlChanger)
+           lvlChanger.FadeToLevel(1);
     }
 
   
@@ -114,7 +114,12 @@ public class GameManager : MonoBehaviour
         return currentGameState;
     }
 }
-
+//states 
+//base 
+//FallAnimState
+//lvl 1 
+//death 
+//end game (victory)
 public enum GameState
 {
     Base,

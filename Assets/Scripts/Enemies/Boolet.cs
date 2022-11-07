@@ -20,7 +20,7 @@ namespace SkyReach.Enemies.Projectiles
     // Update is called once per frame
         void Update()
         {
-         transform.position += -transform.up * Time.deltaTime * Speed;
+            transform.position += -transform.up * Time.deltaTime * Speed;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
