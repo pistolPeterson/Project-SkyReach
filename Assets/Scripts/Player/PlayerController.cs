@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 namespace SkyReach.Player
 {
@@ -20,7 +22,8 @@ namespace SkyReach.Player
         [SerializeField] private float maxJumpTime;
         [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag;
         [SerializeField] private float gravityScale;
-
+        public static event Action jump; 
+        
         [Header("Advanced Movement Properties")]
         [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
         [SerializeField] private float jumpBufferTime;
@@ -63,7 +66,10 @@ namespace SkyReach.Player
         public void OnDisable()
         {
             input.Disable();
+            Debug.Log("Disabled");
         }
+
+       
 
         public void FixedUpdate()
         {
@@ -113,6 +119,7 @@ namespace SkyReach.Player
                     Body.AddForce(Vector2.up * initialJumpForce, ForceMode2D.Impulse);
                     coyoteTimeExpired = true;
                     jumpHoldTimer = maxJumpTime;
+                    jump?.Invoke();
                     didJump = true;
                 }
 
@@ -157,6 +164,11 @@ namespace SkyReach.Player
 
             // Horizontal movement
             Body.AddForce(FacingDirection.x * Vector2.right * speed);
+        }
+
+        public bool IsGrounded()
+        {
+            return groundCollider != null;
         }
 
         void Input.IMovementActions.OnMove(InputAction.CallbackContext context)
