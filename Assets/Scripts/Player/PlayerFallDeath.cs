@@ -8,7 +8,7 @@ using UnityEngine;
 /// 1. player getting out of bounds based on height
 /// 2. "insta" death called by obstacles/enemies 
 /// </summary>
-public class PlayerDeath : MonoBehaviour
+public class PlayerFallDeath : MonoBehaviour
 {
     [SerializeField] private Transform playerLocation; 
     private float currentHeight = 0; //current height always set to 0 by default, to be init of where the player is spawned
@@ -17,7 +17,6 @@ public class PlayerDeath : MonoBehaviour
 
     private float currentDeathHeight;
 
-    public static event Action FallDeath; 
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +45,14 @@ public class PlayerDeath : MonoBehaviour
     private void CheckDeath()
     {
         if (currentHeight < currentDeathHeight)
-            FallDeath?.Invoke();
+        {
+            //freeze player at that point
+            //play glitch animation
+           //call death ( //fade in fade out, and reset scene) 
+           GameManager.Instance.Death();
+      
+        }
+           
     }
 
     private void OnDrawGizmosSelected()

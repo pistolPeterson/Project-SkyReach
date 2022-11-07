@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using SkyReach.Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 /// <summary>
 /// The higher level game manager, will set the game flow/states and allow the game to pass any data or info.. 
 /// </summary>
@@ -31,10 +33,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
        FallingAnimation();
-        //start timer
-        timer.StartTimer();
-        //transition to 'base' level music state if needed 
-
     }
 
     // Update is called once per frame
@@ -43,7 +41,34 @@ public class GameManager : MonoBehaviour
         
     }
 
+   
+    public void FallingAnimation()
+    {
+        currentGameState = GameState.FallAnimationState; 
+        //disable player input 
+        playerController.OnDisable();
+        //play falling animation, player splats into ground 
+        playerObj.transform.position = initPlayerFallAnimLocation.position;
+        
+        //play somersault anim 
+        
 
+        //go to lvl 1 state
+        Level1State();
+    }
+
+    public void Level1State()
+    {
+        currentGameState = GameState.Level1; 
+
+        //input is back on
+        playerController.OnEnable();
+        //starting level sfx/UI
+        
+        //turn timer on 
+        timer.StartTimer();
+    }
+    
     public void EndGame() //victory condition
     {
         Debug.Log("In End game state");
@@ -59,44 +84,30 @@ public class GameManager : MonoBehaviour
         //in a few seconds go to another scene 
             //feedback demo = "thanks fro playing, please give feedback on our game" 
             // main demo = end credits 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     //states 
     //base 
     //FallAnimState
     //lvl 1 
     //death 
-    //end game 
+    //end game (victory)
 
-    public void FallingDeath()
+    public void Death()
     {
+        if (currentGameState != GameState.Level1) return; 
         //state = death
-        //play falling music and sfx 
-        //start fading out 
-        //reset scene
-        //
+        currentGameState = GameState.Death;
+        
+        //start fading out and reset scene 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 
-    public void FallingAnimation()
-    {
-        currentGameState = GameState.FallAnimationState; 
-        //disable player input 
-        playerController.OnDisable();
-        //play falling animation, player splats into ground 
-        playerObj.transform.position = initPlayerFallAnimLocation.position;
-        //go to lvl 1 state
-        Level1State();
-    }
+  
 
-    public void Level1State()
-    {
-        currentGameState = GameState.Level1; 
-
-        //input is back on
-        playerController.OnEnable();
-        //starting sfx/UI
-        //turn timer on 
-        timer.StartTimer();
-    }
+   
+   
 
     public GameState GetCurrentGameState()
     {
