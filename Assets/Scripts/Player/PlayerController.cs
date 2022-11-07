@@ -46,7 +46,6 @@ namespace SkyReach.Player
         private bool coyoteTimeExpired = false;
         private Input input;
 
-        public static event Action jump;
 
         public void Awake()
         {
@@ -122,7 +121,6 @@ namespace SkyReach.Player
                     jumpHoldTimer = maxJumpTime;
                     jump?.Invoke();
                     didJump = true;
-                    FindObjectOfType<PlayerFootAudio>().PlayJumpSfx();
                    
                 }
 
