@@ -26,7 +26,7 @@ namespace SkyReach.Enemies
             timer += Time.deltaTime;
             if(timer>=shootTimer){
                 Debug.Log("spawning");
-               anim.Play("Projectile1Enemy_Attack");
+               anim.Play("Projectile1Enemy_Attack", -1, 0f);
                 timer = 0;
             }
 

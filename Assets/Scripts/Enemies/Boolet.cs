@@ -25,8 +25,14 @@ namespace SkyReach.Enemies.Projectiles
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.gameObject.GetComponent<PlayerController>())
+            if (collision.gameObject.GetComponent<PlayerController>())
+            {
                 Destroy(gameObject);
+                //play hit animation 
+                
+                GameManager.Instance.Death();
+            }
+                
         }
     }
 }
