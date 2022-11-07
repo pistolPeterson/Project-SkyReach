@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SkyReach.Player;
 using UnityEngine;
 
 namespace SkyReach.Enemies.Projectiles
@@ -19,12 +20,13 @@ namespace SkyReach.Enemies.Projectiles
     // Update is called once per frame
         void Update()
         {
-         transform.position += -transform.right * Time.deltaTime * Speed;
+         transform.position += -transform.up * Time.deltaTime * Speed;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Destroy(gameObject);
+            if(collision.gameObject.GetComponent<PlayerController>())
+                Destroy(gameObject);
         }
     }
 }
