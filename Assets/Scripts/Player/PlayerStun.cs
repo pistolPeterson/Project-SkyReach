@@ -18,20 +18,19 @@ public class PlayerStun : MonoBehaviour
         controller = GetComponent<PlayerController>();
         StunPlayer();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void StunPlayer() //will be refactored to have variable stun time depending on severity of damage
     {
+        if (animator == null)
+        {
+            Debug.Log("Animator is null!");
+
+            return; 
+        }
         
-        //play stun animation 
         animator.Play("StunAnimation");
-        //disable movement 
-        //controller.OnDisable();
-        //Die = restart level, play death music, play stun sfx 
+       
+        
     }
 }

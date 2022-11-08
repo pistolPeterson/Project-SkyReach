@@ -46,6 +46,7 @@ namespace SkyReach.Player
         private bool coyoteTimeExpired = false;
         private Input input;
 
+
         public void Awake()
         {
             Body = GetComponent<Rigidbody2D>();
@@ -66,7 +67,6 @@ namespace SkyReach.Player
         public void OnDisable()
         {
             input.Disable();
-            Debug.Log("Disabled");
         }
 
        
@@ -121,6 +121,7 @@ namespace SkyReach.Player
                     jumpHoldTimer = maxJumpTime;
                     jump?.Invoke();
                     didJump = true;
+                   
                 }
 
                 // handle jump hold
@@ -184,5 +185,7 @@ namespace SkyReach.Player
         {
             isJumping = context.ReadValueAsButton();
         }
+
+      
     }
 }
