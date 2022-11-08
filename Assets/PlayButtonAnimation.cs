@@ -20,6 +20,6 @@ public class PlayButtonAnimation : MonoBehaviour
     public void PlaySelectAnimation()
     {
         
-        anim.SetTrigger("PlaySelectAnimTrigger");
+        anim.SetTrigger("HoverPlayTrigger");
     }
 }
