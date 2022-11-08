@@ -2078,7 +2078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2068848758, guid: 6cf1b9d5d9fde2c4f9aaa069527eef00, type: 3}
       propertyPath: m_Size.y
-      value: 28.605621
+      value: 108.83386
       objectReference: {fileID: 0}
     - target: {fileID: 2068848758, guid: 6cf1b9d5d9fde2c4f9aaa069527eef00, type: 3}
       propertyPath: m_Offset.x
@@ -2086,7 +2086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2068848758, guid: 6cf1b9d5d9fde2c4f9aaa069527eef00, type: 3}
       propertyPath: m_Offset.y
-      value: 12.043472
+      value: 52.157593
       objectReference: {fileID: 0}
     - target: {fileID: 2068848758, guid: 6cf1b9d5d9fde2c4f9aaa069527eef00, type: 3}
       propertyPath: m_UsedByEffector
@@ -2134,11 +2134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550492367814867496, guid: 6cf1b9d5d9fde2c4f9aaa069527eef00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 163.7
+      value: 251.7
       objectReference: {fileID: 0}
     - target: {fileID: 550492367814867496, guid: 6cf1b9d5d9fde2c4f9aaa069527eef00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 593.7
+      value: 595.1
       objectReference: {fileID: 0}
     - target: {fileID: 550492367814867496, guid: 6cf1b9d5d9fde2c4f9aaa069527eef00, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4215,10 +4215,10 @@ AreaEffector2D:
     m_Bits: 1
   m_UseGlobalAngle: 0
   m_ForceAngle: 90
-  m_ForceMagnitude: 500
+  m_ForceMagnitude: 1500
   m_ForceVariation: 0
   m_ForceTarget: 0
-  m_Drag: 50
+  m_Drag: 0
   m_AngularDrag: 0
 --- !u!1001 &1998242697
 PrefabInstance:
