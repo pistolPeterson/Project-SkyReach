@@ -17,14 +17,19 @@ namespace Platforms
         private Animator anim; 
         public ElectricityState state; //public for debugging purposes
         
+        
+        
         // Start is called before the first frame update
         private void Start()
         {
             playerStun = FindObjectOfType<PlayerStun>();
             anim = GetComponent<Animator>();
+            
             if (playerStun == null) ;
-            Debug.Log("No player stun system in Scene!");
+                Debug.Log("No player stun system in Scene!");
+                
             state = ElectricityState.UnElectrified;
+            anim.enabled = false;
         }
 
         // Update is called once per frame
@@ -80,8 +85,16 @@ namespace Platforms
             
             //if state is electrified 
             //call playerStun.StunPlayer()
-            if(state == ElectricityState.Electrified)
-                playerStun.StunPlayer();
+            if (state == ElectricityState.Electrified)
+            {
+                //freeze player 
+                
+                //stun animation 
+                //playerStun.StunPlayer();
+                
+                //invoke death (//fade in fade out, and reset scene) 
+                GameManager.Instance.Death();
+            }
             
             
         }
