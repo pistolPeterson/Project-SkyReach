@@ -12,13 +12,15 @@ public class PlayerStun : MonoBehaviour
     [SerializeField] private float stunTime = 1f;
     [SerializeField] private float inputDelay = 0.5f;
     [SerializeField] private float launchForce = 10f;
-    [SerializeField] private float launchAngleRange = 20f;
+    [SerializeField] private float launchAngle = 45f;
 
     private PlayerController controller;
+    private GrapplingHook grapplingHook;
 
     private void Awake()
     {
         controller = GetComponent<PlayerController>();
+        grapplingHook = transform.parent.GetComponentInChildren<GrapplingHook>();
         animator = GetComponent<Animator>();
     }
 
@@ -40,6 +42,7 @@ public class PlayerStun : MonoBehaviour
     {
         // Disable player movement
         controller.enabled = false;
+        grapplingHook.enabled = false;
         // freeze player in place
         controller.Body.velocity = Vector2.zero;
         
@@ -52,8 +55,10 @@ public class PlayerStun : MonoBehaviour
         // if the horizontal component is zero, use player's last horizontal input
         // if the horizontal component is not zero, use the horizontal component
         float horizontal = collisionNormal.x == 0 ? controller.LastHorizontalFacingDirection.x : collisionNormal.x;
-        float vertical = collisionNormal.y;
-        Vector2 launchDirection = new Vector2(-Mathf.Sign(horizontal), -Mathf.Sign(vertical)).normalized;
+
+        // convert launch angle to direction
+        Vector2 launchDirection = new Vector2(horizontal * Mathf.Cos(launchAngle * Mathf.Deg2Rad), Mathf.Sin(launchAngle * Mathf.Deg2Rad));
+        
 
         // Apply launch force
         controller.Body.AddForce(launchDirection * launchForce, ForceMode2D.Impulse);
@@ -61,5 +66,6 @@ public class PlayerStun : MonoBehaviour
 
         // Re-enable player movement
         controller.enabled = true;
+        grapplingHook.enabled = true;
     }
 }

@@ -1070,6 +1070,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Felipe
       objectReference: {fileID: 0}
+    - target: {fileID: 6908633723696272387, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: launchAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908633723696272387, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: launchForce
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908633723696272387, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: launchDirection.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908633723696272387, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: launchDirection.y
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
 --- !u!1 &1525576040
@@ -1562,7 +1578,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971376145}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 55.940002, y: -200.26993, z: -10.077683}
+  m_LocalPosition: {x: 216, y: -118.230064, z: -10.077683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1668,11 +1684,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 4
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
