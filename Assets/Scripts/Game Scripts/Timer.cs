@@ -11,7 +11,9 @@ public class Timer : MonoBehaviour
     private bool timerActive = false;
     public float currentTime;
 
-    private float finalTime;  
+    private float finalTime;
+
+    //[SerializeField] private StatisticsData playerData;
     
     
     
@@ -43,12 +45,14 @@ public class Timer : MonoBehaviour
         public void PauseTimer()
         {
             timerActive = false;
+            //playerData.setTime(currentTime);
         }
 
         public void StopTimer()
         {
             timerActive = false;
             finalTime = currentTime;
+            //FindObjectOfType<StatisticsData>().
            
         }
     
