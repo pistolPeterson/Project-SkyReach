@@ -205,6 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7176458093793231739}
+  stunTime: 0.5
+  inputDelay: 0.5
+  launchForce: 250
+  launchAngleRange: 20
 --- !u!114 &6891011946920984407
 MonoBehaviour:
   m_ObjectHideFlags: 0
