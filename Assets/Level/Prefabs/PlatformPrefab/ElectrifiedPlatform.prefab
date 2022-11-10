@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2415942532920955549}
   - component: {fileID: 2207436423239826700}
   - component: {fileID: 7522124915614623105}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: ElectrifiedPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

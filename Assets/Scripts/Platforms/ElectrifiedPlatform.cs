@@ -23,12 +23,24 @@ namespace Platforms
         {
             anim = GetComponent<Animator>();
             state = ElectricityState.UnElectrified;
-            anim.enabled = false;
+            anim.enabled = true;
+        }
+
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.GetComponent<PlayerController>())
+            {
+                Debug.Log("time to stun then die");
+                GameManager.Instance.Death();
+            }
+    
         }
 
         // Update is called once per frame
         private void Update()
         {
+            return;
             timer+=Time.deltaTime;
 
             if (!(timer > electricityStateTime)) return;
