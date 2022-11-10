@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 public class BreakingPlatform : MonoBehaviour
 {
-    public int timer;
+    public float timer;
     // Start is called before the first frame update
     void Start()
     {

@@ -185,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91baed759e3a15944a62c6b79fb08b97
-      internalID: 507343937
+      spriteID: ad17f7abe35716343b6bff337bcf24ba
+      internalID: -2082676364
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     nameFileIdTable:
       Tiles-Sheet-bg 1_0: -1003031939
       Tiles-Sheet-bg_0: 6982215
-      Tiles-Sheet-bg 1_1: 507343937
+      Tiles-Sheet-bg 1_1: -2082676364
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
