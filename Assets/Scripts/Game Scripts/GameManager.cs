@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
            var lvlChanger = FindObjectOfType<LevelChanger>();
            if(lvlChanger)
-               lvlChanger.FadeToLevel(1);
+               lvlChanger.FadeToLevel(2);
     }
    
 
