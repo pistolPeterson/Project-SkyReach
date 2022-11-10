@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 7176458093793231739}
   - component: {fileID: 1954464518}
   - component: {fileID: 6908633723696272387}
-  - component: {fileID: 6891011946920984407}
   m_Layer: 0
   m_Name: Body
   m_TagString: Player
@@ -205,20 +204,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7176458093793231739}
---- !u!114 &6891011946920984407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328089123933327733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 081677ee9185a884b9147dd6a9f52b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLocation: {fileID: 1328089124666387264}
-  deathHeightDistance: 15
+  stunTime: 1
+  inputDelay: 0.5
+  launchForce: 10
+  launchAngle: 45
 --- !u!1 &1328089124654131163
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1328089124654131162
 Transform:
   m_ObjectHideFlags: 0

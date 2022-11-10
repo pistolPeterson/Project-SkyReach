@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,9 +21,15 @@ public class LevelChanger : MonoBehaviour
        
     }
 
-    public void FadeToLevel(int levelIndex)
+    public void FadeToLevel(int levelIndex, float timeToWait = 1.0f)
     {
         levelToLoad = levelIndex;
+        StartCoroutine(WaitToSetTrigger(timeToWait));
+    }
+
+    private IEnumerator WaitToSetTrigger(float timeToWait)
+    {
+        yield return new WaitForSeconds(timeToWait); 
         anim.SetTrigger("FadeOut");
     }
 

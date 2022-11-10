@@ -6,15 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Level/Scenes/Gameplay Scenes/MainMenu.unity
-    guid: e6389798d8dbcef459484369db19b71f
+    path: Assets/Level/Scenes/Gameplay Scenes/MainMenu_1.unity
+    guid: bac4ff5a2491d0343bc71a477fcfdc03
   - enabled: 1
-    path: Assets/Level/Scenes/Sandbox Scenes/PeteLevel.unity
-    guid: 6c7017d7865386e41ad2578e888d4ede
+    path: Assets/Level/Scenes/Gameplay Scenes/Level 1 Official.unity
+    guid: 917b3c4a22ce1974eaf17ea80106147b
   - enabled: 1
     path: Assets/Level/Scenes/Sandbox Scenes/PeteEndSurveyScene.unity
     guid: a5b4393f41ec65640ad4d321e494b316
-  - enabled: 1
-    path: Assets/Level/Scenes/Gameplay Scenes/TestLevel.unity
-    guid: b6f609b400c28e44b986f5703f7b561d
   m_configObjects: {}
