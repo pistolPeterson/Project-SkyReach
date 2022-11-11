@@ -16,10 +16,14 @@ namespace SkyReach.Player
         const string playerRunLeft = "PlayerRunLeft";
         const string playerJumpingRight = "PlayerJumpingRight";
         const string playerJumpingLeft = "PlayerJumpingLeft";
-        
-        [SerializeField] private PlayerController playerController; 
-        private Vector2 zeroVector = new Vector2(0,0);
+        const string playerFallLeft = "PlayerFallLeft";
+        const string playerFallRight = "PlayerFallRight";
 
+        
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private float fallSpeedThreshold = -20.1f;
+        private Vector2 zeroVector = new Vector2(0,0);
+        private bool isFalling = false;
         void Start()
         {
             animator = GetComponent<Animator>();        
@@ -27,13 +31,29 @@ namespace SkyReach.Player
 
         void Update()
         {
+            CheckIfFalling();
             ControlAnimation();
         }
 
         void ControlAnimation()
         {
             //Gets the player facing from the player controller
-            facing = playerController.LastHorizontalFacingDirection.x;        
+            facing = playerController.LastHorizontalFacingDirection.x;
+
+
+            if (isFalling)
+            {
+                if (facing > 0)
+                {
+                    ChangeAnimationState(playerFallRight);
+                }
+                else
+                {
+                    ChangeAnimationState(playerFallLeft);
+                }
+                return;
+            }
+            
             
                 //Plays walk right animation when player is moving right
                 if (facing > 0) 
@@ -69,11 +89,23 @@ namespace SkyReach.Player
                     }
                 }                
         }
-                
+
+        private void CheckIfFalling()
+        {
+            if (playerController.Body.velocity.y <= fallSpeedThreshold)
+            {
+                isFalling = true;
+            }
+            else
+            {
+                isFalling = false;
+            }
+        }
         void ChangeAnimationState(string newState)
         {
             //stops the same animation from interrupting itself
             if (currentState == newState) return;
+            
             //play animation
             animator.Play(newState);
 
