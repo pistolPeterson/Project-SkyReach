@@ -21,7 +21,7 @@ public class LevelChanger : MonoBehaviour
        
     }
 
-    public void FadeToLevel(int levelIndex, float timeToWait = 1.0f)
+    public void FadeToLevel(int levelIndex, float timeToWait = 0.5f)
     {
         levelToLoad = levelIndex;
         StartCoroutine(WaitToSetTrigger(timeToWait));

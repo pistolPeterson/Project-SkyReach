@@ -91,9 +91,7 @@ public class GameManager : MonoBehaviour
         if (currentGameState != GameState.Level1) return; 
         //state = death
         currentGameState = GameState.Death;
-        
         //start fading out and reset scene 
-        
         OnPlayerDeath?.Invoke();
         
         

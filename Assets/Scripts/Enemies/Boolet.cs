@@ -38,6 +38,7 @@ namespace SkyReach.Enemies.Projectiles
         {
             if (collision.gameObject.GetComponent<PlayerController>())
             {
+                
                 GameManager.Instance.Death();
 
                 Destroy(gameObject);
