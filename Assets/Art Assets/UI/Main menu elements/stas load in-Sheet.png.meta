@@ -132,19 +132,19 @@ TextureImporter:
       name: stas load in-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 21
-        width: 131
-        height: 87
+        x: 62
+        y: 61
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1625509ae459e2a4dab418827c3a8c1b
-      internalID: 656336165
+      spriteID: e30743cf5ed40fb4b81504147819be49
+      internalID: -1693468037
       vertices: []
       indices: 
       edges: []
@@ -153,19 +153,19 @@ TextureImporter:
       name: stas load in-Sheet_1
       rect:
         serializedVersion: 2
-        x: 639
-        y: 21
-        width: 139
-        height: 87
+        x: 650
+        y: 53
+        width: 123
+        height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d17b287a5c6b4c541bb30e107d830d2a
-      internalID: 514177742
+      spriteID: 78af2668d4461404dbc953ed99f48f88
+      internalID: -846199202
       vertices: []
       indices: 
       edges: []
@@ -174,19 +174,19 @@ TextureImporter:
       name: stas load in-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 28
-        width: 149
-        height: 80
+        x: 1290
+        y: 58
+        width: 123
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8f25be270faffe418534d20198ee45e
-      internalID: 643602656
+      spriteID: 4f9a877c1f054c64090eb3ccbbe3f27f
+      internalID: 38364342
       vertices: []
       indices: 
       edges: []
@@ -195,19 +195,19 @@ TextureImporter:
       name: stas load in-Sheet_3
       rect:
         serializedVersion: 2
-        x: 1917
-        y: 38
-        width: 158
-        height: 70
+        x: 1920
+        y: 60
+        width: 142
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e63512e7e54b7b943ab40f2e725c8abf
-      internalID: 355858088
+      spriteID: 1866b94548d208d4290fdb0f7ff2ba38
+      internalID: 465019596
       vertices: []
       indices: 
       edges: []
@@ -216,19 +216,19 @@ TextureImporter:
       name: stas load in-Sheet_4
       rect:
         serializedVersion: 2
-        x: 2556
-        y: 44
-        width: 161
-        height: 64
+        x: 2560
+        y: 62
+        width: 150
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aec4f181d5d6e24ebdb6364f9130271
-      internalID: 1011721821
+      spriteID: 88ed5669586766d449cc228a2364f2da
+      internalID: 1057328203
       vertices: []
       indices: 
       edges: []
@@ -237,19 +237,19 @@ TextureImporter:
       name: stas load in-Sheet_5
       rect:
         serializedVersion: 2
-        x: 3195
-        y: 1.3333359
-        width: 213.33333
-        height: 106.666664
+        x: 3210
+        y: 62
+        width: 123
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ed1536f592434a478a62ff7312a1ccb
-      internalID: -510447635
+      spriteID: eb52f47f03a02944d87f243714828e84
+      internalID: -528325834
       vertices: []
       indices: 
       edges: []
@@ -265,12 +265,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      stas load in-Sheet_1: 514177742
-      stas load in-Sheet_3: 355858088
-      stas load in-Sheet_5: -510447635
-      stas load in-Sheet_0: 656336165
-      stas load in-Sheet_2: 643602656
-      stas load in-Sheet_4: 1011721821
+      stas load in-Sheet_1: -846199202
+      stas load in-Sheet_3: 465019596
+      stas load in-Sheet_5: -528325834
+      stas load in-Sheet_0: -1693468037
+      stas load in-Sheet_2: 38364342
+      stas load in-Sheet_4: 1057328203
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

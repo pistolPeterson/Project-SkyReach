@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b3df37c88081f194f88397b8bf0dac85
+guid: 6270231f7dfe4fd42b281aa3e0da2186
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,286 +117,286 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Options screen idle-Sheet_0
+      name: Stats_Words_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 640
-        height: 320
+        x: 97
+        y: 293
+        width: 111
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18135dc1308b9e94fbda1ec72c39eb28
-      internalID: 174417719
+      spriteID: f807a247099297c489b6a3ea423c7ec9
+      internalID: -1772439353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_1
+      name: Stats_Words_1
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 640
-        height: 320
+        x: 736
+        y: 282
+        width: 112
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e0a487d12e90334d9231b6b34b7b528
-      internalID: -597855617
+      spriteID: 02cb52bea7e866941a43a683f4229538
+      internalID: 1172860120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_2
+      name: Stats_Words_2
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 640
-        height: 320
+        x: 651
+        y: 222
+        width: 207
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e87a6da9f69f2e745b6330ebd1ae7560
-      internalID: 1031931117
+      spriteID: 248386337f19cf545b7b8d24ed84c2ea
+      internalID: 1459566098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_3
+      name: Stats_Words_3
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 640
-        height: 320
+        x: 653
+        y: 194
+        width: 114
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4d1c79bf25f5dd4c9d4af17b572ead8
-      internalID: 880962071
+      spriteID: 7859bc6df5da07f40ab3dcf9f67b50da
+      internalID: -1894754069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_4
+      name: Stats_Words_4
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 640
-        height: 320
+        x: 652
+        y: 168
+        width: 205
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff3712fcb5a2c1842b25863b72155069
-      internalID: 1270256981
+      spriteID: 845e359f6d2b87145b034addade4aeb7
+      internalID: 1290665709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_5
+      name: Stats_Words_5
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 640
-        height: 320
+        x: 655
+        y: 141
+        width: 101
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d692345a10e22046aaf67ff26433d19
-      internalID: -1159962290
+      spriteID: f1db0b7409d497442856f900f2702a6e
+      internalID: -1622485298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_6
+      name: Stats_Words_6
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 640
-        height: 320
+        x: 652
+        y: 112
+        width: 142
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 632a18f872f7e274a80d696a582a77a7
-      internalID: -991895930
+      spriteID: 496a7473289f1f94c989843363b1523c
+      internalID: 649742236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_7
+      name: Stats_Words_7
       rect:
         serializedVersion: 2
-        x: 4480
-        y: 0
-        width: 640
-        height: 320
+        x: 1375
+        y: 271
+        width: 114
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5669a8f1b338587418efc5f4ca8e5858
-      internalID: 1511956763
+      spriteID: a3fb3c513f8a84647b9ccd74d7c3211e
+      internalID: -135005809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_8
+      name: Stats_Words_8
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 0
-        width: 640
-        height: 320
+        x: 1291
+        y: 218
+        width: 207
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25d78492467d4684e8e07b557397683f
-      internalID: -1423994321
+      spriteID: f2db9a0d9dd273348921dd3be698cce0
+      internalID: 1532728844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_9
+      name: Stats_Words_9
       rect:
         serializedVersion: 2
-        x: 5760
-        y: 0
-        width: 640
-        height: 320
+        x: 1293
+        y: 189
+        width: 115
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08c9ca1cc2f4cbb4bb2a555e449277c9
-      internalID: -445743457
+      spriteID: 8688e4cc6f3336a4988402eb85d9c447
+      internalID: -1241168453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_10
+      name: Stats_Words_10
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 0
-        width: 640
-        height: 320
+        x: 1291
+        y: 163
+        width: 206
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c27f214a996db194393b884e9d081f5a
-      internalID: -249677037
+      spriteID: ccdfe5e83082ab3458961140e616f7aa
+      internalID: 1634905520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_11
+      name: Stats_Words_11
       rect:
         serializedVersion: 2
-        x: 7040
-        y: 0
-        width: 640
-        height: 320
+        x: 1292
+        y: 135
+        width: 104
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6abb1783d9d305d4681226d9cdf8e33f
-      internalID: -2123734463
+      spriteID: 4125a19ade8119a48813c55ed7a0acd2
+      internalID: 1117236164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_12
+      name: Stats_Words_12
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 0
-        width: 640
-        height: 320
+        x: 1292
+        y: 107
+        width: 142
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8e1aae3c424a2e4e9bdeb4b93386901
-      internalID: -1909575409
+      spriteID: b5b3924f016c6f24898cea6c3071d115
+      internalID: -2058803300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Options screen idle-Sheet_13
+      name: Stats_Words_13
       rect:
         serializedVersion: 2
-        x: 8320
-        y: 0
-        width: 640
-        height: 320
+        x: 1931
+        y: 212
+        width: 207
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,8 +404,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2aeef6596ad00f40ac31b4cd39604e3
-      internalID: -1505675190
+      spriteID: 4a9b951a872638d4fb1928f86e605bd7
+      internalID: -649949759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stats_Words_14
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 184
+        width: 114
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ac68dbf94800a4aa021babc7bb2dda
+      internalID: 186465427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stats_Words_15
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 157
+        width: 207
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5f45da2d85e1c4e8cc298cec5ad226
+      internalID: 2080759884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stats_Words_16
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 129
+        width: 108
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f0c5c21d796c14895550ea3f837151
+      internalID: 996837914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stats_Words_17
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 100
+        width: 142
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6f65063ab09a84b853d779eba8fe1e
+      internalID: 570089364
       vertices: []
       indices: 
       edges: []
@@ -421,20 +505,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Options screen idle-Sheet_2: 1031931117
-      Options screen idle-Sheet_9: -445743457
-      Options screen idle-Sheet_0: 174417719
-      Options screen idle-Sheet_12: -1909575409
-      Options screen idle-Sheet_6: -991895930
-      Options screen idle-Sheet_4: 1270256981
-      Options screen idle-Sheet_10: -249677037
-      Options screen idle-Sheet_5: -1159962290
-      Options screen idle-Sheet_13: -1505675190
-      Options screen idle-Sheet_7: 1511956763
-      Options screen idle-Sheet_8: -1423994321
-      Options screen idle-Sheet_3: 880962071
-      Options screen idle-Sheet_11: -2123734463
-      Options screen idle-Sheet_1: -597855617
+      Stats_Words_7: -135005809
+      Stats_Words_15: 2080759884
+      Stats_Words_9: -1241168453
+      Stats_Words_2: 1459566098
+      Stats_Words_3: -1894754069
+      Stats_Words_13: -649949759
+      Stats_Words_11: 1117236164
+      Stats_Words_14: 186465427
+      Stats_Words_17: 570089364
+      Stats_Words_5: -1622485298
+      Stats_Words_8: 1532728844
+      Stats_Words_6: 649742236
+      Stats_Words_16: 996837914
+      Stats_screen-Sheet_2: 993767034
+      Stats_screen-Sheet_4: -366954781
+      Stats_Words_10: 1634905520
+      Stats_Words_1: 1172860120
+      Stats_Words_4: 1290665709
+      Stats_Words_12: -2058803300
+      Stats_screen-Sheet_1: 676035817
+      Stats_screen-Sheet_0: -617917760
+      Stats_screen-Sheet_3: 924346754
+      Stats_Words_0: -253782991
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

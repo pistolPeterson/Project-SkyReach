@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 587d0bc451bd7364ca988a169c4c8537
+guid: 1a8d9d5a65263b447a0a3b9cfd46605e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,43 +117,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: resume hover-Sheet_0
+      name: Stats_Screen_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 125
-        width: 134
-        height: 28
+        x: 0
+        y: 0
+        width: 640
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c46d34efbbdd754083435119e1d9c48
-      internalID: -366650684
+      spriteID: d16ffba9bf1a4674fa4a4325bdaa9ae6
+      internalID: 1117912170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: resume hover-Sheet_1
+      name: Stats_Screen_1
       rect:
         serializedVersion: 2
-        x: 1317
-        y: 126
-        width: 132
-        height: 26
+        x: 640
+        y: 0
+        width: 640
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86a352c5548a88645a6d4dfce74de09b
-      internalID: 1071058530
+      spriteID: 34633bcfe6bae9d4c9ce3d6050969ff5
+      internalID: -2027520432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stats_Screen_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 640
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2a3775c9d18314c973b0e1771cfe48
+      internalID: -1061453501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stats_Screen_3
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 640
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e810412f2f68a14aba80ac5a9be2ac0
+      internalID: 420459637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stats_Screen_4
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 640
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662ac7efd520d8e48ad3684db86d099c
+      internalID: -167942408
       vertices: []
       indices: 
       edges: []
@@ -169,8 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      resume hover-Sheet_1: 1071058530
-      resume hover-Sheet_0: -366650684
+      Stats_Screen_3: 420459637
+      Stats_Screen_0: 1117912170
+      Stats_Screen_1: -2027520432
+      Stats_Screen_2: -1061453501
+      Stats_Screen_4: -167942408
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1247,7 +1247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -83020585, guid: 785c07848b0cd9a4d89fd3430fca4740, type: 3}
+  m_Sprite: {fileID: 2024970727, guid: 785c07848b0cd9a4d89fd3430fca4740, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1406,13 +1406,14 @@ GameObject:
   - component: {fileID: 7678719848618794969}
   - component: {fileID: 7678719848618794970}
   - component: {fileID: 7800021098578207259}
+  - component: {fileID: 3690866168959197324}
   m_Layer: 5
   m_Name: BackgroundLoadUpAnimationMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7678719848618794971
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1491,6 +1492,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3690866168959197324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7678719848618794972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506f844aebef837469b37818479f6a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAnimLoadObj: {fileID: 7678719848618794972}
 --- !u!1 &7678719848818730081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,7 +2361,7 @@ GameObject:
   - component: {fileID: 7678719849225795119}
   - component: {fileID: 7678719849225795088}
   - component: {fileID: 7678719849225795089}
-  - component: {fileID: 7678719849225795115}
+  - component: {fileID: 4268463709202844536}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -2549,7 +2563,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!95 &7678719849225795115
+--- !u!95 &4268463709202844536
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -2559,7 +2573,7 @@ Animator:
   m_GameObject: {fileID: 7678719849225795091}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2b8548e7520b55c49a08114d3e8e2113, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0412d5857a326dd46b2b182f7d377306, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2732,7 +2746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7606316773379115904
 RectTransform:
   m_ObjectHideFlags: 0
