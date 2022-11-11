@@ -18,7 +18,7 @@ public class EndGameTrigger : MonoBehaviour
     {
         PlayerController player = other.GetComponent<PlayerController>(); 
         
-        if(player == null || gameManager.GetCurrentGameState() == GameState.EndGame ) return;
+        if(player == null || gameManager.CurrentGameState == GameState.EndGame ) return;
        
         GameManager.Instance.EndGame(); 
     }

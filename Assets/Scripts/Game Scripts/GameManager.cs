@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [SerializeField] private GameState currentGameState;
+    public GameState CurrentGameState;
     
     public static event Action endGame;
     public static event Action OnPlayerDeath;
@@ -23,40 +23,11 @@ public class GameManager : MonoBehaviour
         else
             Instance = this;
     }
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-       Spawn();
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
-    }
-
-   
-    public void Spawn()
-    {
-        currentGameState = GameState.Spawn; 
-       
-      
-        
-       
-        Level1State();
-    }
-
-    public void Level1State()
-    {
-        currentGameState = GameState.Level1; 
-
-   
-    }
     
+
     public void EndGame() //victory condition
     {
-        currentGameState = GameState.EndGame; 
+        CurrentGameState = GameState.EndGame; 
        
         endGame?.Invoke();
       
@@ -69,24 +40,18 @@ public class GameManager : MonoBehaviour
     public void Death()
     {
         
-        currentGameState = GameState.Death;
+        CurrentGameState = GameState.Death;
         
         OnPlayerDeath?.Invoke();
         var lvlChanger = FindObjectOfType<LevelChanger>();
         if(lvlChanger) lvlChanger.FadeToLevel(1); //restart level
     }
     
-    public GameState GetCurrentGameState()
-    {
-        return currentGameState;
-    }
+
 }
 
 public enum GameState
 {
-    Base,
-    Spawn,
-    Level1,
     Death,
     EndGame
 }
