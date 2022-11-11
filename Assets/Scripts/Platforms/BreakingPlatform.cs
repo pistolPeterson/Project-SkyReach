@@ -6,7 +6,6 @@ using SkyReach.Player;
 
 public class BreakingPlatform : MonoBehaviour
 {
-    [SerializeField] GameObject breakingPlatform;
     [SerializeField] float respawnTimer = 2.0f;
     [SerializeField] float turnOffTimer = 1.5f; 
     // Start is called before the first frame update
@@ -34,8 +33,8 @@ public class BreakingPlatform : MonoBehaviour
     IEnumerator TogglePlatformOff()
     {
         yield return new WaitForSeconds(turnOffTimer);
-        breakingPlatform.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = false;
-        breakingPlatform.GetComponent<Collider2D>().enabled = false;
+       GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         StartCoroutine(TogglePlatformOn());
 
     }
@@ -43,8 +42,8 @@ public class BreakingPlatform : MonoBehaviour
     IEnumerator TogglePlatformOn()
     {
         yield return new WaitForSeconds(respawnTimer);
-        breakingPlatform.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = true;
-        breakingPlatform.GetComponent<Collider2D>().enabled = true;
+        GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = true;
+        GetComponent<Collider2D>().enabled = true;
        
     }
 }

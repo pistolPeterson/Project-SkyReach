@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//This script handles animations
+//This script handles the player animations. 
 namespace SkyReach.Player 
 {
     public class PlayerAnimation : MonoBehaviour
@@ -27,10 +27,10 @@ namespace SkyReach.Player
 
         void Update()
         {
-            controlAnimation();
+            ControlAnimation();
         }
 
-        void controlAnimation()
+        void ControlAnimation()
         {
             //Gets the player facing from the player controller
             facing = playerController.LastHorizontalFacingDirection.x;        
@@ -42,7 +42,6 @@ namespace SkyReach.Player
                     if (!playerController.IsGrounded())
                     {
                        ChangeAnimationState(playerJumpingRight); 
-                       //Debug.Log("right jumping anim plays here"); 
                     }
                     else if (playerController.FacingDirection == zeroVector) 
                     {                   
@@ -59,7 +58,6 @@ namespace SkyReach.Player
                    if (!playerController.IsGrounded())
                     {
                        ChangeAnimationState(playerJumpingLeft); 
-                       //Debug.Log("left jumping anim plays here"); 
                     }                   
                     else if (playerController.FacingDirection == zeroVector) 
                     {                        
