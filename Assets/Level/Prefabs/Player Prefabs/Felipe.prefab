@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1508582128965813855}
+  fallSpeedThreshold: -100
 --- !u!114 &6908633723696272387
 MonoBehaviour:
   m_ObjectHideFlags: 0

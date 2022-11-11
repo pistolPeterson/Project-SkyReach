@@ -40,9 +40,9 @@ namespace Platforms
         // Update is called once per frame
         private void Update()
         {
-            return;
+           
             timer+=Time.deltaTime;
-
+            /*
             if (!(timer > electricityStateTime)) return;
             
             switch (state)
@@ -78,7 +78,7 @@ namespace Platforms
                     break;
 
             }
-
+            */
 
 
         }

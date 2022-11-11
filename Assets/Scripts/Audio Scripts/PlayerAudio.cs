@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using SkyReach.Player;
 using UnityEngine;
-
+/// <summary>
+/// The audio system for the player itself including the jump, landing sound, stunned/hit sound
+/// </summary>
 public class PlayerAudio : MonoBehaviour
 {
     [SerializeField] private AudioSource source;

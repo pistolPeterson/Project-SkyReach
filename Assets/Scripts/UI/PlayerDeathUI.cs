@@ -34,8 +34,5 @@ public class PlayerDeathUI : MonoBehaviour
         playerDeathAnimationPanel.SetActive(true);
         anim.SetTrigger("PlayerDeathTrigger");
         playerDeathBackgroundPanel.SetActive(true);
-        
-       
-      
     }
 }
