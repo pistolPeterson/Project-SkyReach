@@ -29,7 +29,6 @@ public class BreakingPlatform : MonoBehaviour
         
         //Turns platform off
         StartCoroutine(TogglePlatformOff());
-        Debug.Log("Turning platform off, running respawn coroutine");
     }
     //Turns platform off, calls the turn platform on coroutine
     IEnumerator TogglePlatformOff()
@@ -44,10 +43,8 @@ public class BreakingPlatform : MonoBehaviour
     IEnumerator TogglePlatformOn()
     {
         yield return new WaitForSeconds(respawnTimer);
-        Debug.Log("Waited 1 second ");
         breakingPlatform.GetComponent<SpriteRenderer>().GetComponent<Renderer>().enabled = true;
         breakingPlatform.GetComponent<Collider2D>().enabled = true;
        
     }
 }
-
