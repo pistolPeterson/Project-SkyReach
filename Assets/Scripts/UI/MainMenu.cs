@@ -7,9 +7,20 @@ namespace SkyReach.UI
 {
     public class MainMenu : MonoBehaviour
     {
+        [SerializeField] private GameObject statPanel;
+        
+        [SerializeField] private GameObject optionPanel;
+        [SerializeField] private GameObject creditPanel;
         public void PlayGame()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
+
+        public void ShowStatPanel()
+        {
+            statPanel.gameObject.SetActive(true);
+        }
+     
     }
 }

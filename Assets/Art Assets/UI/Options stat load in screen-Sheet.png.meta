@@ -115,7 +115,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Options stat load in screen-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 77
+        width: 65
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9795526e84daf41abc21f35012f686
+      internalID: 2107507739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Options stat load in screen-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 69
+        width: 66
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b60e20bd2b35bf46a54282e1b5f74dd
+      internalID: -592040231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +168,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Options stat load in screen-Sheet_9: -999157573
+      Options stat load in screen-Sheet_1: -592040231
+      Options stat load in screen-Sheet_3: -415962493
+      Options stat load in screen-Sheet_8: 443060896
+      Options stat load in screen-Sheet_2: 1273914895
+      Options stat load in screen-Sheet_6: -1333002517
+      Options stat load in screen-Sheet_4: -379947942
+      Options stat load in screen-Sheet_7: -940988894
+      Options stat load in screen-Sheet_0: 2107507739
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

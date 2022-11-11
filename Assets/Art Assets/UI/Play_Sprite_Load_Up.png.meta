@@ -137,6 +137,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Play_Sprite_Load_Up_0
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 96
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7edcb16d2ccbc4e9f59aee7a202124
+      internalID: -12440415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play_Sprite_Load_Up_1
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 83
+        width: 502
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db05e5ccf3dba5744b4f5422db846951
+      internalID: -879550161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play_Sprite_Load_Up_2
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 85
+        width: 314
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c809314239e1a4b45bfa9ee31ab93c32
+      internalID: 495159903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play_Sprite_Load_Up_3
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 93
+        width: 246
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64b7c45ea7eec647992a4af61b553ca
+      internalID: 155028330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play_Sprite_Load_Up_4
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 98
+        width: 295
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c03eb1f0ce72248afe2e6866121ad7
+      internalID: 560349693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -148,7 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Play_Sprite_Load_Up_2: 495159903
+      Play_Sprite_Load_Up_1: -879550161
       Play_Button: 1822566105
+      Play_Sprite_Load_Up_4: 560349693
+      Play_Sprite_Load_Up_0: -12440415
+      Play_Sprite_Load_Up_3: 155028330
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
