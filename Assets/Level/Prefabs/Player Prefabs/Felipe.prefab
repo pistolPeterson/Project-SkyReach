@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1954464518}
   - component: {fileID: 6908633723696272387}
   - component: {fileID: 5029440442382364020}
+  - component: {fileID: 6250296403786641395}
   m_Layer: 0
   m_Name: Body
   m_TagString: Player
@@ -224,6 +225,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 5158703598386983337}
   jumpSfx: {fileID: 8300000, guid: 929c73e419467cc43a9075559403349b, type: 3}
+  groundedSfx: {fileID: 8300000, guid: 407c0f4a4c267cb45afea8e5164eb191, type: 3}
+  hookBlast: {fileID: 8300000, guid: 731acc1c239f84f429aa30e84e6a98b4, type: 3}
+  playerController: {fileID: 1508582128965813855}
+--- !u!81 &6250296403786641395
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328089123933327733}
+  m_Enabled: 1
 --- !u!1 &1328089124654131163
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,9 +527,9 @@ AudioSource:
   m_GameObject: {fileID: 5110733757550534041}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2909027985078557632, guid: cd42e2d1e6d33094d8a8c2fcabac75c9, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
