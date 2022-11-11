@@ -67,7 +67,6 @@ public class GameManager : MonoBehaviour
     
     public void EndGame() //victory condition
     {
-        Debug.Log("In End game state");
         currentGameState = GameState.EndGame; 
         //stop timer 
         timer.StopTimer();
