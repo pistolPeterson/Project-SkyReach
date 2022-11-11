@@ -17,10 +17,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private StatisticsData stats;
 
-    [SerializeField] private Transform initPlayerFallAnimLocation;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject playerObj;
     public static event Action endGame;
+    public static event Action OnPlayerDeath;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-       FallingAnimation();
+       Spawn();
     }
 
     // Update is called once per frame
@@ -42,18 +42,14 @@ public class GameManager : MonoBehaviour
     }
 
    
-    public void FallingAnimation()
+    public void Spawn()
     {
-        currentGameState = GameState.FallAnimationState; 
+        currentGameState = GameState.Spawn; 
         //disable player input 
         playerController.OnDisable();
-        //play falling animation, player splats into ground 
-        playerObj.transform.position = initPlayerFallAnimLocation.position;
+      
         
-        //play somersault anim 
-        
-
-        //go to lvl 1 state
+       
         Level1State();
     }
 
@@ -77,8 +73,7 @@ public class GameManager : MonoBehaviour
         timer.StopTimer();
        
         endGame?.Invoke();
-        //record time for statistics 
-        //disable movement 
+      
         //play end game music
         
         //in a few seconds go to another scene 
@@ -98,7 +93,10 @@ public class GameManager : MonoBehaviour
         currentGameState = GameState.Death;
         
         //start fading out and reset scene 
-       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        OnPlayerDeath?.Invoke();
+        
+        
        var lvlChanger = FindObjectOfType<LevelChanger>();
        if(lvlChanger)
            lvlChanger.FadeToLevel(1);
@@ -114,16 +112,11 @@ public class GameManager : MonoBehaviour
         return currentGameState;
     }
 }
-//states 
-//base 
-//FallAnimState
-//lvl 1 
-//death 
-//end game (victory)
+
 public enum GameState
 {
     Base,
-    FallAnimationState,
+    Spawn,
     Level1,
     Death,
     EndGame

@@ -32,6 +32,7 @@ namespace SkyReach.Player
             //method that increase jumps
             PlayerController.jump += setJumps;
             GrapplingHook.hook += setHooks;
+            GameManager.OnPlayerDeath += setDeaths; 
         }
 
         void OnDisable()
@@ -39,6 +40,8 @@ namespace SkyReach.Player
             //unsubscribe 
             PlayerController.jump -= setJumps;
             GrapplingHook.hook -= setHooks;
+            GameManager.OnPlayerDeath -= setDeaths; 
+
         }
 
         void setJumps()

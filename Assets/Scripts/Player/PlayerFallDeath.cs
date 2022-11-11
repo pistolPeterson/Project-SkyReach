@@ -20,6 +20,7 @@ public class PlayerFallDeath : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         currentHeight = playerLocation.position.y; 
         currentDeathHeight = currentHeight - deathHeightDistance; 
     }
@@ -28,6 +29,8 @@ public class PlayerFallDeath : MonoBehaviour
     void Update()
     {
         CalculateHeights();
+        Debug.Log("current Death heigght: " + currentDeathHeight);
+        Debug.Log("current  heigght: " + currentHeight);
     }
 
     private void CalculateHeights()
@@ -49,6 +52,7 @@ public class PlayerFallDeath : MonoBehaviour
             //freeze player at that point
             //play glitch animation
            //call death ( //fade in fade out, and reset scene) 
+           Debug.Log("dying");
            GameManager.Instance.Death();
       
         }
@@ -57,7 +61,7 @@ public class PlayerFallDeath : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.red;
         var pointA = new Vector3(-10, currentDeathHeight, 0);
         var pointB = new Vector3(10, currentDeathHeight, 0);
         Gizmos.DrawLine(pointA, pointB);

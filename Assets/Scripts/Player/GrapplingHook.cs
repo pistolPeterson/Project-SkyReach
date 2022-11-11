@@ -49,6 +49,21 @@ namespace SkyReach.Player
         public static event Action hook;
 
 
+        public void OnEnable()
+        {
+            if (input == null)
+            {
+                input = new Input();
+                input.Hook.SetCallbacks(this);
+            }
+            input.Enable();
+
+        }
+
+        public void OnDisable()
+        {
+            input.Disable();
+        }
         public void Awake()
         {
             // warn if player is not set

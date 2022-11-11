@@ -10,7 +10,6 @@ namespace Platforms
     public class ElectrifiedPlatform : MonoBehaviour
     {
         public float electricityStateTime = 5f; //change electricity state this amount of seconds
-        private PlayerStun playerStun;
       
 
         private float timer = 0;
@@ -22,19 +21,26 @@ namespace Platforms
         // Start is called before the first frame update
         private void Start()
         {
-            playerStun = FindObjectOfType<PlayerStun>();
             anim = GetComponent<Animator>();
-            
-            if (playerStun == null) ;
-                Debug.Log("No player stun system in Scene!");
-                
             state = ElectricityState.UnElectrified;
-            anim.enabled = false;
+            anim.enabled = true;
+        }
+
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.GetComponent<PlayerController>())
+            {
+                Debug.Log("time to stun then die");
+                GameManager.Instance.Death();
+            }
+    
         }
 
         // Update is called once per frame
         private void Update()
         {
+            return;
             timer+=Time.deltaTime;
 
             if (!(timer > electricityStateTime)) return;
@@ -76,31 +82,6 @@ namespace Platforms
 
 
         }
-
-        private void OnCollisionStay2D(Collision2D collision)
-        {
-            //this verifies that the object that is colliding is the player obj
-            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-            if (playerController == null) return;
-            
-            //if state is electrified 
-            //call playerStun.StunPlayer()
-            if (state == ElectricityState.Electrified)
-            {
-                //freeze player 
-                
-                //stun animation 
-                //playerStun.StunPlayer();
-                
-                //invoke death (//fade in fade out, and reset scene) 
-                GameManager.Instance.Death();
-            }
-            
-            
-        }
-
-       
-
     }
     
     public enum ElectricityState //enum to get the states of the electric platform 
