@@ -46,6 +46,9 @@ namespace SkyReach.Player
         private Rigidbody2D hookBody;
         private Input input;
         private int hookingLayer;
+        
+        //helper variable to determine when player is being pulled by hook
+        private bool isPullingPlayer = false; 
         public static event Action hook;
 
 
@@ -141,10 +144,15 @@ namespace SkyReach.Player
             {
                 if (!hookBody.IsTouching(player.Collider))
                 {
+                    isPullingPlayer = true;
                     // move player towards hook
                     player.Body.AddForce((hookBody.position - player.Body.position).normalized * retractForce);
                 }
-                else StopHook();
+                else
+                {
+                    isPullingPlayer = false;
+                    StopHook();
+                }
             }
         }
 
@@ -183,9 +191,15 @@ namespace SkyReach.Player
             }
         }
 
+        
         void Input.IHookActions.OnAim(InputAction.CallbackContext context)
         {
             aimTarget = context.ReadValue<Vector2>();
+        }
+
+        public bool GetIsPlayerPullingIn()
+        {
+            return isPullingPlayer;
         }
     }
 }

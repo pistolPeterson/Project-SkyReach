@@ -225,9 +225,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 5158703598386983337}
   jumpSfx: {fileID: 8300000, guid: 929c73e419467cc43a9075559403349b, type: 3}
-  groundedSfx: {fileID: 8300000, guid: 407c0f4a4c267cb45afea8e5164eb191, type: 3}
+  groundedSfx: {fileID: 8300000, guid: b21eccdc5d7b2264fad2406f3ee3e7ea, type: 3}
   hookBlast: {fileID: 8300000, guid: 731acc1c239f84f429aa30e84e6a98b4, type: 3}
+  hookRappelSfx: {fileID: 8300000, guid: 061f0192620184540a99aada6a3d9bda, type: 3}
   playerController: {fileID: 1508582128965813855}
+  hook: {fileID: 1328089125714790668}
+  hookState: 3
 --- !u!81 &6250296403786641395
 AudioListener:
   m_ObjectHideFlags: 0

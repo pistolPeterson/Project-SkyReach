@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using SkyReach.Player;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Input = SkyReach.Input;
@@ -15,10 +16,15 @@ public class PlayerAudio : MonoBehaviour, Input.IHookActions
     [SerializeField] private AudioClip jumpSfx;
     [SerializeField] private AudioClip groundedSfx;
     [SerializeField] private AudioClip hookBlast;
+    [SerializeField] private AudioClip hookRappelSfx;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private GrapplingHook hook;
     private bool lastFrameIsGrounded = false;
     
     private Input input;
+    
+    private bool playingGrappleAudio = false;
+    public HookAudioState hookState = HookAudioState.Base;
  
 
     // Start is called before the first frame update
@@ -32,7 +38,7 @@ public class PlayerAudio : MonoBehaviour, Input.IHookActions
         if (playerController.IsGrounded() && !lastFrameIsGrounded && playerController.Body.velocity.y <= 20.0f) 
         {
             //play land sound
-            source.PlayOneShot(groundedSfx);
+            PlayGroundedSound();
             //Debug.Log("playing landing sound ");
             lastFrameIsGrounded = true;
         }
@@ -41,8 +47,49 @@ public class PlayerAudio : MonoBehaviour, Input.IHookActions
             lastFrameIsGrounded = playerController.IsGrounded();
            
         }
+
+        HookAudioStateMachine();
+        if (hook.GetIsPlayerPullingIn() && !playerController.IsGrounded() && !playingGrappleAudio)
+        {
+            Debug.Log("we pullin that player boi");
+            playingGrappleAudio = true;
+        }
+        else
+        {
+            playingGrappleAudio = false;
+        }
+      
+        
     }
 
+    private void HookAudioStateMachine()
+    {
+        switch (hookState)
+        {
+            case HookAudioState.Base:
+                if (hook.GetIsPlayerPullingIn() && !playerController.IsGrounded() && !playingGrappleAudio)
+                {
+                    hookState = HookAudioState.StartRapel; 
+                }
+                break;
+            case HookAudioState.StartRapel:
+                source.clip = hookRappelSfx;
+                source.Play();
+                Debug.Log("playing rappel audio once");
+                hookState = HookAudioState.Rappeling;
+                break; 
+            case HookAudioState.Rappeling:
+                if (playerController.IsGrounded())
+                {
+                    source.Stop();
+                    
+                    Debug.Log("stopping rappel audio");
+                    hookState = HookAudioState.Base;
+                }
+                break;
+            
+        } 
+    }
     private void OnEnable()
     {
         if (input == null)
@@ -68,11 +115,15 @@ public class PlayerAudio : MonoBehaviour, Input.IHookActions
     {
         source.PlayOneShot(hookBlast);
     }
-    public void PlayGroundedSounded()
+    public void PlayGroundedSound()
     {
         source.PlayOneShot(groundedSfx);
     }
 
+    public void PlayHookRappel()
+    {
+        source.PlayOneShot(hookRappelSfx);
+    }
 
     public void OnFire(InputAction.CallbackContext context)
     {
@@ -86,4 +137,12 @@ public class PlayerAudio : MonoBehaviour, Input.IHookActions
     {
         //throw new NotImplementedException();
     }
+}
+
+public enum HookAudioState
+{
+    StartRapel, 
+   Rappeling, 
+   StopRappel, 
+   Base, 
 }
