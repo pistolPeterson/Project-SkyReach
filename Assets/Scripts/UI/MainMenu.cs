@@ -22,5 +22,11 @@ namespace SkyReach.UI
             statPanel.gameObject.SetActive(true);
         }
      
+     
+       public void ShowOptionPanel()
+       {
+           Debug.Log("showing option panel");
+            optionPanel.gameObject.SetActive(true);
+       }
     }
 }
