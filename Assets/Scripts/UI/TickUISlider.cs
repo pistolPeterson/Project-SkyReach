@@ -15,7 +15,7 @@ public class TickUISlider : MonoBehaviour
     }
     public void IncreaseTick()
     {
-        if (index >= 9)
+        if (index > 9)
         {
             index = 9;
             return;
