@@ -21,6 +21,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         currentTime = 0;
+        timerActive = true;
     }
 
     // Update is called once per frame
@@ -35,7 +36,18 @@ public class Timer : MonoBehaviour
         
     }
 
-        public void StartTimer() 
+    private void OnEnable()
+    {
+        GameManager.endGame += StopTimer; 
+        
+    }
+
+    private void OnDisable()
+    {
+        GameManager.endGame -= StopTimer;
+    }
+
+    public void StartTimer() 
         {
             timerActive = true;
         }
@@ -49,7 +61,9 @@ public class Timer : MonoBehaviour
         {
             timerActive = false;
             finalTime = currentTime;
-           
+            var statsData = FindObjectOfType<StatisticsData>();
+            if(statsData)
+                statsData.SetBestRunTime(finalTime);
         }
     
         public void ResetTimer()

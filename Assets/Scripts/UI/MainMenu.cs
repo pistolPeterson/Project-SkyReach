@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using SkyReach.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +13,14 @@ namespace SkyReach.UI
         
         [SerializeField] private GameObject optionPanel;
         [SerializeField] private GameObject creditPanel;
+        [SerializeField] private StatisticCanvasTracker statsUI;
+
+        private void Start()
+        {
+            if (statsUI == null)
+                statsUI = FindObjectOfType<StatisticCanvasTracker>();
+        }
+
         public void PlayGame()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -27,6 +37,7 @@ namespace SkyReach.UI
             creditPanel.gameObject.SetActive(false);
             optionPanel.gameObject.SetActive(false);
             statPanel.gameObject.SetActive(true);
+            statsUI.SetData();
         }
      
      

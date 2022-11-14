@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeathUI : MonoBehaviour
 {
@@ -34,5 +35,13 @@ public class PlayerDeathUI : MonoBehaviour
         playerDeathAnimationPanel.SetActive(true);
         anim.SetTrigger("PlayerDeathTrigger");
         playerDeathBackgroundPanel.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

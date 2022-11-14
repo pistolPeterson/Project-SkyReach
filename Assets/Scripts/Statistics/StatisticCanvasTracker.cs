@@ -5,19 +5,22 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-namespace SkyReach.Player
-{
+
     public class StatisticCanvasTracker : MonoBehaviour
     {
         public TextMeshProUGUI JumpNumber;
+        public TextMeshProUGUI PlayerDeaths;
+        public TextMeshProUGUI PersonalBestTime;
+        public TextMeshProUGUI EnemiesKilled;
+        public TextMeshProUGUI TimesGrappled;
         public StatisticsData playerData;
-        private int temp = 0;
-        //private SaveDataSystem saveData;
+        private int tempData = 0;
+        private float timer = 0.0f;
 
         // Start is called before the first frame update
         void Start()
         {
-            JumpNumber.text = "0";
+           
             if (playerData == null)
             {
                 Debug.Log("playerData is null!");
@@ -27,17 +30,30 @@ namespace SkyReach.Player
         // Update is called once per frame
         void Update()
         {
-            temp = playerData.getJumps();
-            JumpNumber.text = temp.ToString();
-            //Debug.Log("number of jumps: " + playerData.getJumps());
+            //event is fired off that triggers SetData method
         }
 
-        /*public void SetData()
+        public void SetData()
         {
-            saveData = FindObjectOfType<SaveDataSystem>();
+            /*saveData = FindObjectOfType<SaveDataSystem>();
             JumpNumber.text = saveData.LoadData();
-            Console.WriteLine("Hello!");
-        }*/
+            Console.WriteLine("Hello!");*/
+            tempData = playerData.getJumps();
+            JumpNumber.text = tempData.ToString();
+
+            tempData = playerData.getDeaths();
+            PlayerDeaths.text = tempData.ToString();
+
+            tempData = playerData.getHooks();
+            TimesGrappled.text = tempData.ToString();
+
+            tempData = playerData.GetEnemiesKilled();
+            EnemiesKilled.text = tempData.ToString();
+
+            timer = playerData.GetBestRunTime();
+            Debug.Log(timer);
+            PersonalBestTime.text = timer.ToString();
+        }
     }
-}
+
 
