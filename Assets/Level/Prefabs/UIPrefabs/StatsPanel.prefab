@@ -30,9 +30,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 9219285583933920970}
   - {fileID: 1513014904787650004}
   - {fileID: 225939145509379691}
-  - {fileID: 9219285583933920970}
   - {fileID: 4975511114863322111}
   - {fileID: 4203913625378349106}
   - {fileID: 6989794967990132508}
@@ -118,7 +118,7 @@ RectTransform:
   m_Children:
   - {fileID: 225939146552934992}
   m_Father: {fileID: 225939145292501416}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1337,7 +1337,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 225939145292501416}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e69513c60dd7b7428efe83ed2d561c8, type: 3}
+  m_Sprite: {fileID: 326671092, guid: 770c38abeea810b4fb350749cc12be4d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1414,7 +1414,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 225939145292501416}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1449,7 +1449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6e69513c60dd7b7428efe83ed2d561c8, type: 3}
+  m_Sprite: {fileID: 174417719, guid: b3df37c88081f194f88397b8bf0dac85, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1469,7 +1469,7 @@ Animator:
   m_GameObject: {fileID: 8980312808506604756}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2d7a669b8b109534d8ea9515254dcbb3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 41ba35aff6a51444f840d46a2d3e5cd7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

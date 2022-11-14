@@ -16,17 +16,28 @@ namespace SkyReach.UI
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-
+        public void ShowMainMenu()
+        {
+            statPanel.SetActive(false);
+            creditPanel.gameObject.SetActive(false);
+            optionPanel.gameObject.SetActive(false);
+        }
         public void ShowStatPanel()
         {
+            creditPanel.gameObject.SetActive(false);
+            optionPanel.gameObject.SetActive(false);
             statPanel.gameObject.SetActive(true);
         }
      
      
        public void ShowOptionPanel()
        {
-           Debug.Log("showing option panel");
+           statPanel.SetActive(false);
+            creditPanel.gameObject.SetActive(false);
             optionPanel.gameObject.SetActive(true);
+
        }
+       
+       
     }
 }
