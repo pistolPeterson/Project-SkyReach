@@ -150,10 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e5858d47ec5c0449c253db537762e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 700
-  initialJumpForce: 700
-  jumpHoldForce: 700
-  maxJumpTime: 12
+  speed: 500
+  initialJumpForce: 350
+  jumpHoldForce: 300
+  maxJumpTime: 10
   horizontalDrag: 0.1
   gravityScale: 100
   groundRaycastDistance: 0.05
