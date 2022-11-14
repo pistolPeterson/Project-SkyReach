@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class TickUISlider : MonoBehaviour
 {
     public List<GameObject> ticks;
 
-    private int index = 5;
+    private int index = 9;
+
+    [SerializeField] private AudioType audioType;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,19 @@ public class TickUISlider : MonoBehaviour
         {
             ticks[i].SetActive(true);
         }
+
+        var audioSystem = FindObjectOfType<AudioMixerSystem>();
+        if(!audioSystem) return;
+
+        switch (audioType)
+        {
+            case AudioType.Music:
+                audioSystem.SetMusicVolume(index);
+                break; 
+            case AudioType.SFX:
+                audioSystem.SetSfxVolume(index);
+                break;
+        }
     }
     
     private void HideAllTicks()
@@ -53,4 +69,10 @@ public class TickUISlider : MonoBehaviour
             tick.SetActive(false);
         }
     }
+}
+
+public enum AudioType
+{
+    SFX, 
+    Music
 }
