@@ -464,6 +464,7 @@ MonoBehaviour:
   retractForce: 2000
   baseDistance: 1
   maxDistance: 150
+  cooldownLength: 1
   hookMask:
     serializedVersion: 2
     m_Bits: 8
