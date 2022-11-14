@@ -24,6 +24,7 @@ namespace SkyReach.Player
         [SerializeField] private float retractForce = 250f;
         [SerializeField] private float baseDistance = 1f;
         [SerializeField] private float maxDistance = 15f;
+        [SerializeField] private float cooldownLength = 1f;
         [SerializeField] private LayerMask hookMask;
 
         [Header("Player Reference")]
@@ -43,6 +44,7 @@ namespace SkyReach.Player
         private Vector2 lastHorizontalFacingDirection;
         private bool isRetracting;
         private bool isAttached;
+        private bool isInCooldown;
         private Rigidbody2D hookBody;
         private Input input;
         private int hookingLayer;
@@ -60,7 +62,6 @@ namespace SkyReach.Player
                 input.Hook.SetCallbacks(this);
             }
             input.Enable();
-
         }
 
         public void OnDisable()
@@ -88,8 +89,8 @@ namespace SkyReach.Player
             }
             input.Enable();
 
-            // hide hook until fired
-            hookBody.simulated = false;
+            // disable hook until fired
+            StopHook();
 
             // set hooking layer
             hookingLayer = LayerMask.NameToLayer("HookingPlayer");
@@ -102,7 +103,7 @@ namespace SkyReach.Player
             // rotation is towards aimTarget
             if (!hookBody.simulated)
             {
-                Vector2 direction = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(aimTarget) - player.Body.position;
+                Vector2 direction = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(aimTarget) - (Vector2)player.transform.position;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 transform.position = (Vector2)player.transform.position + direction.normalized * baseDistance;
@@ -135,7 +136,7 @@ namespace SkyReach.Player
                 if (hookBody.IsTouchingLayers(hookMask))
                 {
                     isAttached = true;
-                    hook?.Invoke();
+                    hook?.Invoke(); // invoke hook event for stat tracking
                     hookBody.velocity = Vector2.zero;
                     player.gameObject.layer = hookingLayer;
                 }
@@ -172,13 +173,16 @@ namespace SkyReach.Player
         {
             isRetracting = false;
             isAttached = false;
+            hookBody.velocity = Vector2.zero;
             hookBody.simulated = false;
             player.gameObject.layer = 0; // default layer
+            StopCoroutine(Cooldown());
+            StartCoroutine(Cooldown());
         }
 
         void Input.IHookActions.OnFire(InputAction.CallbackContext context)
         {
-            if (context.started)
+            if (context.started && !isInCooldown)
             {
                 if (!hookBody.simulated)
                 {
@@ -201,5 +205,11 @@ namespace SkyReach.Player
         {
             return isPullingPlayer;
         }
-    }
+        IEnumerator Cooldown()
+        {
+            isInCooldown = true;
+            yield return new WaitForSeconds(cooldownLength);
+            isInCooldown = false;
+        }
+    
 }
