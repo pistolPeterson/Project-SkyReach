@@ -22,8 +22,8 @@ namespace SkyReach.Player
         [SerializeField] private float maxJumpTime;
         [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag;
         [SerializeField] private float gravityScale;
-        public static event Action jump; 
-        
+        public static event Action jump;
+
         [Header("Advanced Movement Properties")]
         [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
         [SerializeField] private float jumpBufferTime;
@@ -69,7 +69,7 @@ namespace SkyReach.Player
             input.Disable();
         }
 
-       
+
 
         public void FixedUpdate()
         {
@@ -85,17 +85,23 @@ namespace SkyReach.Player
 
             Vector2 relativeVelocity = Body.velocity;
 
+            // if the ground collider is a moving rigidbody, remove its velocity from the player's velocity
+            Rigidbody2D groundBody = groundCollider.GetComponent<Rigidbody2D>();
+            if (groundBody != null)
+            {
+                relativeVelocity -= groundBody.velocity;
+            }
+
+
             // if grounded, reset coyote timer
             // if grounded on a rigidbody, move the player with the rigidbody
-            if (Body.velocity.y <= 0 && groundCollider != null)
+            if (relativeVelocity.y <= 0 && groundCollider != null)
             {
                 coyoteTimeExpired = false;
                 coyoteTimer = 0.0f;
 
-                Rigidbody2D groundBody = groundCollider.GetComponent<Rigidbody2D>();
                 if (groundBody != null)
                 {
-                    relativeVelocity -= groundBody.velocity;
                     Body.position += groundBody.velocity * Time.fixedDeltaTime;
                 }
             }
@@ -121,7 +127,7 @@ namespace SkyReach.Player
                     jumpHoldTimer = maxJumpTime;
                     jump?.Invoke();
                     didJump = true;
-                   
+
                 }
 
                 // handle jump hold
@@ -186,6 +192,6 @@ namespace SkyReach.Player
             isJumping = context.ReadValueAsButton();
         }
 
-      
+
     }
 }
