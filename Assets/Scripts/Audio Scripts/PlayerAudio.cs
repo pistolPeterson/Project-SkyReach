@@ -51,7 +51,6 @@ public class PlayerAudio : MonoBehaviour, Input.IHookActions
         HookAudioStateMachine();
         if (hook.GetIsPlayerPullingIn() && !playerController.IsGrounded() && !playingGrappleAudio)
         {
-            Debug.Log("we pullin that player boi");
             playingGrappleAudio = true;
         }
         else
@@ -75,7 +74,6 @@ public class PlayerAudio : MonoBehaviour, Input.IHookActions
             case HookAudioState.StartRapel:
                 source.clip = hookRappelSfx;
                 source.Play();
-                Debug.Log("playing rappel audio once");
                 hookState = HookAudioState.Rappeling;
                 break; 
             case HookAudioState.Rappeling:
@@ -83,7 +81,6 @@ public class PlayerAudio : MonoBehaviour, Input.IHookActions
                 {
                     source.Stop();
                     
-                    Debug.Log("stopping rappel audio");
                     hookState = HookAudioState.Base;
                 }
                 break;
