@@ -33,13 +33,11 @@ namespace SkyReach.UI
         {
             if (audioSource == null) Debug.Log("audiosource is still null tho");
             audioSource.PlayOneShot(hoverSfx);
-            Debug.Log("playin hover");
         }
 
         public void PlayClickSfx()
         {
             audioSource.PlayOneShot(clickSfx);
-            Debug.Log("playin click");
 
         }
 

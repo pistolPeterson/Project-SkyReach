@@ -19,24 +19,22 @@ namespace SkyReach.Player
     [RequireComponent(typeof(Rigidbody2D))]
     public class GrapplingHook : MonoBehaviour, Input.IHookActions
     {
-        [Header("Hook Properties")]
-        [SerializeField] private float fireSpeed = 40f;
+        [Header("Hook Properties")] [SerializeField]
+        private float fireSpeed = 40f;
+
         [SerializeField] private float retractForce = 250f;
         [SerializeField] private float baseDistance = 1f;
         [SerializeField] private float maxDistance = 15f;
         [SerializeField] private float cooldownLength = 1f;
         [SerializeField] private LayerMask hookMask;
 
-        [Header("Player Reference")]
-        [SerializeField] private PlayerController player;
+        [Header("Player Reference")] [SerializeField]
+        private PlayerController player;
 
         // exposed properties
         public bool IsAttached
         {
-            get
-            {
-                return isAttached;
-            }
+            get { return isAttached; }
         }
 
         // internal variables
@@ -48,6 +46,9 @@ namespace SkyReach.Player
         private Rigidbody2D hookBody;
         private Input input;
         private int hookingLayer;
+
+        //helper variable to determine when player is being pulled by hook
+        private bool isPullingPlayer = false;
         public static event Action hook;
 
 
@@ -58,6 +59,7 @@ namespace SkyReach.Player
                 input = new Input();
                 input.Hook.SetCallbacks(this);
             }
+
             input.Enable();
         }
 
@@ -65,6 +67,7 @@ namespace SkyReach.Player
         {
             input.Disable();
         }
+
         public void Awake()
         {
             // warn if player is not set
@@ -73,6 +76,7 @@ namespace SkyReach.Player
                 Debug.LogWarning("Player not set in GrapplingHook.cs");
                 enabled = false;
             }
+
             hookBody = GetComponent<Rigidbody2D>();
         }
 
@@ -84,6 +88,7 @@ namespace SkyReach.Player
                 input = new Input();
                 input.Hook.SetCallbacks(this);
             }
+
             input.Enable();
 
             // disable hook until fired
@@ -100,7 +105,8 @@ namespace SkyReach.Player
             // rotation is towards aimTarget
             if (!hookBody.simulated)
             {
-                Vector2 direction = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(aimTarget) - (Vector2)player.transform.position;
+                Vector2 direction = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(aimTarget) -
+                                    (Vector2)player.transform.position;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 transform.position = (Vector2)player.transform.position + direction.normalized * baseDistance;
@@ -142,10 +148,15 @@ namespace SkyReach.Player
             {
                 if (!hookBody.IsTouching(player.Collider))
                 {
+                    isPullingPlayer = true;
                     // move player towards hook
                     player.Body.AddForce((hookBody.position - player.Body.position).normalized * retractForce);
                 }
-                else StopHook();
+                else
+                {
+                    isPullingPlayer = false;
+                    StopHook();
+                }
             }
         }
 
@@ -187,9 +198,15 @@ namespace SkyReach.Player
             }
         }
 
+
         void Input.IHookActions.OnAim(InputAction.CallbackContext context)
         {
             aimTarget = context.ReadValue<Vector2>();
+        }
+
+        public bool GetIsPlayerPullingIn()
+        {
+            return isPullingPlayer;
         }
 
         IEnumerator Cooldown()
