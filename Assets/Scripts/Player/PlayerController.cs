@@ -69,8 +69,6 @@ namespace SkyReach.Player
             input.Disable();
         }
 
-
-
         public void FixedUpdate()
         {
             // set gravity scale.
@@ -86,7 +84,7 @@ namespace SkyReach.Player
             Vector2 relativeVelocity = Body.velocity;
 
             // if the ground collider is a moving rigidbody, remove its velocity from the player's velocity
-            Rigidbody2D groundBody = groundCollider.GetComponent<Rigidbody2D>();
+            Rigidbody2D groundBody = groundCollider?.GetComponent<Rigidbody2D>();
             if (groundBody != null)
             {
                 relativeVelocity -= groundBody.velocity;
