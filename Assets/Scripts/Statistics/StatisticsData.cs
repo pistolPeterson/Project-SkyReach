@@ -31,10 +31,7 @@ public class StatisticsData : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            SceneManager.LoadScene(0);
-        }
+       
     }
 
     public int getJumps()
