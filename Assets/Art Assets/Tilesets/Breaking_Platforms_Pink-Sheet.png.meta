@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 844cb7671bde5504f81efcd3fecc4d0a
+guid: 9b1558a815cfa4744ae91feb88890e4d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,232 +117,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_0
+      name: Breaking_Platforms_Pink-Sheet_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 6
-        width: 30
-        height: 22
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 0
+        y: 155.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cdd73a720c37574aa6eb4bf70a63ae6
-      internalID: -1545283027
+      spriteID: 8c96b71ab4d8d684b9b75e5bbf62f88f
+      internalID: 339587479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_1
+      name: Breaking_Platforms_Pink-Sheet_1
       rect:
         serializedVersion: 2
-        x: 49
-        y: 5
-        width: 30
-        height: 23
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 115
+        y: 155.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6719de79115488b469e354e6e981c0d7
-      internalID: -1438060369
+      spriteID: 86a3c93abaa006d4eaf5536c5dec5765
+      internalID: 967603904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_2
+      name: Breaking_Platforms_Pink-Sheet_2
       rect:
         serializedVersion: 2
-        x: 97
-        y: 3
-        width: 30
-        height: 25
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 230
+        y: 155.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 892501a0cb9045042a59db5ee887f9fa
-      internalID: 813587216
+      spriteID: c350b801268a75f4296570d831b9dcb7
+      internalID: 823277351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_3
+      name: Breaking_Platforms_Pink-Sheet_3
       rect:
         serializedVersion: 2
-        x: 145
-        y: 8
-        width: 30
-        height: 21
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 345
+        y: 155.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 035b4f68330055a40a52a7f9100e9bc5
-      internalID: 2081584410
+      spriteID: 216185404ea5aa3489a3000a5afc1279
+      internalID: 64453363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_4
+      name: Breaking_Platforms_Pink-Sheet_4
       rect:
         serializedVersion: 2
-        x: 193
-        y: 7
-        width: 30
-        height: 22
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 0
+        y: 104.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db8f9b2dc1b7907418369a34515598eb
-      internalID: -1549585323
+      spriteID: 966bcd160b804694aa8230959f853be9
+      internalID: 1041348086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_5
+      name: Breaking_Platforms_Pink-Sheet_5
       rect:
         serializedVersion: 2
-        x: 241
-        y: 7
-        width: 30
-        height: 21
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 115
+        y: 104.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebdfdbfc18686034091740ec06a7ad80
-      internalID: -1608628721
+      spriteID: ae3d0549137058c4284229d9196b4929
+      internalID: -337493216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_6
+      name: Breaking_Platforms_Pink-Sheet_6
       rect:
         serializedVersion: 2
-        x: 289
-        y: 6
-        width: 30
-        height: 24
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 230
+        y: 104.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3711c3599f2dabc4d88a73d604bf23f2
-      internalID: -489367457
+      spriteID: 8d1938ffc1e8ac849b17aac37c165163
+      internalID: -851690226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_7
+      name: Breaking_Platforms_Pink-Sheet_7
       rect:
         serializedVersion: 2
-        x: 337
-        y: 5
-        width: 30
-        height: 24
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 345
+        y: 104.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d1522d1ba6e7db44a206a83f59fb5f2
-      internalID: -466206187
+      spriteID: 9fef4dbee9e760740afe660341c57e6b
+      internalID: -1433501881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_8
+      name: Breaking_Platforms_Pink-Sheet_8
       rect:
         serializedVersion: 2
-        x: 385
-        y: 4
-        width: 30
-        height: 24
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 115
+        y: 53.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b2a438feb3b36b4499b50fbc1549ea6
-      internalID: 1732430994
+      spriteID: 6fd1a66944e662249baed82292cb9969
+      internalID: -548630682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_9
+      name: Breaking_Platforms_Pink-Sheet_9
       rect:
         serializedVersion: 2
-        x: 433
-        y: 7
-        width: 30
-        height: 21
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 230
+        y: 53.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae47b7295e77cae479f43c357ae91f9d
-      internalID: 819497851
+      spriteID: 6bbf2f25dfe361643b9d2efdaf59a9f9
+      internalID: 834481470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileDrone_jus_Reduxt_Attack-Sheet_10
+      name: Breaking_Platforms_Pink-Sheet_10
       rect:
         serializedVersion: 2
-        x: 481
-        y: 6
-        width: 30
-        height: 22
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 345
+        y: 53.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12d883d3c88cd8840a5fbc069b3ce5ab
-      internalID: 294633360
+      spriteID: 738661d1acc4eb74984d1e77cfe05d0a
+      internalID: 1869203272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breaking_Platforms_Pink-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.25
+        width: 115.75
+        height: 51.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a8e1e041c3a874c831cef36533e242
+      internalID: 954799041
       vertices: []
       indices: 
       edges: []
@@ -358,21 +379,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_4: -1549585323
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_0: -1545283027
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_1: -1438060369
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_14: -2119109510
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_5: -1608628721
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_2: 813587216
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_6: -489367457
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_9: 819497851
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_13: 1858494694
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_10: 294633360
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_8: 1732430994
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_7: -466206187
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_11: -413687336
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_3: 2081584410
-      ProjectileDrone_jus_Reduxt_Attack-Sheet_12: -151624129
+      Breaking_Platforms_Pink-Sheet_9: 834481470
+      Breaking_Platforms_Pink-Sheet_11: 954799041
+      Breaking_Platforms_Pink-Sheet_5: -337493216
+      Breaking_Platforms_Pink-Sheet_6: -851690226
+      Breaking_Platforms_Pink-Sheet_1: 967603904
+      Breaking_Platforms_Pink-Sheet_0: 339587479
+      Breaking_Platforms_Pink-Sheet_8: -548630682
+      Breaking_Platforms_Pink-Sheet_4: 1041348086
+      Breaking_Platforms_Pink-Sheet_3: 64453363
+      Breaking_Platforms_Pink-Sheet_2: 823277351
+      Breaking_Platforms_Pink-Sheet_10: 1869203272
+      Breaking_Platforms_Pink-Sheet_7: -1433501881
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

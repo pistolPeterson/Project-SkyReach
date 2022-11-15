@@ -115,7 +115,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: RegenBot_Combined_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 60
+        width: 23
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e042deddc99b9494c948200b8ceabe0d
+      internalID: -406202002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 60
+        width: 23
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd29c9da65310d54198aa5d94f1d4fa2
+      internalID: -1125248668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 60
+        width: 23
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e685c9582971d5b4a83b5d86444e6481
+      internalID: 483802850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 61
+        width: 23
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e97d4872d62e3e479e558fd91169086
+      internalID: 1151980121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_4
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 60
+        width: 23
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e64c0146e7021d4c89677edf5073c7a
+      internalID: 1263122897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_5
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 60
+        width: 23
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9449b54bd56734888578a1221139b3
+      internalID: 1636834995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_6
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 61
+        width: 23
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1fee4fd6514b7a498f39bba842c54ef
+      internalID: 1677876906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_7
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 60
+        width: 23
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c574bb587fe1fc46a2e26dc3abfc7c0
+      internalID: 1365295752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_8
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 60
+        width: 23
+        height: 10
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3bcb7418e6dad479a95004de332ae3
+      internalID: 1335610050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_9
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 9
+        width: 24
+        height: 13
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3620b665d67f904481a836fad138d96
+      internalID: 1597115501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 7
+        width: 24
+        height: 15
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58297cbd32b43d64cb29e48c28008243
+      internalID: -1957054452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 6
+        width: 24
+        height: 16
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a6ea30bb28b0c48b6b9cf70ffa5005
+      internalID: 191281691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_12
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 5
+        width: 24
+        height: 17
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba34fe5c75fe8c848a2a13addbe99642
+      internalID: -965563059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_13
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 8
+        width: 24
+        height: 13
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f780cb0053d014642a431b15a6f10393
+      internalID: -1714662954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RegenBot_Combined_14
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 7
+        width: 24
+        height: 14
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a32643dceec98e4498b017ed74cc4e4
+      internalID: -275986603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +441,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RegenBot_Combined_10: -1957054452
+      RegenBot_Combined_4: 1263122897
+      RegenBot_Combined_7: 1365295752
+      RegenBot_Combined_0: -406202002
+      RegenBot_Combined_6: 1677876906
+      RegenBot_Combined_13: -1714662954
+      RegenBot_Combined_2: 483802850
+      RegenBot_Combined_9: 1597115501
+      RegenBot_Combined_12: -965563059
+      RegenBot_Combined_14: -275986603
+      RegenBot_Combined_5: 1636834995
+      RegenBot_Combined_8: 1335610050
+      RegenBot_Combined_11: 191281691
+      RegenBot_Combined_3: 1151980121
+      RegenBot_Combined_1: -1125248668
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

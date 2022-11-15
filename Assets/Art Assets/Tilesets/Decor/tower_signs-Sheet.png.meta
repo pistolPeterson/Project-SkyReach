@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b16b628f94ca8df4f91116b41204f9a5
+guid: f9defecac3f27f748af727adadb3a3dd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_0
+      name: tower_signs-Sheet_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 15
-        width: 30
-        height: 21
+        x: 13
+        y: 11
+        width: 62
+        height: 118
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f50975572dfc55d4681b57aaa8f46401
-      internalID: 639944453
+      spriteID: f84bfa45b5fca214bb44043c75370a7f
+      internalID: -1206774032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_1
+      name: tower_signs-Sheet_1
       rect:
         serializedVersion: 2
-        x: 57
-        y: 14
-        width: 30
-        height: 22
+        x: 103
+        y: 11
+        width: 62
+        height: 118
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1673066dc1da5cd4fadf9569b9c47477
-      internalID: 1601023217
+      spriteID: 13b3644a72601ef43a572404d95c3d4e
+      internalID: 1398568160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_4
+      name: tower_signs-Sheet_2
       rect:
         serializedVersion: 2
-        x: 105
-        y: 13
-        width: 30
-        height: 23
+        x: 193
+        y: 11
+        width: 62
+        height: 118
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a6834f859461ac429b1046f22240d95
-      internalID: -209179285
+      spriteID: f757b4903adfda540873531619243a11
+      internalID: 1557173441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_5
+      name: tower_signs-Sheet_3
       rect:
         serializedVersion: 2
-        x: 153
-        y: 12
-        width: 30
-        height: 24
+        x: 283
+        y: 11
+        width: 62
+        height: 118
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 796db8191b1338347895e50631158e65
-      internalID: -306441022
+      spriteID: 0225859e7e25d0a49b17bf9646061620
+      internalID: -184908450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_6
+      name: tower_signs-Sheet_4
       rect:
         serializedVersion: 2
-        x: 201
-        y: 14
-        width: 30
-        height: 21
+        x: 373
+        y: 11
+        width: 62
+        height: 118
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 709ede43230cb3848ab300a38de2674c
-      internalID: -1786507903
+      spriteID: 90804e0cfa51cd0489c1201bd0e31da2
+      internalID: 1718527119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_7
+      name: tower_signs-Sheet_5
       rect:
         serializedVersion: 2
-        x: 249
-        y: 13
-        width: 30
-        height: 22
+        x: 463
+        y: 11
+        width: 62
+        height: 118
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +236,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1216f67669cf7194cb478b6a8eada6e0
-      internalID: 1068668431
+      spriteID: b1525613494103c47906a140a09b5e3b
+      internalID: 636951026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tower_signs-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 11
+        width: 62
+        height: 118
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828048f2f01824a4394a505e9fdc750b
+      internalID: 977097041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tower_signs-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 11
+        width: 62
+        height: 118
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb7ba6e35e301e48aecf5b29d28629d
+      internalID: 1840070015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tower_signs-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 11
+        width: 62
+        height: 118
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a811ee127506ea40a52dad5775999e9
+      internalID: 582857515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tower_signs-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 11
+        width: 62
+        height: 118
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1072b3c172bcdf341bdf996d438be571
+      internalID: 1295956035
       vertices: []
       indices: 
       edges: []
@@ -253,14 +337,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Projectile_Redux_Idle-Sheet_3: 46646964
-      Projectile_Redux_Idle-Sheet_1: 1601023217
-      Projectile_Redux_Idle-Sheet_6: -1786507903
-      Projectile_Redux_Idle-Sheet_0: 639944453
-      Projectile_Redux_Idle-Sheet_7: 1068668431
-      Projectile_Redux_Idle-Sheet_4: -209179285
-      Projectile_Redux_Idle-Sheet_2: 1123741408
-      Projectile_Redux_Idle-Sheet_5: -306441022
+      tower_signs-Sheet_8: 582857515
+      tower_signs-Sheet_2: 1557173441
+      tower_signs-Sheet_3: -184908450
+      tower_signs-Sheet_1: 1398568160
+      tower_signs-Sheet_9: 1295956035
+      tower_signs-Sheet_0: -1206774032
+      tower_signs-Sheet_7: 1840070015
+      tower_signs-Sheet_5: 636951026
+      tower_signs-Sheet_6: 977097041
+      tower_signs-Sheet_4: 1718527119
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

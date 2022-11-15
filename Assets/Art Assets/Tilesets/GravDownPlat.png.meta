@@ -115,7 +115,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GravDownPlat_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ad438727971864b9e576eed86cf379
+      internalID: -551475686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6c2f428bac9e2468fd4e95361cb65c
+      internalID: -944730082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70edec04d0de7bd4e977ca98732711fc
+      internalID: 348760183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_3
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c518216abd572c41b6d22fecc7beb4e
+      internalID: -1791476448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_4
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1cafe30fbc25e04dab1c1421ebc289c
+      internalID: -415695684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_5
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e13ea8be8e10b441a583eff65c1fcc4
+      internalID: 1943425437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_6
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e84fff2081c2da4ab04e8f180611f1d
+      internalID: -749865821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_7
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b76198a1f05de4db5d41c269fb650f
+      internalID: 729433666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_8
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a66097554a5102419d8a5e064a629cd
+      internalID: 279964768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_9
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744dbc7288338944aa95b0e6e9440c3d
+      internalID: 2020958631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_10
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64090cdbb0eeac14fa7123000f7f7c05
+      internalID: -810949658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_11
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4b827446c83ab40861aa6eed2cd634
+      internalID: 1388445398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravDownPlat_12
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 31
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c627db5605b72843af8c884b6f67d04
+      internalID: -531553628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +399,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GravDownPlat_6: -749865821
+      GravDownPlat_8: 279964768
+      GravDownPlat_10: -810949658
+      GravDownPlat_9: 2020958631
+      GravDownPlat_2: 348760183
+      GravDownPlat_5: 1943425437
+      GravDownPlat_0: -551475686
+      GravDownPlat_1: -944730082
+      GravDownPlat_7: 729433666
+      GravDownPlat_12: -531553628
+      GravDownPlat_11: 1388445398
+      GravDownPlat_4: -415695684
+      GravDownPlat_3: -1791476448
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

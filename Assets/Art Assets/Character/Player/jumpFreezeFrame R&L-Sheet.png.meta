@@ -127,7 +127,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: jumpFreezeFrame R&L-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 23
+        height: 30
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6a7fcac0661c548b8b09f7505f8b62
+      internalID: -1450844546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jumpFreezeFrame R&L-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 23
+        height: 30
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c08e1a00ad282445a3194d509921df4
+      internalID: -957069448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +180,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jumpFreezeFrame R&L-Sheet_1: -957069448
+      jumpFreezeFrame R&L-Sheet_0: -1450844546
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b16b628f94ca8df4f91116b41204f9a5
+guid: efdd07870a4aaf3429cba4d139b6060c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_0
+      name: Breaking_Platforms_Silver-Sheet_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 15
-        width: 30
-        height: 21
+        x: 0
+        y: 102.66667
+        width: 115.75
+        height: 51.333332
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f50975572dfc55d4681b57aaa8f46401
-      internalID: 639944453
+      spriteID: 6afd4e6d88f95ad40afd98ba1959a8de
+      internalID: -610663385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_1
+      name: Breaking_Platforms_Silver-Sheet_1
       rect:
         serializedVersion: 2
-        x: 57
-        y: 14
-        width: 30
-        height: 22
+        x: 115
+        y: 102.66667
+        width: 115.75
+        height: 51.333332
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1673066dc1da5cd4fadf9569b9c47477
-      internalID: 1601023217
+      spriteID: 07e3a5da83ef6004e8ce07142696221b
+      internalID: 887701580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_4
+      name: Breaking_Platforms_Silver-Sheet_2
       rect:
         serializedVersion: 2
-        x: 105
-        y: 13
-        width: 30
-        height: 23
+        x: 230
+        y: 102.66667
+        width: 115.75
+        height: 51.333332
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a6834f859461ac429b1046f22240d95
-      internalID: -209179285
+      spriteID: 4e73677ef70403449bec4e5d381451c7
+      internalID: -1616316323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_5
+      name: Breaking_Platforms_Silver-Sheet_3
       rect:
         serializedVersion: 2
-        x: 153
-        y: 12
-        width: 30
-        height: 24
+        x: 345
+        y: 102.66667
+        width: 115.75
+        height: 51.333332
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 796db8191b1338347895e50631158e65
-      internalID: -306441022
+      spriteID: b6876a9ac1096224691f9bcda57aeba2
+      internalID: 1983640471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_6
+      name: Breaking_Platforms_Silver-Sheet_4
       rect:
         serializedVersion: 2
-        x: 201
-        y: 14
-        width: 30
-        height: 21
+        x: 0
+        y: 51.666668
+        width: 115.75
+        height: 51.333332
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 709ede43230cb3848ab300a38de2674c
-      internalID: -1786507903
+      spriteID: 92425956a5009b94bae6091d1466e397
+      internalID: 1353483465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_7
+      name: Breaking_Platforms_Silver-Sheet_5
       rect:
         serializedVersion: 2
-        x: 249
-        y: 13
-        width: 30
-        height: 22
+        x: 115
+        y: 51.666668
+        width: 115.75
+        height: 51.333332
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +236,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1216f67669cf7194cb478b6a8eada6e0
-      internalID: 1068668431
+      spriteID: 550d7f1131991244c911a70c323037d5
+      internalID: -1634657107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breaking_Platforms_Silver-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 51.666668
+        width: 115.75
+        height: 51.333332
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868c1037fc544f44da969b1730d4b4ae
+      internalID: -267617155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breaking_Platforms_Silver-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66666794
+        width: 115.75
+        height: 51.333332
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798df1025c915ec429ed6ee880fcdb3e
+      internalID: 1866182076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breaking_Platforms_Silver-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 0.66666794
+        width: 115.75
+        height: 51.333332
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceadfb4645bf190488c3635cce6d92f4
+      internalID: 518742764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breaking_Platforms_Silver-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0.66666794
+        width: 115.75
+        height: 51.333332
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dea90b073a9c944abe7c3e67a0bd202
+      internalID: -705682240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Breaking_Platforms_Silver-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1
+        width: 118
+        height: 51
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87bea897a7c0254cb17476470edd82f
+      internalID: 139277024
       vertices: []
       indices: 
       edges: []
@@ -253,14 +358,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Projectile_Redux_Idle-Sheet_3: 46646964
-      Projectile_Redux_Idle-Sheet_1: 1601023217
-      Projectile_Redux_Idle-Sheet_6: -1786507903
-      Projectile_Redux_Idle-Sheet_0: 639944453
-      Projectile_Redux_Idle-Sheet_7: 1068668431
-      Projectile_Redux_Idle-Sheet_4: -209179285
-      Projectile_Redux_Idle-Sheet_2: 1123741408
-      Projectile_Redux_Idle-Sheet_5: -306441022
+      Breaking_Platforms_Silver-Sheet_9: -705682240
+      Breaking_Platforms_Silver-Sheet_0: -610663385
+      Breaking_Platforms_Silver-Sheet_6: -267617155
+      Breaking_Platforms_Silver-Sheet_5: -1634657107
+      Breaking_Platforms_Silver-Sheet_10: 139277024
+      Breaking_Platforms_Silver-Sheet_8: 518742764
+      Breaking_Platforms_Silver-Sheet_2: -1616316323
+      Breaking_Platforms_Silver-Sheet_3: 1983640471
+      Breaking_Platforms_Silver-Sheet_4: 1353483465
+      Breaking_Platforms_Silver-Sheet_1: 887701580
+      Breaking_Platforms_Silver-Sheet_7: 1866182076
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

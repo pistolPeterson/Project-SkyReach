@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b16b628f94ca8df4f91116b41204f9a5
+guid: 474645af40ba1a143adad24dc7868139
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,55 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_0
+      name: Rocket_Projectile_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 15
-        width: 30
-        height: 21
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f50975572dfc55d4681b57aaa8f46401
-      internalID: 639944453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 14
-        width: 30
-        height: 22
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1673066dc1da5cd4fadf9569b9c47477
-      internalID: 1601023217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 105
+        x: 14
         y: 13
-        width: 30
-        height: 23
+        width: 4
+        height: 9
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,62 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a6834f859461ac429b1046f22240d95
-      internalID: -209179285
+      spriteID: 6c39af71fc2a9624688dafd271b62b9f
+      internalID: -204578088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_5
+      name: Rocket_Projectile_1
       rect:
         serializedVersion: 2
-        x: 153
-        y: 12
-        width: 30
-        height: 24
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 796db8191b1338347895e50631158e65
-      internalID: -306441022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 201
-        y: 14
-        width: 30
-        height: 21
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 709ede43230cb3848ab300a38de2674c
-      internalID: -1786507903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 249
+        x: 62
         y: 13
-        width: 30
-        height: 22
+        width: 4
+        height: 8
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +152,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1216f67669cf7194cb478b6a8eada6e0
-      internalID: 1068668431
+      spriteID: e47686de51497404e9c1b8aac14cb412
+      internalID: 1193331801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocket_Projectile_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 13
+        width: 4
+        height: 9
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8eb1036d1b6cf41872639c545e660e
+      internalID: 904426652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocket_Projectile_3
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 13
+        width: 4
+        height: 8
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae53d1a3494c7e2449db1ff636f125bd
+      internalID: -856434943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocket_Projectile_4
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 13
+        width: 4
+        height: 9
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d00867df74ace24cb92dcce288e3ee5
+      internalID: -1610652876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocket_Projectile_5
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 13
+        width: 4
+        height: 8
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af24f35d5400a4542a3de88fad868770
+      internalID: 174267855
       vertices: []
       indices: 
       edges: []
@@ -253,14 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Projectile_Redux_Idle-Sheet_3: 46646964
-      Projectile_Redux_Idle-Sheet_1: 1601023217
-      Projectile_Redux_Idle-Sheet_6: -1786507903
-      Projectile_Redux_Idle-Sheet_0: 639944453
-      Projectile_Redux_Idle-Sheet_7: 1068668431
-      Projectile_Redux_Idle-Sheet_4: -209179285
-      Projectile_Redux_Idle-Sheet_2: 1123741408
-      Projectile_Redux_Idle-Sheet_5: -306441022
+      Rocket_Projectile_1: 1193331801
+      Rocket_Projectile_3: -856434943
+      Rocket_Projectile_5: 174267855
+      Rocket_Projectile_4: -1610652876
+      Rocket_Projectile_2: 904426652
+      Rocket_Projectile_0: -204578088
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
