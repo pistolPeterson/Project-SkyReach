@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3686644f8c6e0e84d901e861ece535a4
+guid: 55bdc4e0ab9abe047ad19562f9bd6c0e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_0
+      name: tower_signs4v3_rightpink-Sheet_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 145
-        width: 28
-        height: 28
+        x: 0
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4457db49a55b96d44b566a33635b7f3d
-      internalID: -2041441204
+      spriteID: 1d877fcd2702c0b4b86e0497a9edd757
+      internalID: 418665490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_1
+      name: tower_signs4v3_rightpink-Sheet_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 145
-        width: 28
-        height: 28
+        x: 70
+        y: 3
+        width: 51
+        height: 74
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8decd7bca3a3cff4e8f59128b430aa7c
-      internalID: 1803741199
+      spriteID: a1a11863fc7d0664b936b4e125ff6398
+      internalID: -258781656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_2
+      name: tower_signs4v3_rightpink-Sheet_2
       rect:
         serializedVersion: 2
-        x: 98
-        y: 144
-        width: 28
-        height: 28
+        x: 140
+        y: 3
+        width: 51
+        height: 74
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 234072be3cacb0f41b5e25b388e2422e
-      internalID: 925500220
+      spriteID: 7f3bd6ae7ef86054baa7a13b2bb22299
+      internalID: -2107210407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_3
+      name: tower_signs4v3_rightpink-Sheet_3
       rect:
         serializedVersion: 2
-        x: 146
-        y: 149
-        width: 28
-        height: 27
+        x: 210
+        y: 3
+        width: 51
+        height: 74
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e431b3dbaca138e49afe9dfd426b3194
-      internalID: 457906885
+      spriteID: 37b30dee2ee0c734aae512c2f0f5c936
+      internalID: 759326160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_4
+      name: tower_signs4v3_rightpink-Sheet_4
       rect:
         serializedVersion: 2
-        x: 194
-        y: 146
-        width: 28
-        height: 28
+        x: 280
+        y: 3
+        width: 51
+        height: 74
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 548df00b408af9b4188c9f60aaddcc15
-      internalID: -255052566
+      spriteID: a9db92a310ec1fe4f8635cdb5597560c
+      internalID: -1131928051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_5
+      name: tower_signs4v3_rightpink-Sheet_5
       rect:
         serializedVersion: 2
-        x: 242
-        y: 145
-        width: 28
-        height: 28
+        x: 350
+        y: 3
+        width: 51
+        height: 74
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41a77adc26020704787fe429fce0a0d6
-      internalID: -1602204454
+      spriteID: 0464cff88ce1f6f4e9297835d755ce67
+      internalID: -720919421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_6
+      name: tower_signs4v3_rightpink-Sheet_6
       rect:
         serializedVersion: 2
-        x: 290
-        y: 144
-        width: 28
-        height: 28
+        x: 420
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5f21b4da09a0104d8d0bbdc64edd1ce
-      internalID: 973630762
+      spriteID: 53b684fd11253044f958743caa47123f
+      internalID: -72196583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_7
+      name: tower_signs4v3_rightpink-Sheet_7
       rect:
         serializedVersion: 2
-        x: 338
-        y: 145
-        width: 28
-        height: 27
+        x: 490
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16e396c8783c41d43ae2c6d6efaad44a
-      internalID: 1661473075
+      spriteID: a502c1528851a3243b191da5541e44a6
+      internalID: -1715941720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_8
+      name: tower_signs4v3_rightpink-Sheet_8
       rect:
         serializedVersion: 2
-        x: 2
-        y: 98
-        width: 28
-        height: 28
+        x: 560
+        y: 3
+        width: 51
+        height: 74
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cae5dc7718574d49acb44298a25713d
-      internalID: 439873662
+      spriteID: af8bddf135b1ddd48a4d165b72a031a6
+      internalID: 159488294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_9
+      name: tower_signs4v3_rightpink-Sheet_9
       rect:
         serializedVersion: 2
-        x: 50
-        y: 98
-        width: 28
-        height: 28
+        x: 630
+        y: 3
+        width: 51
+        height: 74
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,20 +320,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09f008cab01bc04409c3a724cffc703b
-      internalID: -401606081
+      spriteID: 4f359b1d658017344b2f0cdda35e575a
+      internalID: -405519076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_10
+      name: tower_signs4v3_rightpink-Sheet_10
       rect:
         serializedVersion: 2
-        x: 98
-        y: 97
-        width: 28
-        height: 28
+        x: 700
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,20 +341,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb12660056630ed4bbc71fd6a855baa9
-      internalID: -507870881
+      spriteID: f894fd797ace8054dbcb484fc23c236a
+      internalID: -1294443463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_11
+      name: tower_signs4v3_rightpink-Sheet_11
       rect:
         serializedVersion: 2
-        x: 146
-        y: 98
-        width: 28
-        height: 27
+        x: 770
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,20 +362,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c87c563098cda85429bfc18b61c0b952
-      internalID: 1152664369
+      spriteID: 1a6be7e7f419ff547865fa8dd0d74972
+      internalID: -820041900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_12
+      name: tower_signs4v3_rightpink-Sheet_12
       rect:
         serializedVersion: 2
-        x: 194
-        y: 98
-        width: 28
-        height: 28
+        x: 840
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,20 +383,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d429dde9ac1c2e4b82b90504e445a49
-      internalID: 194229551
+      spriteID: c810daa8c65fcf7438b7b50c2ef3a2d2
+      internalID: 1972641269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_13
+      name: tower_signs4v3_rightpink-Sheet_13
       rect:
         serializedVersion: 2
-        x: 242
-        y: 98
-        width: 28
-        height: 28
+        x: 910
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,20 +404,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8dbcb21708b913438814a31895bd463
-      internalID: -327097325
+      spriteID: 0e3d83971ba25464e88808b98992f470
+      internalID: 1000197743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_14
+      name: tower_signs4v3_rightpink-Sheet_14
       rect:
         serializedVersion: 2
-        x: 290
-        y: 97
-        width: 28
-        height: 28
+        x: 980
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,20 +425,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b9e93adeaaf653499ebee5f9996a6c5
-      internalID: -2139429520
+      spriteID: 0379d4ea56518634194414dd3e0093da
+      internalID: 1359181027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_15
+      name: tower_signs4v3_rightpink-Sheet_15
       rect:
         serializedVersion: 2
-        x: 338
-        y: 98
-        width: 28
-        height: 27
+        x: 1050
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,20 +446,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c4d8b530f0e2b8498fb093028c8879b
-      internalID: -351488095
+      spriteID: 8f156fdd240fae344abe712ea22985ab
+      internalID: 1287591956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_16
+      name: tower_signs4v3_rightpink-Sheet_16
       rect:
         serializedVersion: 2
-        x: 2
-        y: 57
-        width: 27
-        height: 20
+        x: 1120
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,20 +467,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98ed58924e84aae498b635e60677b5c9
-      internalID: -1962502108
+      spriteID: 7bb44c0627b426a46bc04b41536ecedc
+      internalID: -2020246142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_17
+      name: tower_signs4v3_rightpink-Sheet_17
       rect:
         serializedVersion: 2
-        x: 53
-        y: 58
-        width: 27
-        height: 20
+        x: 1190
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,20 +488,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 458cd4e5032cf304c8901ecd7efe320e
-      internalID: 758383791
+      spriteID: dfe863e01e034944da8fee580cf54228
+      internalID: 1302656305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Enemy_Combined_18
+      name: tower_signs4v3_rightpink-Sheet_18
       rect:
         serializedVersion: 2
-        x: 96
-        y: 59
-        width: 27
-        height: 20
+        x: 1260
+        y: 1
+        width: 53
+        height: 77
       alignment: 5
       pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,134 +509,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d559e96e30ceb7547aba5b152439a17a
-      internalID: -1579562093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Enemy_Combined_19
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 57
-        width: 27
-        height: 20
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 800a1cfd25006a54e8693f8ad8c0890a
-      internalID: -272274495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Enemy_Combined_20
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 58
-        width: 27
-        height: 20
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b698a9dec16a0694a981621eb9b79621
-      internalID: -1984915214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Enemy_Combined_21
-      rect:
-        serializedVersion: 2
-        x: 241
-        y: 58
-        width: 27
-        height: 20
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 735acce93f24d034cb8306de05dda2b4
-      internalID: 264838084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Enemy_Combined_22
-      rect:
-        serializedVersion: 2
-        x: 291
-        y: 58
-        width: 27
-        height: 20
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0de67d0d273a01c4a861025c190c7277
-      internalID: -1286650975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Enemy_Combined_23
-      rect:
-        serializedVersion: 2
-        x: 341
-        y: 58
-        width: 27
-        height: 20
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 617ad6a916e8b214283dad2e0a3e7ae5
-      internalID: 742724765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Enemy_Combined_24
-      rect:
-        serializedVersion: 2
-        x: 385
-        y: 58
-        width: 27
-        height: 20
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f17027a88e501ef4db9e73cdb9b592e6
-      internalID: 625682433
+      spriteID: cebd6b1ef58646a449924eeda6583201
+      internalID: 1394368733
       vertices: []
       indices: 
       edges: []
@@ -652,32 +526,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rocket_Enemy_Combined_1: 1803741199
-      Rocket_Enemy_Combined_7: 1661473075
-      Rocket_Enemy_Combined_14: -2139429520
-      Rocket_Enemy_Combined_9: -401606081
-      Rocket_Enemy_Combined_24: 625682433
-      Rocket_Enemy_Combined_0: -2041441204
-      Rocket_Enemy_Combined_16: -1962502108
-      Rocket_Enemy_Combined_25: 1258429483
-      Rocket_Enemy_Combined_2: 925500220
-      Rocket_Enemy_Combined_23: 742724765
-      Rocket_Enemy_Combined_6: 973630762
-      Rocket_Enemy_Combined_3: 457906885
-      Rocket_Enemy_Combined_20: -1984915214
-      Rocket_Enemy_Combined_19: -272274495
-      Rocket_Enemy_Combined_15: -351488095
-      Rocket_Enemy_Combined_12: 194229551
-      Rocket_Enemy_Combined_17: 758383791
-      Rocket_Enemy_Combined_21: 264838084
-      Rocket_Enemy_Combined_8: 439873662
-      Rocket_Enemy_Combined_11: 1152664369
-      Rocket_Enemy_Combined_13: -327097325
-      Rocket_Enemy_Combined_4: -255052566
-      Rocket_Enemy_Combined_22: -1286650975
-      Rocket_Enemy_Combined_18: -1579562093
-      Rocket_Enemy_Combined_5: -1602204454
-      Rocket_Enemy_Combined_10: -507870881
+      tower_signs4v3_rightpink-Sheet_17: 1302656305
+      tower_signs4v3_rightpink-Sheet_6: -72196583
+      tower_signs4v3_rightpink-Sheet_10: -1294443463
+      tower_signs4v3_rightpink-Sheet_3: 759326160
+      tower_signs4v3_rightpink-Sheet_13: 1000197743
+      tower_signs4v3_rightpink-Sheet_15: 1287591956
+      tower_signs4v3_rightpink-Sheet_18: 1394368733
+      tower_signs4v3_rightpink-Sheet_1: -258781656
+      tower_signs4v3_rightpink-Sheet_7: -1715941720
+      tower_signs4v3_rightpink-Sheet_11: -820041900
+      tower_signs4v3_rightpink-Sheet_12: 1972641269
+      tower_signs4v3_rightpink-Sheet_9: -405519076
+      tower_signs4v3_rightpink-Sheet_14: 1359181027
+      tower_signs4v3_rightpink-Sheet_0: 418665490
+      tower_signs4v3_rightpink-Sheet_16: -2020246142
+      tower_signs4v3_rightpink-Sheet_5: -720919421
+      tower_signs4v3_rightpink-Sheet_4: -1131928051
+      tower_signs4v3_rightpink-Sheet_8: 159488294
+      tower_signs4v3_rightpink-Sheet_2: -2107210407
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

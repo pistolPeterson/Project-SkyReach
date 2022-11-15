@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b16b628f94ca8df4f91116b41204f9a5
+guid: 234bb19c59b98a140a0807e77b529b8a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,127 +117,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_0
+      name: clouds2-Sheet (1)_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 15
-        width: 30
-        height: 21
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 50
+        y: 28
+        width: 237
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f50975572dfc55d4681b57aaa8f46401
-      internalID: 639944453
+      spriteID: 562af1de1c2c2f541a68ef98bcbe2146
+      internalID: -1263730426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_1
+      name: clouds2-Sheet (1)_1
       rect:
         serializedVersion: 2
-        x: 57
-        y: 14
-        width: 30
-        height: 22
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 383
+        y: 28
+        width: 241
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1673066dc1da5cd4fadf9569b9c47477
-      internalID: 1601023217
+      spriteID: 413621696ca0ef44190ec2b197a99c4a
+      internalID: 1778206262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_4
+      name: clouds2-Sheet (1)_2
       rect:
         serializedVersion: 2
-        x: 105
-        y: 13
-        width: 30
-        height: 23
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 720
+        y: 27
+        width: 238
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a6834f859461ac429b1046f22240d95
-      internalID: -209179285
+      spriteID: 2f5c5c5cd9b1c6b4f8a176331aaa4ce4
+      internalID: 267779381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_5
+      name: clouds2-Sheet (1)_3
       rect:
         serializedVersion: 2
-        x: 153
-        y: 12
-        width: 30
-        height: 24
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 1061
+        y: 27
+        width: 238
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 796db8191b1338347895e50631158e65
-      internalID: -306441022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 201
-        y: 14
-        width: 30
-        height: 21
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 709ede43230cb3848ab300a38de2674c
-      internalID: -1786507903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Projectile_Redux_Idle-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 13
-        width: 30
-        height: 22
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1216f67669cf7194cb478b6a8eada6e0
-      internalID: 1068668431
+      spriteID: 936c6951643de9a4dbe94faf6c9e2dc7
+      internalID: 1966260596
       vertices: []
       indices: 
       edges: []
@@ -253,14 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Projectile_Redux_Idle-Sheet_3: 46646964
-      Projectile_Redux_Idle-Sheet_1: 1601023217
-      Projectile_Redux_Idle-Sheet_6: -1786507903
-      Projectile_Redux_Idle-Sheet_0: 639944453
-      Projectile_Redux_Idle-Sheet_7: 1068668431
-      Projectile_Redux_Idle-Sheet_4: -209179285
-      Projectile_Redux_Idle-Sheet_2: 1123741408
-      Projectile_Redux_Idle-Sheet_5: -306441022
+      clouds2-Sheet (1)_2: 267779381
+      clouds2-Sheet (1)_0: -1263730426
+      clouds2-Sheet (1)_1: 1778206262
+      clouds2-Sheet (1)_3: 1966260596
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

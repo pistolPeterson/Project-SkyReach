@@ -115,7 +115,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GravUpPlat_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06aaf601bd88d784aa90121c501a6f39
+      internalID: 1872171860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505a023c9889dbe46a5d69428865c89c
+      internalID: -158138050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3f02da9f3f0ec49ad582fe88a46931
+      internalID: 1629972255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b0b251b22e1af4d9be284f23338bf2
+      internalID: -1339907497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_4
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed84071996fa4a447902ca1766888b1f
+      internalID: -1088632190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_5
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526c1a8e5069db94fa58834bfb6fb1f5
+      internalID: -1334096832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_6
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df31917fcec4981448a68639c9adeccd
+      internalID: -187758163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_7
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a821c8057d62e614088566b00a7822f9
+      internalID: 1593369533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_8
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532dc039ca98257438ce420e5eaffd95
+      internalID: 1870041431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_9
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f2fc741b729e74fa7ef02be5011276
+      internalID: -1005579858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_10
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a62203f2530bd4498c1d6da7cbf423
+      internalID: 192906495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_11
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 29
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258421a32ac3c1144b924d40742adff3
+      internalID: 680912107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravUpPlat_12
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 29
+        width: 85
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66063faa48c48744a86b4f7cf749460
+      internalID: -1731997955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +399,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GravUpPlat_5: -1334096832
+      GravUpPlat_11: 680912107
+      GravUpPlat_0: 1872171860
+      GravUpPlat_3: -1339907497
+      GravUpPlat_6: -187758163
+      GravUpPlat_9: -1005579858
+      GravUpPlat_1: -158138050
+      GravUpPlat_2: 1629972255
+      GravUpPlat_10: 192906495
+      GravUpPlat_4: -1088632190
+      GravUpPlat_7: 1593369533
+      GravUpPlat_12: -1731997955
+      GravUpPlat_8: 1870041431
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
