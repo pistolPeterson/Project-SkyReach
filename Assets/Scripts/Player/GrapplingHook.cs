@@ -46,9 +46,6 @@ namespace SkyReach.Player
         private float originalPlayerGravity;
         private float cooldownTimer;
         private bool isFiring;
-
-        //helper variable to determine when player is being pulled by hook
-        private bool isPullingPlayer = false;
         public static event Action hookPullAction;
 
 
