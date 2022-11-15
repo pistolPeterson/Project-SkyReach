@@ -102,12 +102,14 @@ namespace SkyReach.Player
                     if (colliders.Length > 0)
                     {
                         Attach(colliders[0].attachedRigidbody);
+                        break;
                     }
 
                     // if trying to fire hook, but hook is already out, finish it prematurely
                     if (isFiring)
                     {
                         Finish();
+                        break;
                     }
 
                     // if hook reaches max distance, retract it
@@ -123,10 +125,12 @@ namespace SkyReach.Player
                     if (isFiring)
                     {
                         Finish();
+                        break;
                     }
 
                     // check if hook has reached player
-                    if (player.Collider.IsTouching(hookCollider))
+                    // hook collider is a trigger
+                    if (player.Body.IsTouching(hookCollider))
                     {
                         Finish();
                         break;
@@ -154,6 +158,7 @@ namespace SkyReach.Player
                     if (isFiring)
                     {
                         Finish();
+                        break;
                     }
 
                     // if hook is attached to a moving body, move the hook with it
@@ -190,7 +195,7 @@ namespace SkyReach.Player
                     // move and rotate hook to rotate around player in aim direction at base distance
                     Vector2 aimDirection = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(aimTarget) - player.Body.position;
                     hookBody.position = player.Body.position + aimDirection.normalized * baseDistance;
-                    transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg);
+                    hookBody.rotation = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
 
                     // check if hook is being fired
                     if (isFiring)
@@ -247,7 +252,6 @@ namespace SkyReach.Player
             // detach hook from any bodies
             attachedBody = null;
             hookBody.velocity = Vector2.zero;
-            hookBody.position = player.Body.position;
 
             // start cooldown
             cooldownTimer = cooldownLength;
