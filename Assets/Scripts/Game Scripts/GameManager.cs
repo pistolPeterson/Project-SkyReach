@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using SkyReach.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,46 +8,91 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameState CurrentGameState;
-    
-    public static event Action endGame;
-    public static event Action OnPlayerDeath;
+
+    [Header("References")]
+    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private Transform playerSpawnPoint;
+
+    [Header("Scene References")]
+    [SerializeField] private Scene winScene;
+
+    // internal variables
+    private GameState _state;
+    private GameObject _player;
+    private Scene _currentScene;
+
+    // exposed properties
+    public GameState State
+    {
+        get => _state;
+        private set
+        {
+            _state = value;
+            onStateChange.Invoke(_state);
+        }
+    }
+
+    // events
+    public static event Action<GameState> onStateChange;
+
+    // Implementing Singleton
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-            Destroy(this);
-        else
+        if (Instance == null)
+        {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-    
 
-    public void EndGame() //victory condition
+    private void Update()
     {
-        CurrentGameState = GameState.EndGame; 
-       
-        endGame?.Invoke();
-      
-     
-           var lvlChanger = FindObjectOfType<LevelChanger>();
-           if(lvlChanger) lvlChanger.FadeToLevel(2); //go to the end credit scene
+        switch (State)
+        {
+            case GameState.Starting:
+                SpawnPlayer();
+                break;
+            case GameState.Playing:
+                break;
+            case GameState.Paused:
+                break;
+            case GameState.Death:
+                break;
+            case GameState.Completed:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
-   
 
-    public void Death()
+    private void SpawnPlayer()
     {
-        
-        CurrentGameState = GameState.Death;
-        
-        OnPlayerDeath?.Invoke();
-        var lvlChanger = FindObjectOfType<LevelChanger>();
-        if(lvlChanger) lvlChanger.FadeToLevel(1); //restart level
+        _player = Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
+        State = GameState.Playing;
     }
-    
 
+    private void WinGame()
+    {
+        State = GameState.Completed;
+        SceneManager.LoadScene(winScene.name);
+    }
+
+    private void LoseGame()
+    {
+        State = GameState.Death;
+        SceneManager.LoadScene(_currentScene.name);
+    }
 }
 
 public enum GameState
 {
+    Starting,
+    Playing,
+    Paused,
     Death,
-    EndGame
+    Completed
 }
