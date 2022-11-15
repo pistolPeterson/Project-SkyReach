@@ -235,6 +235,9 @@ namespace SkyReach.Player
             originalPlayerGravity = player.Body.gravityScale;
             player.Body.gravityScale = gravityOverride;
 
+            // fire event
+            hookPullAction?.Invoke();
+
             // change state
             State = HookState.Pulling;
         }
