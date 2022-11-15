@@ -30,8 +30,7 @@ namespace SkyReach.Player
         [SerializeField] private LayerMask hookMask;
 
         [Header("Player Reference")]
-        [SerializeField]
-        private PlayerController player;
+        [SerializeField] private PlayerController player;
 
         // exposed properties
         public HookState State { get; private set; } = HookState.Idle;
