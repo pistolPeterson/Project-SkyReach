@@ -34,22 +34,22 @@ public class GameManager : MonoBehaviour
             switch (_state)
             {
                 case GameState.Playing:
-                    PlayerSpawned.Invoke(); // only fire start event when done starting
+                    PlayerSpawned?.Invoke(); // only fire start event when done starting
                     break;
                 case GameState.Paused:
-                    GamePaused.Invoke();
+                    GamePaused?.Invoke();
                     break;
                 case GameState.Won:
-                    GameWon.Invoke();
+                    GameWon?.Invoke();
                     break;
                 case GameState.Death:
-                    PlayerDied.Invoke();
+                    PlayerDied?.Invoke();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
 
-            StateChanged.Invoke(_state);
+            StateChanged?.Invoke(_state);
 
         }
     }

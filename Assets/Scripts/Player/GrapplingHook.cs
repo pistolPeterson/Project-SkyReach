@@ -39,7 +39,7 @@ namespace SkyReach.Player
             private set
             {
                 _state = value;
-                StateChanged.Invoke(_state);
+                StateChanged?.Invoke(_state);
             }
         }
 
@@ -250,7 +250,7 @@ namespace SkyReach.Player
             player.Body.gravityScale = gravityOverride;
 
             // fire event
-            HookPulled.Invoke();
+            HookPulled?.Invoke();
 
             // change state
             State = HookState.Pulling;
