@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    private static GameManager Instance;
 
     [Header("References")]
     [SerializeField] private GameObject playerPrefab;
@@ -28,12 +28,37 @@ public class GameManager : MonoBehaviour
         private set
         {
             _state = value;
-            onStateChange.Invoke(_state);
+
+            // call specific events
+            switch (_state)
+            {
+                case GameState.Playing:
+                    PlayerSpawned.Invoke(); // only fire start event when done starting
+                    break;
+                case GameState.Paused:
+                    GamePaused.Invoke();
+                    break;
+                case GameState.Won:
+                    GameWon.Invoke();
+                    break;
+                case GameState.Death:
+                    PlayerDied.Invoke();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            StateChanged.Invoke(_state);
+
         }
     }
 
     // events
-    public static event Action<GameState> onStateChange;
+    public static event Action<GameState> StateChanged;
+    public static event Action PlayerSpawned;
+    public static event Action GameWon;
+    public static event Action GamePaused;
+    public static event Action PlayerDied;
 
     // Implementing Singleton
     private void Awake()
@@ -62,29 +87,29 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Death:
                 break;
-            case GameState.Completed:
+            case GameState.Won:
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
     }
 
-    private void SpawnPlayer()
+    public static void SpawnPlayer()
     {
-        _player = Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
-        State = GameState.Playing;
+        Instance._player = Instantiate(Instance.playerPrefab, Instance.playerSpawnPoint.position, Quaternion.identity);
+        Instance.State = GameState.Playing;
     }
 
-    private void WinGame()
+    public static void WinGame()
     {
-        State = GameState.Completed;
-        SceneManager.LoadScene(winScene.name);
+        Instance.State = GameState.Won;
+        SceneManager.LoadScene(Instance.winScene.name);
     }
 
-    private void LoseGame()
+    public static void KillPlayer()
     {
-        State = GameState.Death;
-        SceneManager.LoadScene(_currentScene.name);
+        Instance.State = GameState.Death;
+        SceneManager.LoadScene(Instance._currentScene.name);
     }
 }
 
@@ -94,5 +119,5 @@ public enum GameState
     Playing,
     Paused,
     Death,
-    Completed
+    Won
 }

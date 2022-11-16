@@ -47,6 +47,7 @@ namespace SkyReach.Player
 
         // events
         public static event Action<HookState> onStateChange;
+        public static event Action onHookPull;
 
         // internal variables
         private HookState _state;
@@ -247,6 +248,9 @@ namespace SkyReach.Player
             // set player gravity
             _originalPlayerGravity = player.Body.gravityScale;
             player.Body.gravityScale = gravityOverride;
+
+            // fire event
+            onHookPull.Invoke();
 
             // change state
             State = HookState.Pulling;

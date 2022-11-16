@@ -10,14 +10,14 @@ namespace Platforms
     public class ElectrifiedPlatform : MonoBehaviour
     {
         public float electricityStateTime = 5f; //change electricity state this amount of seconds
-      
+
 
         private float timer = 0;
-        private Animator anim; 
+        private Animator anim;
         public ElectricityState state; //public for debugging purposes
-        
-        
-        
+
+
+
         // Start is called before the first frame update
         private void Start()
         {
@@ -32,16 +32,16 @@ namespace Platforms
             if (collision.gameObject.GetComponent<PlayerController>())
             {
                 Debug.Log("time to stun then die");
-                GameManager.Instance.Death();
+                GameManager.KillPlayer();
             }
-    
+
         }
 
         // Update is called once per frame
         private void Update()
         {
-           
-            timer+=Time.deltaTime;
+
+            timer += Time.deltaTime;
             /*
             if (!(timer > electricityStateTime)) return;
             
@@ -83,12 +83,12 @@ namespace Platforms
 
         }
     }
-    
+
     public enum ElectricityState //enum to get the states of the electric platform 
     {
-        Electrified, 
-        UnElectrified, 
-        TransitionToElectrified, 
+        Electrified,
+        UnElectrified,
+        TransitionToElectrified,
         TransitionToUnElectrified
     }
 }
