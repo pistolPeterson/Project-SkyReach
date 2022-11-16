@@ -29,22 +29,17 @@ public class StatisticsData : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-       
-    }
-
-    public int getJumps()
+    public int GetJumps()
     {
         return PlayerPrefs.GetInt("Jumps");
     }
 
-    public int getDeaths()
+    public int GetDeaths()
     {
         return PlayerPrefs.GetInt("Deaths"); ;
     }
 
-    public int getHooks()
+    public int GetHooks()
     {
         return PlayerPrefs.GetInt("Hooks");
     }
@@ -63,54 +58,72 @@ public class StatisticsData : MonoBehaviour
     void OnEnable()
     {
         //method that increase jumps
-        PlayerController.jump += setJumps;
-        GrapplingHook.hookPullAction += setHooks;
-        GameManager.OnPlayerDeath += setDeaths;
+        PlayerController.jump += SetJumps;
+        GrapplingHook.hookPullAction += SetHooks;
+        GameManager.OnPlayerDeath += SetDeaths;
 
     }
 
     void OnDisable()
     {
         //unsubscribe 
-        PlayerController.jump -= setJumps;
-        GrapplingHook.hookPullAction -= setHooks;
-        GameManager.OnPlayerDeath -= setDeaths;
+        PlayerController.jump -= SetJumps;
+        GrapplingHook.hookPullAction -= SetHooks;
+        GameManager.OnPlayerDeath -= SetDeaths;
 
     }
 
     public void SetBestRunTime(float latestRunTime)
     {
 
+        
 
         if (latestRunTime < PlayerPrefs.GetFloat("BestRunTime"))
             PlayerPrefs.SetFloat("BestRunTime", latestRunTime);
 
         Debug.Log(PlayerPrefs.GetFloat("BestRunTime") + " is the new best run time");
     }
-    void setJumps()
+    void SetJumps()
     {
         jumps++;
         PlayerPrefs.SetInt("Jumps", jumps);
         //Debug.Log("Jump triggered!");
     }
 
-    void setDeaths()
+    void SetDeaths()
     {
         playerDeath++;
         PlayerPrefs.SetInt("Deaths", playerDeath);
     }
 
-    void setHooks()
+    void SetHooks()
     {
         numHooks++;
         PlayerPrefs.SetInt("Hooks", numHooks);
         //Debug.Log("Number of times hooked: " + numHooks);
     }
 
-    void setEnemiesKilled()
+    void SetEnemiesKilled()
     {
         enemiesKilled++;
         PlayerPrefs.SetInt("Enemies Killed", enemiesKilled);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PrefReset();
+        }
+    }
+
+    public void PrefReset()
+    {
+        PlayerPrefs.SetInt("Jumps", 0);
+        PlayerPrefs.SetInt("Deaths", 0);
+        PlayerPrefs.SetInt("Hooks", 0);
+        PlayerPrefs.SetInt("Enemies Killed", 0);
+        PlayerPrefs.SetFloat("BestRunTime", Single.MaxValue);
     }
 }
 
