@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     public static void WinGame()
     {
         Instance.State = GameState.Won;
-        Instance.levelChanger.FadeToLevel(2);
+        Instance.levelChanger.FadeToLevel(Instance.winSceneName);
     }
 
     public static void KillPlayer()
