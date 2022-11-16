@@ -12,9 +12,10 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform playerSpawnPoint;
+    [SerializeField] private LevelChanger levelChanger;
 
     [Header("Scene References")]
-    [SerializeField] private Scene winScene;
+    [SerializeField] private string winSceneName;
 
     // internal variables
     private GameState _state;
@@ -103,13 +104,13 @@ public class GameManager : MonoBehaviour
     public static void WinGame()
     {
         Instance.State = GameState.Won;
-        SceneManager.LoadScene(Instance.winScene.name);
+        Instance.levelChanger.FadeToLevel(2);
     }
 
     public static void KillPlayer()
     {
         Instance.State = GameState.Death;
-        SceneManager.LoadScene(Instance._currentScene.name);
+        Instance.levelChanger.FadeToLevel(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
