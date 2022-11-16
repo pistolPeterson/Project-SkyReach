@@ -39,15 +39,15 @@ namespace SkyReach.Player
             private set
             {
                 _state = value;
-                onStateChange.Invoke(_state);
+                StateChanged.Invoke(_state);
             }
         }
 
         public Rigidbody2D AttachedBody { get; private set; }
 
         // events
-        public static event Action<HookState> onStateChange;
-        public static event Action onHookPull;
+        public static event Action<HookState> StateChanged;
+        public static event Action HookPulled;
 
         // internal variables
         private HookState _state;
@@ -250,7 +250,7 @@ namespace SkyReach.Player
             player.Body.gravityScale = gravityOverride;
 
             // fire event
-            onHookPull.Invoke();
+            HookPulled.Invoke();
 
             // change state
             State = HookState.Pulling;
