@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireSpeed: 350
-  retractSpeed: 250
+  retractSpeed: 1800
   baseDistance: 25
   maxDistance: 150
   cooldownLength: 1
