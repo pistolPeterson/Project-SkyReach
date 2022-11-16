@@ -14,6 +14,7 @@ namespace SkyReach.UI
         [SerializeField] private GameObject optionPanel;
         [SerializeField] private GameObject creditPanel;
         [SerializeField] private StatisticCanvasTracker statsUI;
+        [SerializeField] private Animator transitionOutAnimator;
 
         private void Start()
         {
@@ -31,6 +32,7 @@ namespace SkyReach.UI
             statPanel.SetActive(false);
             creditPanel.gameObject.SetActive(false);
             optionPanel.gameObject.SetActive(false);
+            PlayTransitionOutAnim();
         }
         public void ShowStatPanel()
         {
@@ -38,6 +40,7 @@ namespace SkyReach.UI
             optionPanel.gameObject.SetActive(false);
             statPanel.gameObject.SetActive(true);
             statsUI.SetData();
+            PlayTransitionOutAnim();
         }
      
      
@@ -46,9 +49,16 @@ namespace SkyReach.UI
            statPanel.SetActive(false);
             creditPanel.gameObject.SetActive(false);
             optionPanel.gameObject.SetActive(true);
+            PlayTransitionOutAnim();
 
        }
-       
-       
+
+       public void PlayTransitionOutAnim()
+       {
+           transitionOutAnimator.gameObject.SetActive(true);
+           transitionOutAnimator.Play("ExitOptionsAnim");
+       }
+
+
     }
 }
