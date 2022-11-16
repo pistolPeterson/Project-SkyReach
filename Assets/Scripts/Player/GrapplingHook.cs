@@ -249,6 +249,9 @@ namespace SkyReach.Player
             _originalPlayerGravity = player.Body.gravityScale;
             player.Body.gravityScale = gravityOverride;
 
+            // set player layer
+            player.gameObject.layer = _hookingLayer;
+
             // fire event
             HookPulled?.Invoke();
 
@@ -265,6 +268,9 @@ namespace SkyReach.Player
             // detach hook from any bodies
             _attachedBody = null;
             _body.velocity = Vector2.zero;
+
+            // reset player layer
+            player.gameObject.layer = 0; // default layer
 
             // start cooldown
             _cooldown = cooldownLength;
