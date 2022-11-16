@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LevelChanger levelChanger;
 
     [Header("Scene References")]
-    [SerializeField] private string winSceneName;
+    [SerializeField] private int winSceneIndex;
 
     // internal variables
     private GameState _state;
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     public static void WinGame()
     {
         Instance.State = GameState.Won;
-        Instance.levelChanger.FadeToLevel(Instance.winSceneName);
+        Instance.levelChanger.FadeToLevel(Instance.winSceneIndex);
     }
 
     public static void KillPlayer()

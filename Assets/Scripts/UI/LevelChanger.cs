@@ -27,12 +27,6 @@ public class LevelChanger : MonoBehaviour
         StartCoroutine(WaitToSetTrigger(timeToWait));
     }
 
-    public void FadeToLevel(string levelName, float timeToWait = 0.5f)
-    {
-        levelToLoad = SceneManager.GetSceneByName(levelName).buildIndex;
-        StartCoroutine(WaitToSetTrigger(timeToWait));
-    }
-
     private IEnumerator WaitToSetTrigger(float timeToWait)
     {
         yield return new WaitForSeconds(timeToWait);
