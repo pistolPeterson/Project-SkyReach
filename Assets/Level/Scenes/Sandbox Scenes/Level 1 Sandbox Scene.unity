@@ -1257,11 +1257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2835215442418191393, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 133.4
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 2835215442418191393, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 138.6
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 3713740332160381099, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_IsTrigger
@@ -1273,6 +1273,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5008263515999314732, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008263516272988058, guid: 40ae67b480198104580b7e622554e81f, type: 3}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5008263516300523724, guid: 40ae67b480198104580b7e622554e81f, type: 3}
@@ -1319,6 +1323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerBackgroundExtended
       objectReference: {fileID: 0}
+    - target: {fileID: 5008263516776425400, guid: 40ae67b480198104580b7e622554e81f, type: 3}
+      propertyPath: m_Name
+      value: Floor1.5Background
+      objectReference: {fileID: 0}
     - target: {fileID: 5008263516776425403, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1347,6 +1355,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5008263517563914637, guid: 40ae67b480198104580b7e622554e81f, type: 3}
+      propertyPath: m_Name
+      value: Floor1Background
+      objectReference: {fileID: 0}
     - target: {fileID: 5008263517763225467, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1358,6 +1370,10 @@ PrefabInstance:
     - target: {fileID: 5008263517875734715, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008263518007410429, guid: 40ae67b480198104580b7e622554e81f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.99215686
       objectReference: {fileID: 0}
     - target: {fileID: 5520637728022467978, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1377,7 +1393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520637728421794738, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 206
+      value: 217
       objectReference: {fileID: 0}
     - target: {fileID: 5520637729682606437, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1396,8 +1412,16 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6336211904225663457, guid: 40ae67b480198104580b7e622554e81f, type: 3}
+      propertyPath: baseDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336211904225663457, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: cooldownLength
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336211904225663463, guid: 40ae67b480198104580b7e622554e81f, type: 3}
+      propertyPath: m_Radius
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6755107921012396938, guid: 40ae67b480198104580b7e622554e81f, type: 3}
       propertyPath: playerLocation
@@ -3673,6 +3697,14 @@ PrefabInstance:
     - target: {fileID: 5397708727451542640, guid: 6d14cd7211689774ba2409ef3a8b4689, type: 3}
       propertyPath: m_Name
       value: Floor 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350612887495637204, guid: 6d14cd7211689774ba2409ef3a8b4689, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -172.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350612887495637204, guid: 6d14cd7211689774ba2409ef3a8b4689, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -123.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d14cd7211689774ba2409ef3a8b4689, type: 3}
