@@ -29,34 +29,45 @@ namespace SkyReach.UI
 
         public void ShowMainMenu()
         {
-            statPanel.SetActive(false);
-            creditPanel.gameObject.SetActive(false);
-            optionPanel.gameObject.SetActive(false);
+            DisableAllPanels();
             PlayTransitionOutAnim();
         }
         public void ShowStatPanel()
         {
-            creditPanel.gameObject.SetActive(false);
-            optionPanel.gameObject.SetActive(false);
-            statPanel.gameObject.SetActive(true);
+            PlayTransitionInAnim();
+            DisableAllPanels();
+            StartCoroutine(DelayBeforeSettingActive(statPanel, 0.5f));
             statsUI.SetData();
-            PlayTransitionOutAnim();
         }
-     
-     
+        
        public void ShowOptionPanel()
        {
-           statPanel.SetActive(false);
-            creditPanel.gameObject.SetActive(false);
-            optionPanel.gameObject.SetActive(true);
-            PlayTransitionOutAnim();
-
+           PlayTransitionInAnim();
+           DisableAllPanels();
+           StartCoroutine(DelayBeforeSettingActive(optionPanel, 0.5f));
        }
 
-       public void PlayTransitionOutAnim()
+       private IEnumerator DelayBeforeSettingActive(GameObject panel, float sec)
+       {
+           yield return new WaitForSeconds(sec);
+           panel.gameObject.SetActive(true);
+       }
+       private void PlayTransitionInAnim()
+       {
+           transitionOutAnimator.gameObject.SetActive(true);
+           transitionOutAnimator.Play("TransitionInAnim");
+       }
+       private void PlayTransitionOutAnim()
        {
            transitionOutAnimator.gameObject.SetActive(true);
            transitionOutAnimator.Play("ExitOptionsAnim");
+       }
+
+       private void DisableAllPanels()
+       {
+           statPanel.SetActive(false);
+           creditPanel.gameObject.SetActive(false);
+           optionPanel.gameObject.SetActive(false);
        }
 
 
