@@ -8,7 +8,7 @@ public class FloorDeathTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.GetComponent<PlayerController>())
+        if (col.transform.parent.GetComponent<PlayerController>())
         {
             GameManager.KillPlayer();
         }

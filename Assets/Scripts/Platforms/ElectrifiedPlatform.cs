@@ -29,7 +29,7 @@ namespace Platforms
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.GetComponent<PlayerController>())
+            if (collision.transform.parent.GetComponent<PlayerController>())
             {
                 Debug.Log("time to stun then die");
                 GameManager.KillPlayer();

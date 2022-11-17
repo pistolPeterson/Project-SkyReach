@@ -7,7 +7,6 @@ namespace SkyReach.Player
 {
     public class PlayerAnimation : MonoBehaviour
     {
-        private Animator animator;
         private string currentState;
         private float facing;
         const string playerIdleRight = "PlayerIdleRight";
@@ -19,15 +18,12 @@ namespace SkyReach.Player
         const string playerFallLeft = "PlayerFallLeft";
         const string playerFallRight = "PlayerFallRight";
 
-        
+
+        [SerializeField] private Animator animator;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private float fallSpeedThreshold = -20.1f;
         private Vector2 zeroVector = new Vector2(0,0);
         private bool isFalling = false;
-        void Start()
-        {
-            animator = GetComponent<Animator>();        
-        }
 
         void Update()
         {

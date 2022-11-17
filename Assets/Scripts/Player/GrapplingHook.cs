@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 namespace SkyReach.Player
 {
     /// <summary>
-    /// This is a grappling hook addition to the Player Controller that allows the _playerController to attach to and pull itself towards a target.
+    /// This is a grappling hook addition to the Player Controller that allows the body to attach to and pull itself towards a target.
     /// It works under Unity's Physics2D system, and fires a moving hook head that will attach to the first object it collides with.
-    /// If it collides with a target, it will pull the _playerController towards it.
-    /// If not, it will simply retract back to the _playerController.
+    /// If it collides with a target, it will pull the body towards it.
+    /// If not, it will simply retract back to the body.
     ///
     /// IMPORTANT NOTE: This script MODIFIES the Layer property of the Player Controller for ease of use with effectors. If you encounter
     /// issues with the Player Controller not interacting with objects while hooking, it is likely due to the Layer property being changed.
@@ -58,6 +58,7 @@ namespace SkyReach.Player
         private Rigidbody2D _attachedBody;
         private Input _input;
         private PlayerController _playerController;
+        private Rigidbody2D _playerBody;
         private int _hookingLayer;
         private float _originalPlayerGravity;
         private float _cooldown;
@@ -99,6 +100,7 @@ namespace SkyReach.Player
 
             // set hooking layer
             _hookingLayer = LayerMask.NameToLayer("HookingPlayer");
+            _playerBody = _playerController.Body;
         }
 
         public void FixedUpdate()
@@ -107,7 +109,7 @@ namespace SkyReach.Player
             {
                 case HookState.Firing:
                     // Check if hook can attach
-                    Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _collider.radius, hookMask);
+                    Collider2D[] colliders = Physics2D.OverlapCircleAll(_body.position, _collider.radius, hookMask);
                     if (colliders.Length > 0)
                     {
                         Attach(colliders[0].attachedRigidbody);
@@ -122,7 +124,7 @@ namespace SkyReach.Player
                     }
 
                     // if hook reaches max distance, retract it
-                    if (_isFiring || Vector2.Distance(transform.position, _playerController.transform.position) >= maxDistance)
+                    if (_isFiring || Vector2.Distance(_body.position, _playerBody.position) >= maxDistance)
                     {
                         Retract();
                     }
@@ -137,9 +139,9 @@ namespace SkyReach.Player
                         break;
                     }
 
-                    // check if hook has reached _playerController
+                    // check if hook has reached body
                     // hook collider is a trigger
-                    if (_playerController.Body.IsTouching(_collider))
+                    if (_playerBody.IsTouching(_collider))
                     {
                         Finish();
                         break;
@@ -149,7 +151,7 @@ namespace SkyReach.Player
                     if (canPullOnRetract)
                     {
                         // Check if hook can attach
-                        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, _collider.radius, hookMask);
+                        Collider2D[] cols = Physics2D.OverlapCircleAll(_body.position, _collider.radius, hookMask);
                         if (cols.Length > 0)
                         {
                             Attach(cols[0].attachedRigidbody);
@@ -157,8 +159,8 @@ namespace SkyReach.Player
                         }
                     }
 
-                    // move hook towards _playerController
-                    Vector2 direction = _playerController.Body.position - _body.position;
+                    // move hook towards body
+                    Vector2 direction = _playerBody.position - _body.position;
                     _body.velocity = direction.normalized * retractSpeed;
                     break;
 
@@ -173,15 +175,15 @@ namespace SkyReach.Player
                     // if hook is attached to a moving body, move the hook with it
                     _body.velocity = _attachedBody?.velocity ?? Vector2.zero;
 
-                    // check if _playerController has reached hook
-                    if (_playerController.Collider.IsTouching(_collider))
+                    // check if body has reached hook
+                    if (_playerBody.IsTouching(_collider))
                     {
                         Finish();
                         break;
                     }
 
                     // move _playerController towards hook
-                    Vector2 pullDirection = _body.position - _playerController.Body.position;
+                    Vector2 pullDirection = _body.position - _playerBody.position;
                     _playerController.Body.AddForce(pullDirection.normalized * retractSpeed);
                     break;
 
@@ -196,14 +198,14 @@ namespace SkyReach.Player
                     _cooldown -= Time.fixedDeltaTime;
 
                     // move hook to _playerController
-                    _body.position = _playerController.Body.position;
+                    _body.position = _playerBody.position;
                     break;
 
                 case HookState.Idle:
 
-                    // move and rotate hook to rotate around _playerController in aim direction at base distance
-                    Vector2 aimDirection = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(_aimTarget) - _playerController.Body.position;
-                    _body.position = _playerController.Body.position + aimDirection.normalized * baseDistance;
+                    // move and rotate hook to rotate around body in aim direction at base distance
+                    Vector2 aimDirection = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(_aimTarget) - _playerBody.position;
+                    _body.position = _playerBody.position + aimDirection.normalized * baseDistance;
                     _body.rotation = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
 
                     // check if hook is being fired
@@ -218,10 +220,10 @@ namespace SkyReach.Player
         private void Fire()
         {
             // get direction to fire hook
-            Vector2 directionToFire = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(_aimTarget) - _playerController.Body.position;
+            Vector2 directionToFire = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(_aimTarget) - _playerBody.position;
 
             // set body properties
-            _body.position = _playerController.Body.position + (Vector2)directionToFire.normalized * baseDistance;
+            _body.position = _playerBody.position + (Vector2)directionToFire.normalized * baseDistance;
             _body.velocity = directionToFire.normalized * fireSpeed;
 
             // fire event
@@ -244,12 +246,12 @@ namespace SkyReach.Player
             _body.velocity = body?.velocity ?? Vector2.zero;
             _attachedBody = body;
 
-            // set _playerController gravity
-            _originalPlayerGravity = _playerController.Body.gravityScale;
-            _playerController.Body.gravityScale = gravityOverride;
+            // set body gravity
+            _originalPlayerGravity = _playerBody.gravityScale;
+            _playerBody.gravityScale = gravityOverride;
 
-            // set _playerController layer
-            _playerController.gameObject.layer = _hookingLayer;
+            // set body layer
+            _playerBody.gameObject.layer = _hookingLayer;
 
             // fire event
             HookPulled?.Invoke();
@@ -260,16 +262,16 @@ namespace SkyReach.Player
 
         private void Finish()
         {
-            // reset _playerController gravity and update original gravity
-            _playerController.Body.gravityScale = _originalPlayerGravity;
-            _originalPlayerGravity = _playerController.Body.gravityScale;
+            // reset body gravity and update original gravity
+            _playerBody.gravityScale = _originalPlayerGravity;
+            _originalPlayerGravity = _playerBody.gravityScale;
 
             // detach hook from any bodies
             _attachedBody = null;
             _body.velocity = Vector2.zero;
 
-            // reset _playerController layer
-            _playerController.gameObject.layer = 0; // default layer
+            // reset body layer
+            _playerBody.gameObject.layer = 0; // default layer
 
             // fire event
             HookFinished?.Invoke();
