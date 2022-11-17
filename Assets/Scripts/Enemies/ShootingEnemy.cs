@@ -36,6 +36,7 @@ namespace SkyReach.Enemies
         public void ShootBullet()
         {
             Instantiate(Boolet, transform.position, Quaternion.identity);
+            
         }
         
     }
