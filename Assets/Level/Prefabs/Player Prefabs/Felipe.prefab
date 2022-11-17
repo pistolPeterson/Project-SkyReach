@@ -12,11 +12,6 @@ GameObject:
   - component: {fileID: 1328089123933327732}
   - component: {fileID: 1328089123933327497}
   - component: {fileID: 1328089123933327499}
-  - component: {fileID: 1508582128965813855}
-  - component: {fileID: 7176458093793231739}
-  - component: {fileID: 1954464518}
-  - component: {fileID: 6908633723696272387}
-  - component: {fileID: 5029440442382364020}
   - component: {fileID: 6250296403786641395}
   m_Layer: 0
   m_Name: Body
@@ -139,99 +134,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1508582128965813855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328089123933327733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e5858d47ec5c0449c253db537762e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 500
-  initialJumpForce: 350
-  jumpHoldForce: 300
-  maxJumpTime: 10
-  horizontalDrag: 0.1
-  gravityScale: 100
-  groundRaycastDistance: 0.05
-  jumpBufferTime: 2
-  coyoteTime: 0.1
-  playerBody: {fileID: 0}
---- !u!95 &7176458093793231739
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328089123933327733}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 498539f0df7170c418f28f7b5503d3cf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1954464518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328089123933327733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3056213440062fb489f527330165a85f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 1508582128965813855}
-  fallSpeedThreshold: -100
---- !u!114 &6908633723696272387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328089123933327733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cb36c89e2fd63e40bf6cbe7831f08a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7176458093793231739}
-  stunTime: 1
-  inputDelay: 0.5
-  launchForce: 10
-  launchAngle: 45
---- !u!114 &5029440442382364020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328089123933327733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f352f3d96605df49a304d0dd5270ab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 5158703598386983337}
-  jumpSfx: {fileID: 8300000, guid: 929c73e419467cc43a9075559403349b, type: 3}
-  groundedSfx: {fileID: 8300000, guid: b21eccdc5d7b2264fad2406f3ee3e7ea, type: 3}
-  hookBlast: {fileID: 8300000, guid: 731acc1c239f84f429aa30e84e6a98b4, type: 3}
-  hookRappelSfx: {fileID: 8300000, guid: 061f0192620184540a99aada6a3d9bda, type: 3}
-  playerController: {fileID: 1508582128965813855}
-  hook: {fileID: 0}
-  hookState: 3
 --- !u!81 &6250296403786641395
 AudioListener:
   m_ObjectHideFlags: 0
@@ -251,6 +153,8 @@ GameObject:
   - component: {fileID: 1328089124666387264}
   - component: {fileID: 4962784487746446040}
   - component: {fileID: 6872090590556937576}
+  - component: {fileID: 224106110}
+  - component: {fileID: 224106111}
   m_Layer: 0
   m_Name: Felipe
   m_TagString: Untagged
@@ -288,16 +192,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e5858d47ec5c0449c253db537762e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  initialJumpForce: 0
-  jumpHoldForce: 0
-  maxJumpTime: 0
-  horizontalDrag: 0
-  gravityScale: 0
-  groundRaycastDistance: 0
-  jumpBufferTime: 0
-  coyoteTime: 0
-  playerBody: {fileID: 0}
+  speed: 500
+  initialJumpForce: 350
+  jumpHoldForce: 300
+  maxJumpTime: 10
+  horizontalDrag: 0.1
+  gravityScale: 100
+  groundRaycastDistance: 0.05
+  jumpBufferTime: 2
+  coyoteTime: 0.1
+  playerBody: {fileID: 1328089123933327734}
 --- !u!114 &6872090590556937576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +224,41 @@ MonoBehaviour:
   hookMask:
     serializedVersion: 2
     m_Bits: 0
-  hookHead: {fileID: 0}
+  hookHead: {fileID: 1328089125714790667}
+--- !u!114 &224106110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328089124666387265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f352f3d96605df49a304d0dd5270ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 5158703598386983337}
+  jumpSfx: {fileID: 8300000, guid: 929c73e419467cc43a9075559403349b, type: 3}
+  groundedSfx: {fileID: 8300000, guid: b21eccdc5d7b2264fad2406f3ee3e7ea, type: 3}
+  hookBlast: {fileID: 8300000, guid: 731acc1c239f84f429aa30e84e6a98b4, type: 3}
+  hookRappelSfx: {fileID: 8300000, guid: 061f0192620184540a99aada6a3d9bda, type: 3}
+  playerController: {fileID: 0}
+  hook: {fileID: 0}
+  hookState: 3
+--- !u!114 &224106111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328089124666387265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3056213440062fb489f527330165a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  fallSpeedThreshold: -100
 --- !u!1 &1328089125714790664
 GameObject:
   m_ObjectHideFlags: 0
