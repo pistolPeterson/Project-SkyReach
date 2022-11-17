@@ -39,14 +39,15 @@ namespace SkyReach.Player
             private set
             {
                 _state = value;
-                onStateChange.Invoke(_state);
+                StateChanged?.Invoke(_state);
             }
         }
 
         public Rigidbody2D AttachedBody { get; private set; }
 
         // events
-        public static event Action<HookState> onStateChange;
+        public static event Action<HookState> StateChanged;
+        public static event Action HookPulled;
 
         // internal variables
         private HookState _state;
@@ -248,6 +249,12 @@ namespace SkyReach.Player
             _originalPlayerGravity = player.Body.gravityScale;
             player.Body.gravityScale = gravityOverride;
 
+            // set player layer
+            player.gameObject.layer = _hookingLayer;
+
+            // fire event
+            HookPulled?.Invoke();
+
             // change state
             State = HookState.Pulling;
         }
@@ -261,6 +268,9 @@ namespace SkyReach.Player
             // detach hook from any bodies
             _attachedBody = null;
             _body.velocity = Vector2.zero;
+
+            // reset player layer
+            player.gameObject.layer = 0; // default layer
 
             // start cooldown
             _cooldown = cooldownLength;

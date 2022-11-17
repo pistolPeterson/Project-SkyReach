@@ -12,13 +12,13 @@ public class LevelChanger : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-      //  FadeToLevel(1);
+        //  FadeToLevel(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     public void FadeToLevel(int levelIndex, float timeToWait = 0.5f)
@@ -29,7 +29,7 @@ public class LevelChanger : MonoBehaviour
 
     private IEnumerator WaitToSetTrigger(float timeToWait)
     {
-        yield return new WaitForSeconds(timeToWait); 
+        yield return new WaitForSeconds(timeToWait);
         anim.SetTrigger("FadeOut");
     }
 
