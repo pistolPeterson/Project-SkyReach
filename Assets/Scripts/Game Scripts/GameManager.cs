@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using SkyReach.Player;
+using SkyReach.Camera;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -43,8 +44,10 @@ public class GameManager : MonoBehaviour
         CurrentGameState = GameState.Death;
         
         OnPlayerDeath?.Invoke();
+        CinemachineShake.Instance.ShakeCamera(7.5f, 1f);
         var lvlChanger = FindObjectOfType<LevelChanger>();
         if(lvlChanger) lvlChanger.FadeToLevel(1); //restart level
+        
     }
     
 
