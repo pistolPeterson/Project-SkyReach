@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform playerSpawnPoint;
-    [SerializeField] private LevelChanger levelChanger;
+    [SerializeField] private FadeToBlack levelChanger;
 
     [Header("Scene References")]
     [SerializeField] private int winSceneIndex;

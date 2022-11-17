@@ -3,22 +3,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelChanger : MonoBehaviour
+public class FadeToBlack : MonoBehaviour
 {
-    [SerializeField] private Animator anim;
+    private Animator anim;
 
     private int levelToLoad;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         anim = GetComponent<Animator>();
-        //  FadeToLevel(1);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void FadeToLevel(int levelIndex, float timeToWait = 0.5f)
