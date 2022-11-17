@@ -6,20 +6,10 @@ using UnityEngine;
 
 public class EndGameTrigger : MonoBehaviour
 {
-    private GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-        if (!gameManager) Debug.Log("There should be a gamemanager in the scene!");
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController player = other.GetComponent<PlayerController>(); 
-        
-        if(player == null || gameManager.CurrentGameState == GameState.EndGame ) return;
-       
-        GameManager.Instance.EndGame(); 
+        if (other.transform.parent.GetComponent<PlayerController>() == null) return;
+
+        GameManager.WinGame();
     }
 }

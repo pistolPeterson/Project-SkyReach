@@ -7,7 +7,6 @@ namespace SkyReach.Player
 {
     public class PlayerAnimation : MonoBehaviour
     {
-        private Animator animator;
         private string currentState;
         private float facing;
         const string playerIdleRight = "PlayerIdleRight";
@@ -19,15 +18,12 @@ namespace SkyReach.Player
         const string playerFallLeft = "PlayerFallLeft";
         const string playerFallRight = "PlayerFallRight";
 
-        
+
+        [SerializeField] private Animator animator;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private float fallSpeedThreshold = -20.1f;
         private Vector2 zeroVector = new Vector2(0,0);
         private bool isFalling = false;
-        void Start()
-        {
-            animator = GetComponent<Animator>();        
-        }
 
         void Update()
         {
@@ -59,7 +55,7 @@ namespace SkyReach.Player
                 if (facing > 0) 
                 {
                     //Plays idle animation if the player is not moving, if the player is moving plays the appropriate facing animation
-                    if (!playerController.IsGrounded())
+                    if (!playerController.IsGrounded)
                     {
                        ChangeAnimationState(playerJumpingRight); 
                     }
@@ -75,7 +71,7 @@ namespace SkyReach.Player
                 }
                 else if (facing < 0){
                    
-                   if (!playerController.IsGrounded())
+                   if (!playerController.IsGrounded)
                     {
                        ChangeAnimationState(playerJumpingLeft); 
                     }                   

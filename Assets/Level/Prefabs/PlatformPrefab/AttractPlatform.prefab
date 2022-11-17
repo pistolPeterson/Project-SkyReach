@@ -98,7 +98,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 1723625853722755019}
   - component: {fileID: 6065776981793676155}
   - component: {fileID: 8619768072484139964}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ForceField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
