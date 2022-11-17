@@ -229,6 +229,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5895533605325037708, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
   m_PrefabInstance: {fileID: 938446918}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &621456770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8759445624835726700, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
+  m_PrefabInstance: {fileID: 938446918}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621456767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &621456772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,12 +282,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 621456774}
+          m_TargetAssemblyTypeName: ButtonChangeSpriteOnClick, Assembly-CSharp
+          m_MethodName: OnPress
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 891752097}
           m_TargetAssemblyTypeName: TickUISlider, Assembly-CSharp
+          m_MethodName: OnRelease
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 621456774}
+          m_TargetAssemblyTypeName: ButtonChangeSpriteOnClick, Assembly-CSharp
           m_MethodName: OnRelease
           m_Mode: 1
           m_Arguments:
@@ -303,6 +338,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &621456774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621456767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de156cd44a99aef4cb445ec3ef4268ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 621456770}
+  normalSprite: {fileID: 1015698406, guid: b577744e22713b34583821263b942304, type: 3}
+  pressedSprite: {fileID: 594744797, guid: b577744e22713b34583821263b942304, type: 3}
 --- !u!1 &715199126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1917,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2484867572625215765, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
   m_PrefabInstance: {fileID: 938446918}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1072601021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2443550302152542835, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
+  m_PrefabInstance: {fileID: 938446918}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072601018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1072601023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,12 +1970,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1072601025}
+          m_TargetAssemblyTypeName: ButtonChangeSpriteOnClick, Assembly-CSharp
+          m_MethodName: OnPress
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1026505702}
           m_TargetAssemblyTypeName: TickUISlider, Assembly-CSharp
+          m_MethodName: OnRelease
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1072601025}
+          m_TargetAssemblyTypeName: ButtonChangeSpriteOnClick, Assembly-CSharp
           m_MethodName: OnRelease
           m_Mode: 1
           m_Arguments:
@@ -1941,6 +2026,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1072601025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072601018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de156cd44a99aef4cb445ec3ef4268ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 1072601021}
+  normalSprite: {fileID: 1015698406, guid: b577744e22713b34583821263b942304, type: 3}
+  pressedSprite: {fileID: 594744797, guid: b577744e22713b34583821263b942304, type: 3}
 --- !u!1 &1141008314 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7678719849142785084, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
@@ -2785,6 +2885,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2407252747430988872, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
   m_PrefabInstance: {fileID: 938446918}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1923841786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4011233280492280595, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
+  m_PrefabInstance: {fileID: 938446918}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923841783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1923841788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2814,12 +2925,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1923841789}
+          m_TargetAssemblyTypeName: ButtonChangeSpriteOnClick, Assembly-CSharp
+          m_MethodName: OnPress
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1026505702}
           m_TargetAssemblyTypeName: TickUISlider, Assembly-CSharp
+          m_MethodName: OnRelease
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1923841789}
+          m_TargetAssemblyTypeName: ButtonChangeSpriteOnClick, Assembly-CSharp
           m_MethodName: OnRelease
           m_Mode: 1
           m_Arguments:
@@ -2846,11 +2981,37 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &1923841789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923841783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de156cd44a99aef4cb445ec3ef4268ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 1923841786}
+  normalSprite: {fileID: -1779901685, guid: cd9b12192a8b152489205f468312214b, type: 3}
+  pressedSprite: {fileID: 2041761560, guid: cd9b12192a8b152489205f468312214b, type: 3}
 --- !u!1 &1945004713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3032186987068068408, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
   m_PrefabInstance: {fileID: 938446918}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1945004716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 806315814136714312, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
+  m_PrefabInstance: {fileID: 938446918}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945004713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1945004718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2893,12 +3054,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1945004720}
+          m_TargetAssemblyTypeName: ButtonChangeSpriteOnClick, Assembly-CSharp
+          m_MethodName: OnPress
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 891752097}
           m_TargetAssemblyTypeName: TickUISlider, Assembly-CSharp
+          m_MethodName: OnRelease
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1945004720}
+          m_TargetAssemblyTypeName: ButtonChangeSpriteOnClick, Assembly-CSharp
           m_MethodName: OnRelease
           m_Mode: 1
           m_Arguments:
@@ -2925,6 +3110,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &1945004720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945004713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de156cd44a99aef4cb445ec3ef4268ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 1945004716}
+  normalSprite: {fileID: -1779901685, guid: cd9b12192a8b152489205f468312214b, type: 3}
+  pressedSprite: {fileID: 2041761560, guid: cd9b12192a8b152489205f468312214b, type: 3}
 --- !u!1 &2042268434 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7678719849079753845, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
