@@ -6,17 +6,16 @@ using UnityEngine.InputSystem;
 namespace SkyReach.Player
 {
     /// <summary>
-    /// This is a grappling hook addition to the Player Controller that allows the player to attach to and pull itself towards a target.
+    /// This is a grappling hook addition to the Player Controller that allows the body to attach to and pull itself towards a target.
     /// It works under Unity's Physics2D system, and fires a moving hook head that will attach to the first object it collides with.
-    /// If it collides with a target, it will pull the player towards it.
-    /// If not, it will simply retract back to the player.
+    /// If it collides with a target, it will pull the body towards it.
+    /// If not, it will simply retract back to the body.
     ///
     /// IMPORTANT NOTE: This script MODIFIES the Layer property of the Player Controller for ease of use with effectors. If you encounter
     /// issues with the Player Controller not interacting with objects while hooking, it is likely due to the Layer property being changed.
     ///
     /// - Victor (10/19/2022)
     /// </summary>
-    [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
     public class GrapplingHook : MonoBehaviour, Input.IHookActions
     {
         [Header("Hook Properties")]
@@ -29,67 +28,79 @@ namespace SkyReach.Player
         [SerializeField] private bool canPullOnRetract = true;
         [SerializeField] private LayerMask hookMask;
 
-        [Header("Player Reference")]
-        [SerializeField] private PlayerController player;
+        [Header("Body references")]
+        [SerializeField] private Transform hookHead;
 
         // exposed properties
-        public HookState State { get; private set; } = HookState.Idle;
+        public HookState State
+        {
+            get => _state;
+            private set
+            {
+                _state = value;
+                StateChanged?.Invoke(_state);
+            }
+        }
+
+        public Rigidbody2D AttachedBody { get; private set; }
+
+        // events
+        public static event Action<HookState> StateChanged;
+        public static event Action HookPulled;
+        public static event Action HookFired;
+        public static event Action HookFinished;
 
         // internal variables
-        private Vector2 aimTarget;
-        private Rigidbody2D hookBody;
-        private CircleCollider2D hookCollider;
-        private Rigidbody2D attachedBody;
-        private Input input;
-        private int hookingLayer;
-        private float originalPlayerGravity;
-        private float cooldownTimer;
-        private bool isFiring;
-        public static event Action hookPullAction;
-
+        private HookState _state;
+        private Vector2 _aimTarget;
+        private Rigidbody2D _body;
+        private CircleCollider2D _collider;
+        private Rigidbody2D _attachedBody;
+        private Input _input;
+        private PlayerController _playerController;
+        private Rigidbody2D _playerBody;
+        private int _hookingLayer;
+        private float _originalPlayerGravity;
+        private float _cooldown;
+        private bool _isFiring;
 
         public void OnEnable()
         {
-            if (input == null)
+            if (_input == null)
             {
-                input = new Input();
-                input.Hook.SetCallbacks(this);
+                _input = new Input();
+                _input.Hook.SetCallbacks(this);
             }
 
-            input.Enable();
+            _input.Enable();
         }
 
         public void OnDisable()
         {
-            input.Disable();
+            _input.Disable();
         }
 
         public void Awake()
         {
-            // warn if player is not set
-            if (player == null)
-            {
-                Debug.LogWarning("Player not set in GrapplingHook.cs");
-                enabled = false;
-            }
-
-            hookBody = GetComponent<Rigidbody2D>();
-            hookCollider = GetComponent<CircleCollider2D>();
+            _body = hookHead.GetComponent<Rigidbody2D>();
+            _collider = hookHead.GetComponent<CircleCollider2D>();
+            _playerController = GetComponent<PlayerController>();
         }
 
         public void Start()
         {
             // init input
-            if (input == null)
+            if (_input == null)
             {
-                input = new Input();
-                input.Hook.SetCallbacks(this);
+                _input = new Input();
+                _input.Hook.SetCallbacks(this);
             }
 
-            input.Enable();
+            _input.Enable();
 
             // set hooking layer
-            hookingLayer = LayerMask.NameToLayer("HookingPlayer");
+            _hookingLayer = LayerMask.NameToLayer("HookingPlayer");
+            _playerBody = _playerController.Body;
         }
 
         public void FixedUpdate()
@@ -98,20 +109,22 @@ namespace SkyReach.Player
             {
                 case HookState.Firing:
                     // Check if hook can attach
-                    Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, hookCollider.radius, hookMask);
+                    Collider2D[] colliders = Physics2D.OverlapCircleAll(_body.position, _collider.radius, hookMask);
                     if (colliders.Length > 0)
                     {
                         Attach(colliders[0].attachedRigidbody);
+                        break;
                     }
 
                     // if trying to fire hook, but hook is already out, finish it prematurely
-                    if (isFiring)
+                    if (_isFiring)
                     {
                         Finish();
+                        break;
                     }
 
                     // if hook reaches max distance, retract it
-                    if (isFiring || Vector2.Distance(transform.position, player.transform.position) >= maxDistance)
+                    if (_isFiring || Vector2.Distance(_body.position, _playerBody.position) >= maxDistance)
                     {
                         Retract();
                     }
@@ -120,13 +133,15 @@ namespace SkyReach.Player
                 case HookState.Retracting:
 
                     // if trying to fire hook, but hook is already out, finish it prematurely
-                    if (isFiring)
+                    if (_isFiring)
                     {
                         Finish();
+                        break;
                     }
 
-                    // check if hook has reached player
-                    if (player.Collider.IsTouching(hookCollider))
+                    // check if hook has reached body
+                    // hook collider is a trigger
+                    if (_playerBody.IsTouching(_collider))
                     {
                         Finish();
                         break;
@@ -136,7 +151,7 @@ namespace SkyReach.Player
                     if (canPullOnRetract)
                     {
                         // Check if hook can attach
-                        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, hookCollider.radius, hookMask);
+                        Collider2D[] cols = Physics2D.OverlapCircleAll(_body.position, _collider.radius, hookMask);
                         if (cols.Length > 0)
                         {
                             Attach(cols[0].attachedRigidbody);
@@ -144,56 +159,57 @@ namespace SkyReach.Player
                         }
                     }
 
-                    // move hook towards player
-                    Vector2 direction = player.Body.position - hookBody.position;
-                    hookBody.velocity = direction.normalized * retractSpeed;
+                    // move hook towards body
+                    Vector2 direction = _playerBody.position - _body.position;
+                    _body.velocity = direction.normalized * retractSpeed;
                     break;
 
                 case HookState.Pulling:
                     // if trying to fire hook, but hook is already out, finish it prematurely
-                    if (isFiring)
-                    {
-                        Finish();
-                    }
-
-                    // if hook is attached to a moving body, move the hook with it
-                    hookBody.velocity = attachedBody?.velocity ?? Vector2.zero;
-
-                    // check if player has reached hook
-                    if (player.Collider.IsTouching(hookCollider))
+                    if (_isFiring)
                     {
                         Finish();
                         break;
                     }
 
-                    // move player towards hook
-                    Vector2 pullDirection = hookBody.position - player.Body.position;
-                    player.Body.AddForce(pullDirection.normalized * retractSpeed);
+                    // if hook is attached to a moving body, move the hook with it
+                    _body.velocity = _attachedBody?.velocity ?? Vector2.zero;
+
+                    // check if body has reached hook
+                    if (_playerBody.IsTouching(_collider))
+                    {
+                        Finish();
+                        break;
+                    }
+
+                    // move _playerController towards hook
+                    Vector2 pullDirection = _body.position - _playerBody.position;
+                    _playerController.Body.AddForce(pullDirection.normalized * retractSpeed);
                     break;
 
                 case HookState.Cooldown:
                     // check if cooldown is over
-                    if (cooldownTimer <= 0)
+                    if (_cooldown <= 0)
                     {
                         State = HookState.Idle;
                         break;
                     }
 
-                    cooldownTimer -= Time.fixedDeltaTime;
+                    _cooldown -= Time.fixedDeltaTime;
 
-                    // move hook to player
-                    hookBody.position = player.Body.position;
+                    // move hook to _playerController
+                    _body.position = _playerBody.position;
                     break;
 
                 case HookState.Idle:
 
-                    // move and rotate hook to rotate around player in aim direction at base distance
-                    Vector2 aimDirection = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(aimTarget) - player.Body.position;
-                    hookBody.position = player.Body.position + aimDirection.normalized * baseDistance;
-                    transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg);
+                    // move and rotate hook to rotate around body in aim direction at base distance
+                    Vector2 aimDirection = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(_aimTarget) - _playerBody.position;
+                    _body.position = _playerBody.position + aimDirection.normalized * baseDistance;
+                    _body.rotation = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
 
                     // check if hook is being fired
-                    if (isFiring)
+                    if (_isFiring)
                     {
                         Fire();
                     }
@@ -204,15 +220,18 @@ namespace SkyReach.Player
         private void Fire()
         {
             // get direction to fire hook
-            Vector2 directionToFire = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(aimTarget) - player.Body.position;
+            Vector2 directionToFire = (Vector2)UnityEngine.Camera.main.ScreenToWorldPoint(_aimTarget) - _playerBody.position;
 
             // set body properties
-            hookBody.position = player.Body.position + (Vector2)directionToFire.normalized * baseDistance;
-            hookBody.velocity = directionToFire.normalized * fireSpeed;
+            _body.position = _playerBody.position + (Vector2)directionToFire.normalized * baseDistance;
+            _body.velocity = directionToFire.normalized * fireSpeed;
+
+            // fire event
+            HookFired?.Invoke();
 
             // change state
             State = HookState.Firing;
-            isFiring = false;
+            _isFiring = false;
         }
 
         private void Retract()
@@ -224,15 +243,18 @@ namespace SkyReach.Player
         private void Attach(Rigidbody2D body)
         {
             // move hook with attached body if it is moving, otherwise keep it still
-            hookBody.velocity = body?.velocity ?? Vector2.zero;
-            attachedBody = body;
+            _body.velocity = body?.velocity ?? Vector2.zero;
+            _attachedBody = body;
 
-            // set player gravity
-            originalPlayerGravity = player.Body.gravityScale;
-            player.Body.gravityScale = gravityOverride;
+            // set body gravity
+            _originalPlayerGravity = _playerBody.gravityScale;
+            _playerBody.gravityScale = gravityOverride;
+
+            // set body layer
+            _playerBody.gameObject.layer = _hookingLayer;
 
             // fire event
-            hookPullAction?.Invoke();
+            HookPulled?.Invoke();
 
             // change state
             State = HookState.Pulling;
@@ -240,29 +262,34 @@ namespace SkyReach.Player
 
         private void Finish()
         {
-            // reset player gravity and update original gravity
-            player.Body.gravityScale = originalPlayerGravity;
-            originalPlayerGravity = player.Body.gravityScale;
+            // reset body gravity and update original gravity
+            _playerBody.gravityScale = _originalPlayerGravity;
+            _originalPlayerGravity = _playerBody.gravityScale;
 
             // detach hook from any bodies
-            attachedBody = null;
-            hookBody.velocity = Vector2.zero;
-            hookBody.position = player.Body.position;
+            _attachedBody = null;
+            _body.velocity = Vector2.zero;
+
+            // reset body layer
+            _playerBody.gameObject.layer = 0; // default layer
+
+            // fire event
+            HookFinished?.Invoke();
 
             // start cooldown
-            cooldownTimer = cooldownLength;
+            _cooldown = cooldownLength;
 
             State = HookState.Cooldown;
         }
 
         void Input.IHookActions.OnFire(InputAction.CallbackContext context)
         {
-            isFiring = context.ReadValueAsButton();
+            _isFiring = context.ReadValueAsButton();
         }
 
         void Input.IHookActions.OnAim(InputAction.CallbackContext context)
         {
-            aimTarget = context.ReadValue<Vector2>();
+            _aimTarget = context.ReadValue<Vector2>();
         }
 
         public enum HookState

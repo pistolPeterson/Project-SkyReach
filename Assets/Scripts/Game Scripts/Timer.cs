@@ -11,11 +11,7 @@ public class Timer : MonoBehaviour
     private bool timerActive = false;
     public float currentTime;
 
-    private float finalTime;  
-    
-    
-    
-    
+    private float finalTime;
 
     // Start is called before the first frame update
     void Start()
@@ -27,51 +23,51 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timerActive == true) 
+        if (timerActive == true)
         {
             currentTime = currentTime + Time.deltaTime;
-           
-        } 
-       
-        
+
+        }
+
+
     }
 
     private void OnEnable()
     {
-        GameManager.endGame += StopTimer; 
-        
+        GameManager.GameWon += StopTimer;
+
     }
 
     private void OnDisable()
     {
-        GameManager.endGame -= StopTimer;
+        GameManager.GameWon -= StopTimer;
     }
 
-    public void StartTimer() 
-        {
-            timerActive = true;
-        }
-
-        public void PauseTimer()
-        {
-            timerActive = false;
-        }
-
-        public void StopTimer()
-        {
-            timerActive = false;
-            finalTime = currentTime;
-            var statsData = FindObjectOfType<StatisticsData>();
-            if(statsData)
-                statsData.SetBestRunTime(finalTime);
-        }
-    
-        public void ResetTimer()
-        {
-            timerActive = false;
-            currentTime = 0;
-        }
-        
+    public void StartTimer()
+    {
+        timerActive = true;
     }
+
+    public void PauseTimer()
+    {
+        timerActive = false;
+    }
+
+    public void StopTimer()
+    {
+        timerActive = false;
+        finalTime = currentTime;
+        var statsData = FindObjectOfType<StatisticsData>();
+        if (statsData)
+            statsData.SetBestRunTime(finalTime);
+    }
+
+    public void ResetTimer()
+    {
+        timerActive = false;
+        currentTime = 0;
+    }
+
+}
 
 
