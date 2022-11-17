@@ -14,7 +14,6 @@ public class StatisticsData : MonoBehaviour
     private int numHooks = 0;
     private int playerDeath = 0;
     private int enemiesKilled = 0;
-    private float bestRunTime = Single.MaxValue;
 
 
     private void Awake()
@@ -30,7 +29,7 @@ public class StatisticsData : MonoBehaviour
     }
 
    
-    public int getJumps()
+    public int GetJumps()
     {
         return PlayerPrefs.GetInt("Jumps");
     }
@@ -59,18 +58,18 @@ public class StatisticsData : MonoBehaviour
     void OnEnable()
     {
         //method that increase jumps
-        PlayerController.jump += setJumps;
-        GrapplingHook.HookPulled += setHooks;
-        GameManager.PlayerDied += setDeaths;
+        PlayerController.jump += SetJumps;
+        GrapplingHook.HookPulled += SetHooks;
+        GameManager.PlayerDied += SetDeaths;
 
     }
 
     void OnDisable()
     {
         //unsubscribe 
-        PlayerController.jump -= setJumps;
-        GrapplingHook.HookPulled -= setHooks;
-        GameManager.PlayerDied -= setDeaths;
+        PlayerController.jump -= SetJumps;
+        GrapplingHook.HookPulled -= SetHooks;
+        GameManager.PlayerDied -= SetDeaths;
 
     }
 
