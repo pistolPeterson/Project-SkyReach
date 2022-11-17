@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMainMenu Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 494876617744799553, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 494876617744799556, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -599,6 +603,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 494876617806803640, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1689597745, guid: d0f593142b78d0842ac24784706e0601, type: 3}
     - target: {fileID: 494876617806803641, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -615,6 +623,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SkyReach.UI.MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 494876617884609818, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1071058530, guid: 587d0bc451bd7364ca988a169c4c8537, type: 3}
+    - target: {fileID: 494876617884609830, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -884
+      objectReference: {fileID: 0}
+    - target: {fileID: 494876617884609830, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -136.75523
+      objectReference: {fileID: 0}
+    - target: {fileID: 494876618000764675, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1916754006, guid: 4278e02331325f94ab24fe582c896273, type: 3}
     - target: {fileID: 494876618000764684, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -639,6 +663,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1186621805781702524, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1619025131, guid: 44662593bde09ab4ea7048cc3df967cd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a6ba879c6f651488d9cf38fded579c, type: 3}
 --- !u!1001 &689191712
