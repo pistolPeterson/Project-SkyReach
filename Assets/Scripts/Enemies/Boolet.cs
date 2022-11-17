@@ -6,21 +6,21 @@ using UnityEngine;
 namespace SkyReach.Enemies.Projectiles
 {
 
-/// <summary>
-/// A bullet instance script, at spawn will go a specific direction at a specific speed
-/// boolet uwu
-/// </summary>
+    /// <summary>
+    /// A bullet instance script, at spawn will go a specific direction at a specific speed
+    /// boolet uwu
+    /// </summary>
     public class Boolet : MonoBehaviour
     {
         //speed of the bullet 
         public float Speed = 25f;
-        
+
         //bullet direction enum, make it easier for designers to set direction of the bullet at spawn if needed
         [SerializeField] private BooletDirection booletDirectionEnum = BooletDirection.Down;
 
-        
+
         private Vector3 booletDirection;
-    // Start is called before the first frame update
+        // Start is called before the first frame update
         void Start()
         {
             //default direction is going down
@@ -28,7 +28,7 @@ namespace SkyReach.Enemies.Projectiles
             InitBooletDirection();
         }
 
-    // Update is called once per frame
+        // Update is called once per frame
         void FixedUpdate()
         {
             transform.position += booletDirection * Time.deltaTime * Speed;
@@ -38,13 +38,13 @@ namespace SkyReach.Enemies.Projectiles
         {
             if (collision.gameObject.GetComponent<PlayerController>())
             {
-                
-                GameManager.Instance.Death();
+
+                GameManager.KillPlayer();
 
                 Destroy(gameObject);
-                
+
             }
-                
+
         }
 
         //simple switch state to set direction of the bullet based on boolet direction enum
@@ -71,10 +71,10 @@ namespace SkyReach.Enemies.Projectiles
         {
             Up,
             Down,
-            Left, 
+            Left,
             Right
-            
+
         }
     }
-    
+
 }

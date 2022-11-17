@@ -9,7 +9,7 @@ public class PlayerDeathUI : MonoBehaviour
     [SerializeField] private Animator anim;
 
     [SerializeField] private GameObject playerDeathBackgroundPanel;
-    [SerializeField]private GameObject playerDeathAnimationPanel;
+    [SerializeField] private GameObject playerDeathAnimationPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +23,12 @@ public class PlayerDeathUI : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnPlayerDeath += PlayPlayerDeathAnimation;
+        GameManager.PlayerDied += PlayPlayerDeathAnimation;
     }
 
     private void OnDisable()
     {
-        GameManager.OnPlayerDeath -= PlayPlayerDeathAnimation;
+        GameManager.PlayerDied -= PlayPlayerDeathAnimation;
     }
     public void PlayPlayerDeathAnimation()
     {
