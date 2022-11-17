@@ -22,7 +22,6 @@ namespace SkyReach.Player
         [SerializeField] private float maxJumpTime;
         [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag;
         [SerializeField] private float gravityScale;
-        public static event Action jump;
 
         [Header("Advanced Movement Properties")]
         [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
@@ -45,6 +44,9 @@ namespace SkyReach.Player
         private float coyoteTimer = 0.0f;
         private bool coyoteTimeExpired = false;
         private Input input;
+
+        // events
+        public static event Action Jumped;
 
 
         public void Awake()
@@ -123,7 +125,7 @@ namespace SkyReach.Player
                     Body.AddForce(Vector2.up * initialJumpForce, ForceMode2D.Impulse);
                     coyoteTimeExpired = true;
                     jumpHoldTimer = maxJumpTime;
-                    jump?.Invoke();
+                    Jumped?.Invoke();
                     didJump = true;
 
                 }

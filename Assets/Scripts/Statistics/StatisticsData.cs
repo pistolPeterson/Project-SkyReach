@@ -58,18 +58,18 @@ public class StatisticsData : MonoBehaviour
     void OnEnable()
     {
         //method that increase jumps
-        PlayerController.jump += setJumps;
-        GrapplingHook.HookPulled += setHooks;
-        GameManager.PlayerDied += setDeaths;
+        PlayerController.Jumped += SetJumps;
+        GrapplingHook.HookPulled += SetHooks;
+        GameManager.PlayerDied += SetDeaths;
 
     }
 
     void OnDisable()
     {
         //unsubscribe 
-        PlayerController.jump -= setJumps;
-        GrapplingHook.HookPulled -= setHooks;
-        GameManager.PlayerDied -= setDeaths;
+        PlayerController.Jumped -= SetJumps;
+        GrapplingHook.HookPulled -= SetHooks;
+        GameManager.PlayerDied -= SetDeaths;
 
     }
 

@@ -95,12 +95,12 @@ public class PlayerAudio : MonoBehaviour, Input.IHookActions
             input.Hook.SetCallbacks(this);
         }
         input.Enable();
-        PlayerController.jump += PlayJumpSFX;
+        PlayerController.Jumped += PlayJumpSFX;
     }
 
     private void OnDisable()
     {
-        PlayerController.jump -= PlayJumpSFX;
+        PlayerController.Jumped -= PlayJumpSFX;
         input.Disable();
     }
     public void PlayJumpSFX()
