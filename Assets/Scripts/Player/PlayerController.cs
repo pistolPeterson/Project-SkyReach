@@ -29,11 +29,13 @@ namespace SkyReach.Player
 
         [Header("References")]
         [SerializeField] private Transform playerBody;
+        
         // exposed properties
         public Rigidbody2D Body { get; private set; }
         public Collider2D Collider { get; private set; }
         public Vector2 FacingDirection { get; private set; }
         public Vector2 LastHorizontalFacingDirection { get; private set; } = Vector2.right;
+        public bool IsGrounded { get => _groundCollider != null; }
 
         // internal variables
         private Collider2D _groundCollider = null;

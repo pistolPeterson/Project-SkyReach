@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64c85b3e8b63454993e583b436d10ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
+  player: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
   levelChanger: {fileID: 0}
-  winSceneIndex: 0
+  winSceneIndex: 2

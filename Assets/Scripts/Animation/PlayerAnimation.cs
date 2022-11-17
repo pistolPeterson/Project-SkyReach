@@ -59,7 +59,7 @@ namespace SkyReach.Player
                 if (facing > 0) 
                 {
                     //Plays idle animation if the player is not moving, if the player is moving plays the appropriate facing animation
-                    if (!playerController.IsGrounded())
+                    if (!playerController.IsGrounded)
                     {
                        ChangeAnimationState(playerJumpingRight); 
                     }
@@ -75,7 +75,7 @@ namespace SkyReach.Player
                 }
                 else if (facing < 0){
                    
-                   if (!playerController.IsGrounded())
+                   if (!playerController.IsGrounded)
                     {
                        ChangeAnimationState(playerJumpingLeft); 
                     }                   
