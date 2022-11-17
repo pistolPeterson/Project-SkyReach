@@ -38,7 +38,7 @@ namespace SkyReach.Camera
         // Update is called once per frame
         void Update()
         {
-    
+            
         }
 
         private void LateUpdate()
@@ -80,6 +80,7 @@ namespace SkyReach.Camera
 
         public void StartShake(float duration, float power)
         {
+            Debug.Log("SHAKE");
             shakeTimeRemaining = duration;
             shakePower = power;
 

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using SkyReach.Player;
 
 /// <summary>
 /// The game manager, will set the game flow/states and allow the game to pass any data or info.. 
@@ -10,17 +11,18 @@ public class GameManager : MonoBehaviour
     private static GameManager Instance;
 
     [Header("References")]
-    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject player;
     [SerializeField] private Transform playerSpawnPoint;
-    [SerializeField] private LevelChanger levelChanger;
+    [SerializeField] private FadeToBlack levelChanger;
 
     [Header("Scene References")]
     [SerializeField] private int winSceneIndex;
 
     // internal variables
     private GameState _state;
-    private GameObject _player;
     private Scene _currentScene;
+    private PlayerController _playerController;
+    private GrapplingHook _grapplingHook;
 
     // exposed properties
     public GameState State
@@ -61,9 +63,10 @@ public class GameManager : MonoBehaviour
     public static event Action GamePaused;
     public static event Action PlayerDied;
 
-    // Implementing Singleton
+    
     private void Awake()
     {
+        // Implementing Singleton
         if (Instance == null)
         {
             Instance = this;
@@ -73,6 +76,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // set player controller and grappling hook
+        _playerController = player.GetComponent<PlayerController>();
+        _grapplingHook = player.GetComponent<GrapplingHook>();
     }
 
     private void Update()
@@ -80,7 +87,7 @@ public class GameManager : MonoBehaviour
         switch (State)
         {
             case GameState.Starting:
-                SpawnPlayer();
+                EnablePlayer();
                 break;
             case GameState.Playing:
                 break;
@@ -95,10 +102,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void SpawnPlayer()
+    public static void DisablePlayer()
     {
-        Instance._player = Instantiate(Instance.playerPrefab, Instance.playerSpawnPoint.position, Quaternion.identity);
-        Instance.State = GameState.Playing;
+        // get playercontroller, grapplinghook, and disable them
+    }
+
+    public static void EnablePlayer()
+    {
+        // get playercontroller, grapplinghook, and enable them
+
     }
 
     public static void WinGame()

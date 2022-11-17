@@ -12,7 +12,6 @@ namespace SkyReach.Player
     /// This works best with frictionless colliders, as it has its own implemented horizontal friction that also acts in mid-air.
     /// Rigidbody2D.drag is not used because it acts on the vertical axis as well, which slows down the player when jumping.
     /// </summary>
-    [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour, Input.IMovementActions
     {
         [Header("Movement Properties")]
@@ -22,51 +21,74 @@ namespace SkyReach.Player
         [SerializeField] private float maxJumpTime;
         [Range(0.0f, 1.0f), SerializeField] private float horizontalDrag;
         [SerializeField] private float gravityScale;
-        public static event Action jump;
 
         [Header("Advanced Movement Properties")]
         [Range(0.0f, 1.0f), SerializeField] private float groundRaycastDistance;
         [SerializeField] private float jumpBufferTime;
         [Range(0.0f, 1.0f), SerializeField] private float coyoteTime;
 
-
+        [Header("References")]
+        [SerializeField] private Transform playerBody;
+        
         // exposed properties
         public Rigidbody2D Body { get; private set; }
         public Collider2D Collider { get; private set; }
         public Vector2 FacingDirection { get; private set; }
         public Vector2 LastHorizontalFacingDirection { get; private set; } = Vector2.right;
+        public bool IsGrounded { get => _groundCollider != null; }
 
         // internal variables
-        private Collider2D groundCollider = null;
-        private bool isJumping = false;
-        private bool didJump = false;
-        private float jumpHoldTimer = 0.0f;
-        private float jumpBufferTimer = 0.0f;
-        private float coyoteTimer = 0.0f;
-        private bool coyoteTimeExpired = false;
-        private Input input;
+        private Collider2D _groundCollider = null;
+        private bool _isJumping = false;
+        private bool _jumped = false;
+        private float _jumpHoldTimer = 0.0f;
+        private float _jumpBufferTimer = 0.0f;
+        private float _coyoteTimer = 0.0f;
+        private bool _coyoteTimeExpired = false;
+        private Input _input;
+
+        // private properties
+        private Collider2D groundCollider
+        {
+            get => _groundCollider;
+            set
+            {
+                if (_groundCollider != value)
+                {
+                    _groundCollider = value;
+                    if(_groundCollider != null)
+                    {
+                        Landed?.Invoke();
+                    }
+                }
+            }
+        }
+
+        // events
+        public static event Action Jumped;
+        public static event Action Landed;
 
 
         public void Awake()
         {
-            Body = GetComponent<Rigidbody2D>();
-            Collider = GetComponent<Collider2D>();
+            Body = playerBody.GetComponent<Rigidbody2D>();
+            Collider = playerBody.GetComponent<Collider2D>();
         }
 
         public void OnEnable()
         {
-            if (input == null)
+            if (_input == null)
             {
-                input = new Input();
-                input.Movement.SetCallbacks(this);
+                _input = new Input();
+                _input.Movement.SetCallbacks(this);
             }
-            input.Enable();
+            _input.Enable();
 
         }
 
         public void OnDisable()
         {
-            input.Disable();
+            _input.Disable();
         }
 
         public void FixedUpdate()
@@ -95,8 +117,8 @@ namespace SkyReach.Player
             // if grounded on a rigidbody, move the player with the rigidbody
             if (relativeVelocity.y <= 0 && groundCollider != null)
             {
-                coyoteTimeExpired = false;
-                coyoteTimer = 0.0f;
+                _coyoteTimeExpired = false;
+                _coyoteTimer = 0.0f;
 
                 if (groundBody != null)
                 {
@@ -105,63 +127,63 @@ namespace SkyReach.Player
             }
 
             // if the player isn't grounded and coyoteTimeExpired is false, start the coyote timer
-            if (groundCollider == null && !coyoteTimeExpired)
+            if (groundCollider == null && !_coyoteTimeExpired)
             {
-                coyoteTimer += Time.fixedDeltaTime;
-                if (coyoteTimer >= coyoteTime)
+                _coyoteTimer += Time.fixedDeltaTime;
+                if (_coyoteTimer >= coyoteTime)
                 {
-                    coyoteTimeExpired = true;
+                    _coyoteTimeExpired = true;
                 }
             }
 
-            if (isJumping)
+            if (_isJumping)
             {
                 // if the player is grounded or the coyote timer is still running, jump
-                if (!didJump && (groundCollider && relativeVelocity.y <= 0) || (coyoteTimer > 0.0f && !coyoteTimeExpired))
+                if (!_jumped && (groundCollider && relativeVelocity.y <= 0) || (_coyoteTimer > 0.0f && !_coyoteTimeExpired))
                 {
                     Body.velocity = new Vector2(Body.velocity.x, 0.0f);
                     Body.AddForce(Vector2.up * initialJumpForce, ForceMode2D.Impulse);
-                    coyoteTimeExpired = true;
-                    jumpHoldTimer = maxJumpTime;
-                    jump?.Invoke();
-                    didJump = true;
+                    _coyoteTimeExpired = true;
+                    _jumpHoldTimer = maxJumpTime;
+                    Jumped?.Invoke();
+                    _jumped = true;
 
                 }
 
                 // handle jump hold
-                if (jumpHoldTimer > 0.0f)
+                if (_jumpHoldTimer > 0.0f)
                 {
                     Body.AddForce(Vector2.up * jumpHoldForce);
-                    jumpHoldTimer -= Time.fixedDeltaTime;
-                    if (jumpHoldTimer <= 0.0f)
+                    _jumpHoldTimer -= Time.fixedDeltaTime;
+                    if (_jumpHoldTimer <= 0.0f)
                     {
-                        jumpHoldTimer = 0.0f;
-                        isJumping = false;
+                        _jumpHoldTimer = 0.0f;
+                        _isJumping = false;
                     }
                 }
 
                 // if the player is not grounded and the coyote timer expired but the player is holding jump, buffer the jump
-                if (!groundCollider && coyoteTimeExpired && jumpHoldTimer <= 0.0f)
+                if (!groundCollider && _coyoteTimeExpired && _jumpHoldTimer <= 0.0f)
                 {
-                    if (jumpBufferTimer <= 0.0f)
+                    if (_jumpBufferTimer <= 0.0f)
                     {
-                        jumpBufferTimer = jumpBufferTime;
+                        _jumpBufferTimer = jumpBufferTime;
                     }
                     else
                     {
-                        jumpBufferTimer -= Time.deltaTime;
-                        if (jumpBufferTimer <= 0.0f)
+                        _jumpBufferTimer -= Time.deltaTime;
+                        if (_jumpBufferTimer <= 0.0f)
                         {
-                            isJumping = false;
+                            _isJumping = false;
                         }
                     }
                 }
             }
             else
             {
-                jumpHoldTimer = 0.0f;
-                jumpBufferTimer = 0.0f;
-                didJump = false;
+                _jumpHoldTimer = 0.0f;
+                _jumpBufferTimer = 0.0f;
+                _jumped = false;
             }
 
             // While there is no explicit speed cap, horizontal drag will create an artificial one.
@@ -169,11 +191,6 @@ namespace SkyReach.Player
 
             // Horizontal movement
             Body.AddForce(FacingDirection.x * Vector2.right * speed);
-        }
-
-        public bool IsGrounded()
-        {
-            return groundCollider != null;
         }
 
         void Input.IMovementActions.OnMove(InputAction.CallbackContext context)
@@ -187,7 +204,7 @@ namespace SkyReach.Player
 
         void Input.IMovementActions.OnJump(InputAction.CallbackContext context)
         {
-            isJumping = context.ReadValueAsButton();
+            _isJumping = context.ReadValueAsButton();
         }
 
 
