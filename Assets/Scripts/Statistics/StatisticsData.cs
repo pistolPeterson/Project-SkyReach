@@ -29,7 +29,8 @@ public class StatisticsData : MonoBehaviour
 
     }
 
-    public int GetJumps()
+   
+    public int getJumps()
     {
         return PlayerPrefs.GetInt("Jumps");
     }
@@ -58,18 +59,18 @@ public class StatisticsData : MonoBehaviour
     void OnEnable()
     {
         //method that increase jumps
-        PlayerController.jump += SetJumps;
-        GrapplingHook.hookPullAction += SetHooks;
-        GameManager.OnPlayerDeath += SetDeaths;
+        PlayerController.jump += setJumps;
+        GrapplingHook.HookPulled += setHooks;
+        GameManager.PlayerDied += setDeaths;
 
     }
 
     void OnDisable()
     {
         //unsubscribe 
-        PlayerController.jump -= SetJumps;
-        GrapplingHook.hookPullAction -= SetHooks;
-        GameManager.OnPlayerDeath -= SetDeaths;
+        PlayerController.jump -= setJumps;
+        GrapplingHook.HookPulled -= setHooks;
+        GameManager.PlayerDied -= setDeaths;
 
     }
 

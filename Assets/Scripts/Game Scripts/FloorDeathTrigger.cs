@@ -10,7 +10,7 @@ public class FloorDeathTrigger : MonoBehaviour
     {
         if (col.gameObject.GetComponent<PlayerController>())
         {
-            GameManager.Instance.Death();
+            GameManager.KillPlayer();
         }
     }
 }

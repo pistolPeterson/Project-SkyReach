@@ -16,10 +16,10 @@ public class EndGameTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController player = other.GetComponent<PlayerController>(); 
-        
-        if(player == null || gameManager.CurrentGameState == GameState.EndGame ) return;
-       
-        GameManager.Instance.EndGame(); 
+        PlayerController player = other.GetComponent<PlayerController>();
+
+        if (player == null) return;
+
+        GameManager.KillPlayer();
     }
 }
