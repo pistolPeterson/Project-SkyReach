@@ -43,7 +43,8 @@ namespace SkyReach.UI
 
         private void RandomizeSfx() // put this in a global audio manager
         {
-
+            audioSource.volume = Random.Range(0.9f, 1.0f);
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
         }
     }
 
