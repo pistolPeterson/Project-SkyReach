@@ -14,6 +14,7 @@ namespace SkyReach.UI
         [SerializeField] private AudioClip hoverSfx;
 
         [SerializeField] private AudioClip clickSfx;
+        [SerializeField] private AudioClip clickSfx2;
 
         // Start is called before the first frame update
         void Start()
@@ -37,9 +38,17 @@ namespace SkyReach.UI
 
         public void PlayClickSfx()
         {
-            audioSource.PlayOneShot(clickSfx);
+         
+            if(Random.Range(0, 100) % 2 == 0)
+                audioSource.PlayOneShot(clickSfx);
+            else
+            {
+                audioSource.PlayOneShot(clickSfx2);
+            }
 
         }
+        
+      
 
         private void RandomizeSfx() // put this in a global audio manager
         {
