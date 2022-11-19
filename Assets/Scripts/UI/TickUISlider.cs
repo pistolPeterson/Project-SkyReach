@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-
+/// <summary>
+/// A representation of the slider that removes/adds sprites when the button is pressed 
+/// </summary>
 public class TickUISlider : MonoBehaviour
 {
     public List<GameObject> ticks;
