@@ -1309,14 +1309,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 3840869722592356135, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 171.1366
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840869722592356135, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 32.6812
-      objectReference: {fileID: 0}
+    - target: {fileID: 3690866168959197324, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
+      propertyPath: loadUpSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 89b01eb28e2f6de4296c7bbe3684dca4, type: 3}
     - target: {fileID: 3840869722592356135, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -1773,6 +1769,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7678719848818730111, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
+      propertyPath: clickSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 0002101295854554fbd14b51a16b6180, type: 3}
+    - target: {fileID: 7678719848818730111, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
+      propertyPath: hoverSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 6532058602309fd4199c26c8215fd1b5, type: 3}
+    - target: {fileID: 7678719848818730111, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
+      propertyPath: clickSfx2
+      value: 
+      objectReference: {fileID: 8300000, guid: 3925579a970401e4fa4b4847023736f1, type: 3}
     - target: {fileID: 7678719849018026380, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
       propertyPath: m_PreserveAspect
       value: 1

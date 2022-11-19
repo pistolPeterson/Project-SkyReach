@@ -40,6 +40,8 @@ namespace SkyReach.UI
             audioSource.PlayOneShot(clickSfx);
 
         }
+        
+      
 
         private void RandomizeSfx() // put this in a global audio manager
         {
