@@ -10,9 +10,8 @@ namespace SkyReach.UI
     public class MainMenuAudio : MonoBehaviour
     {
         [SerializeField] private AudioSource audioSource;
-
+        [SerializeField] private AudioClip returnClick;
         [SerializeField] private AudioClip hoverSfx;
-
         [SerializeField] private AudioClip clickSfx;
         [SerializeField] private AudioClip clickSfx2;
 
@@ -36,6 +35,10 @@ namespace SkyReach.UI
             audioSource.PlayOneShot(hoverSfx);
         }
 
+        public void PlayReturnClickSfx()
+        {
+            audioSource.PlayOneShot(returnClick);
+        }
         public void PlayClickSfx()
         {
          
@@ -48,7 +51,7 @@ namespace SkyReach.UI
 
         }
         
-      
+        
 
         private void RandomizeSfx() // put this in a global audio manager
         {
