@@ -9,12 +9,14 @@ using UnityEngine;
 public class BatteryCooldownUI : MonoBehaviour
 {
 
-    [SerializeField] private Sprite[] batterySpriteLevels;//the levels of the battery from empty to full, we are garanteed 
+    [SerializeField] private Sprite[] batterySpriteLevels;//the levels of the battery from empty to full, we are garanteed 5 sprites
     [SerializeField] private SpriteRenderer sr;
 
     [SerializeField] private Animator animator;
     private GrapplingHook grapplingHook;
 
+    
+    //TODO: Refactor so its going through the 5 sprite levels instead of the 2 I did below 
     private void Start()
     {
         grapplingHook = GetComponent<GrapplingHook>();
