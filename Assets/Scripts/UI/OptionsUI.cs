@@ -17,7 +17,6 @@ public class OptionsUI : MonoBehaviour
    
     public void ToggleScreenShake()
     {
-        Debug.Log("pressed screen shake!");
         screenShakeOn = !screenShakeOn;
         screenShakeImg.SetActive(screenShakeOn);
     }

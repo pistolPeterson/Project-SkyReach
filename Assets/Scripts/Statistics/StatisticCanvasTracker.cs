@@ -59,7 +59,6 @@ public class StatisticCanvasTracker : MonoBehaviour
 
             else
             {
-                Debug.Log(timer);
                 PersonalBestTime.text = timer.ToString("#.##");
             }
             
