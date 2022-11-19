@@ -12,7 +12,7 @@ public class TickUISlider : MonoBehaviour
     private int index = 9;
     private bool isHeldDown = false;
     private float timer = 0;
-    private float changeTickTime = 0.3f;
+    private float changeTickTime = 0.18f;
 
     [SerializeField] private AudioType audioType;
 
