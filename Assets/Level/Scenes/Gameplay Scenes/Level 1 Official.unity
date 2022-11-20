@@ -217,7 +217,7 @@ PrefabInstance:
     - target: {fileID: 8721227246375615336, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: ffdd8b3f51b780e4b850d4d0aa7b68ab, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
 --- !u!1 &94664933
@@ -530,7 +530,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 190
+  orthographic size: 180
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
