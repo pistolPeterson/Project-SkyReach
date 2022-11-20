@@ -186,6 +186,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Felipe
       objectReference: {fileID: 0}
+    - target: {fileID: 1328089125714790667, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328089125714790667, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328089125714790669, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 993686658, guid: cc986ac5afef026459a0a0497e477241, type: 3}
+    - target: {fileID: 4209300634715576498, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: batterySpriteLevels.Array.data[4]
+      value: 
+      objectReference: {fileID: 277175843, guid: 341356a01c447f141ada826f002b5dc9, type: 3}
     - target: {fileID: 4367279773853266421, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.4
@@ -203,9 +219,17 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7675916154446543954, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: m_Size.x
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675916154446543954, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675916154446543954, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2035330469, guid: 341356a01c447f141ada826f002b5dc9, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7675916154446543954, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -214,10 +238,14 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1478801985
       objectReference: {fileID: 0}
+    - target: {fileID: 7675916154446543954, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8721227246375615336, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ffdd8b3f51b780e4b850d4d0aa7b68ab, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
 --- !u!1 &94664933
@@ -530,7 +558,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 180
+  orthographic size: 190
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
