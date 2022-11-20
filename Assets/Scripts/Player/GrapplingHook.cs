@@ -282,6 +282,15 @@ namespace SkyReach.Player
             State = HookState.Cooldown;
         }
 
+        public float GetCurrentCooldown()
+        {
+            return _cooldown;
+        }
+        
+        public float GetCooldownLength()
+        {
+            return cooldownLength;
+        }
         void Input.IHookActions.OnFire(InputAction.CallbackContext context)
         {
             _isFiring = context.ReadValueAsButton();
