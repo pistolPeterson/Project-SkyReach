@@ -274,6 +274,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &529135457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529135449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3a705d39c64f344afef13ee9e2df52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &618051675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7678719849018026481, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
@@ -2540,38 +2552,14 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7678719847405237753, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
 --- !u!224 &938446919 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7678719849079753840, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
   m_PrefabInstance: {fileID: 938446918}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &938446920 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7678719847405237755, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
-  m_PrefabInstance: {fileID: 938446918}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &938446921
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938446920}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f9edefbe90da7d4aa4d6e4e98131f0a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &946205244 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6716351090180171732, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
