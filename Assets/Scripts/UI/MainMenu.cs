@@ -40,6 +40,12 @@ namespace SkyReach.UI
             statsUI.SetData();
         }
         
+        public void ShowCreditPanel()
+        {
+            DisableAllPanels();
+            StartCoroutine(DelayBeforeSettingActive(creditPanel, 0.5f));
+        }
+        
        public void ShowOptionPanel()
        {
            PlayTransitionInAnim();
