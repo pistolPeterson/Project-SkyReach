@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 48368160}
   - component: {fileID: 48368161}
   m_Layer: 0
-  m_Name: tower_signs3v3_left_side_blue-Sheet_0
+  m_Name: BlueSignLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1961,7 +1961,7 @@ GameObject:
   - component: {fileID: 317558466}
   - component: {fileID: 317558467}
   m_Layer: 0
-  m_Name: tower_signs-Sheet_0
+  m_Name: HYSM Sign Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3448,7 +3448,7 @@ GameObject:
   - component: {fileID: 664900711}
   - component: {fileID: 664900712}
   m_Layer: 0
-  m_Name: tower_signs2_right-Sheet_0
+  m_Name: EnemyKill Sign Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3615,6 +3615,10 @@ PrefabInstance:
     - target: {fileID: 3175774558243548884, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
       propertyPath: m_Name
       value: GameplayCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175774558243548884, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3175774558243548888, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
       propertyPath: m_Pivot.x
@@ -3814,7 +3818,7 @@ GameObject:
   - component: {fileID: 728005291}
   - component: {fileID: 728005292}
   m_Layer: 0
-  m_Name: tower_signs4-Sheet_0 (1)
+  m_Name: BlueSignRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4494,7 +4498,7 @@ GameObject:
   - component: {fileID: 869209714}
   - component: {fileID: 869209715}
   m_Layer: 0
-  m_Name: tower_signs4-Sheet_0 (2)
+  m_Name: BlueSignRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4745,7 +4749,7 @@ GameObject:
   - component: {fileID: 960773932}
   - component: {fileID: 960773933}
   m_Layer: 0
-  m_Name: tower_signs3-Sheet_0
+  m_Name: PinkSignLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6207,7 +6211,7 @@ GameObject:
   - component: {fileID: 1166938446}
   - component: {fileID: 1166938447}
   m_Layer: 0
-  m_Name: tower_signs2-Sheet_0
+  m_Name: EnemyKill  Sign Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6798,7 +6802,7 @@ GameObject:
   - component: {fileID: 1295483756}
   - component: {fileID: 1295483757}
   m_Layer: 0
-  m_Name: tower_signs4-Sheet_0
+  m_Name: BlueSignRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9679,7 +9683,7 @@ GameObject:
   - component: {fileID: 1821794942}
   - component: {fileID: 1821794943}
   m_Layer: 0
-  m_Name: tower_signs3-Sheet_0 (1)
+  m_Name: PinkSignLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10166,7 +10170,7 @@ GameObject:
   - component: {fileID: 1945540726}
   - component: {fileID: 1945540727}
   m_Layer: 0
-  m_Name: tower_signs_left_side-Sheet_0
+  m_Name: HYSM left side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10180,7 +10184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945540725}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -540.43555, y: -200.9524, z: 0}
+  m_LocalPosition: {x: -540.7, y: -200.9524, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
