@@ -282,7 +282,7 @@ MonoBehaviour:
   m_BoundingVolume: {fileID: 0}
   m_BoundingShape2D: {fileID: 2102156498}
   m_ConfineScreenEdges: 1
-  m_Damping: 0
+  m_Damping: 1
 --- !u!114 &94664935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 190
+  orthographic size: 180
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1184,7 +1184,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2801435730325110964, guid: cd42e2d1e6d33094d8a8c2fcabac75c9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7445a83bc127b174b992408157f40d4f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 31486a68fee495845b85c447241edd16, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1600,15 +1600,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7470475218643205773, guid: f5407d799d033ed44b6b1f826c2e50da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -465.58215
+      value: -452.9
       objectReference: {fileID: 0}
     - target: {fileID: 7470475218643205773, guid: f5407d799d033ed44b6b1f826c2e50da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 751.8506
+      value: 734.7
       objectReference: {fileID: 0}
     - target: {fileID: 7470475218643205773, guid: f5407d799d033ed44b6b1f826c2e50da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.87398267
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7470475218643205773, guid: f5407d799d033ed44b6b1f826c2e50da, type: 3}
       propertyPath: m_LocalRotation.w

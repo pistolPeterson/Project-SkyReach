@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 579333770344223062}
   - component: {fileID: 6516917976374155617}
   - component: {fileID: 694100990762091542}
+  - component: {fileID: 617020380869609386}
   m_Layer: 3
   m_Name: AttractPlatform
   m_TagString: Untagged
@@ -156,6 +157,26 @@ PolygonCollider2D:
       - {x: 20.478392, y: -9.895233}
       - {x: 42.4295, y: -9.964142}
       - {x: 42.5, y: -3.2167969}
+--- !u!95 &617020380869609386
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813246802340605239}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 616a1ac45fa28d9439d884022bbf07c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7758504253002400826
 GameObject:
   m_ObjectHideFlags: 0
