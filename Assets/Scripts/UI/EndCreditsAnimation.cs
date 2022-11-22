@@ -8,21 +8,20 @@ using UnityEngine.UI;
 public class EndCreditsAnimation : MonoBehaviour
 {
     //reference to button gameobject 
-    private GameObject returnButton;
+    [SerializeField] private GameObject returnButton;
   
     // Start is called before the first frame update
     void Start()
     {
         //make button not active on start 
-        returnButton.
-        
+           returnButton.SetActive(false);
     }
 
    
     
     //a method that sets the button gameobject active 
-    public void activeButton
+    public void ActivateButton()
     {
-
+        returnButton.SetActive(true);
     }
 }
