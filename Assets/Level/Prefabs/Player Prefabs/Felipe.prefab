@@ -220,7 +220,7 @@ MonoBehaviour:
   retractSpeed: 1800
   baseDistance: 25
   maxDistance: 150
-  cooldownLength: 1
+  cooldownLength: 5
   gravityOverride: 0
   canPullOnRetract: 1
   hookMask:
@@ -280,7 +280,6 @@ MonoBehaviour:
   - {fileID: 2062510347, guid: 341356a01c447f141ada826f002b5dc9, type: 3}
   - {fileID: 277175843, guid: 341356a01c447f141ada826f002b5dc9, type: 3}
   sr: {fileID: 7675916154446543954}
-  animator: {fileID: 0}
 --- !u!1 &1328089125714790664
 GameObject:
   m_ObjectHideFlags: 0
