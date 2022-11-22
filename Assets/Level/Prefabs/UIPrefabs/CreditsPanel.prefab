@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 7356811860751095792}
   - component: {fileID: 7356811860751095798}
   - component: {fileID: 7356811860751095793}
+  - component: {fileID: -1214001438687402980}
   m_Layer: 5
   m_Name: CreditsPanel
   m_TagString: Untagged
@@ -225,6 +226,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &-1214001438687402980
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356811860751095795}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f9edefbe90da7d4aa4d6e4e98131f0a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7356811860853468180
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,9 +35,7 @@ public class StatisticCanvasTracker : MonoBehaviour
 
         public void SetData()
         {
-            /*saveData = FindObjectOfType<SaveDataSystem>();
-            JumpNumber.text = saveData.LoadData();
-            Console.WriteLine("Hello!");*/
+            
             tempData = playerData.GetJumps();
             JumpNumber.text = tempData.ToString();
 
@@ -59,7 +57,6 @@ public class StatisticCanvasTracker : MonoBehaviour
 
             else
             {
-                Debug.Log(timer);
                 PersonalBestTime.text = timer.ToString("#.##");
             }
             
