@@ -8,25 +8,25 @@ namespace SkyReach.Enemies
 
     public class ShootingEnemy : MonoBehaviour
     {
-   
-    public float timer;
-    public float shootTimer;
-    public GameObject Boolet;
 
-    private Animator anim;
-    // Start is called before the first frame update
+        public float timer;
+        public float shootTimer;
+        public GameObject Boolet;
+
+        private Animator anim;
+        // Start is called before the first frame update
         void Start()
         {
             anim = GetComponent<Animator>();
         }
 
-    // Update is called once per frame
+        // Update is called once per frame
         void Update()
         {
             timer += Time.deltaTime;
-            if(timer>=shootTimer){
-                Debug.Log("spawning");
-               anim.Play("Projectile1Enemy_Attack", -1, 0f);
+            if (timer >= shootTimer)
+            {
+                anim.Play("Projectile1Enemy_Attack", -1, 0f);
                 timer = 0;
             }
 
@@ -36,8 +36,8 @@ namespace SkyReach.Enemies
         public void ShootBullet()
         {
             Instantiate(Boolet, transform.position, Quaternion.identity);
-            
+
         }
-        
+
     }
 }

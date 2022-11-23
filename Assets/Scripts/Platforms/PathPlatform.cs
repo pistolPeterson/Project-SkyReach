@@ -36,18 +36,18 @@ public class PathPlatform : MonoBehaviour
         }
 
         Vector2 target = path[currentPathIndex];
-        Vector2 playerToTarget = target - (Vector2)transform.position;
-        if (playerToTarget.magnitude < targetDistanceThreshold)
+        Vector2 platformToTarget = target - (Vector2)transform.position;
+        if (platformToTarget.magnitude < targetDistanceThreshold)
         {
             currentPathIndex = (currentPathIndex + 1) % path.Count;
         }
         else
         {
             // move rigidbody towards target
-            body.velocity = playerToTarget.normalized * platformSpeed;
+            body.velocity = platformToTarget.normalized * platformSpeed;
         }
     }
-    
+
 
 
 }

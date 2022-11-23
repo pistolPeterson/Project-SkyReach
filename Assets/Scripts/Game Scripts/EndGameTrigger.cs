@@ -8,7 +8,7 @@ public class EndGameTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.parent.GetComponent<PlayerController>() == null) return;
+        if (other.GetComponentInParent<PlayerController>() == null) return;
 
         Debug.Log("winning game");
         GameManager.WinGame();

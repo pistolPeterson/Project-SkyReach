@@ -18,8 +18,8 @@ namespace SkyReach.Enemies.Projectiles
         //bullet direction enum, make it easier for designers to set direction of the bullet at spawn if needed
         [SerializeField] private BooletDirection booletDirectionEnum = BooletDirection.Down;
         //the lifetime in seconds of how long the bullet is alive
-       private float lifeTime = 3.33f; 
-        
+        private float lifeTime = 3.33f;
+
 
         private Vector3 booletDirection;
         // Start is called before the first frame update
@@ -28,7 +28,7 @@ namespace SkyReach.Enemies.Projectiles
             //default direction is going down
             booletDirection = -transform.up;
             InitBooletDirection();
-            
+
             //basic code to make the bullet not last infinitely in the level
             Destroy(this.gameObject, lifeTime);
         }
@@ -41,7 +41,7 @@ namespace SkyReach.Enemies.Projectiles
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponent<PlayerController>())
+            if (collision.GetComponentInParent<PlayerController>())
             {
 
                 GameManager.KillPlayer();
