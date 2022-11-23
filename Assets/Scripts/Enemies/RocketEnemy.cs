@@ -12,7 +12,7 @@ namespace SkyReach.Enemies
         [SerializeField] private GameObject rocketPrefab;
         [SerializeField] private float timeBetweenShots = 5f;
 
-        private float timer;
+        private float timer = 0;
 
         void Update()
         {
