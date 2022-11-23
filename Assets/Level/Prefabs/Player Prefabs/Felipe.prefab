@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1328089123933327497}
   - component: {fileID: 1328089123933327499}
   - component: {fileID: 6250296403786641395}
+  - component: {fileID: 1139424523}
   m_Layer: 0
   m_Name: Body
   m_TagString: Player
@@ -143,6 +144,26 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328089123933327733}
   m_Enabled: 1
+--- !u!95 &1139424523
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328089123933327733}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 498539f0df7170c418f28f7b5503d3cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1328089124666387265
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +246,7 @@ MonoBehaviour:
   canPullOnRetract: 1
   hookMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   hookHead: {fileID: 1328089125714790667}
 --- !u!114 &224106110
 MonoBehaviour:
@@ -258,8 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3056213440062fb489f527330165a85f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  playerController: {fileID: 0}
+  animator: {fileID: 1139424523}
+  playerController: {fileID: 4962784487746446040}
   fallSpeedThreshold: -100
 --- !u!114 &4209300634715576498
 MonoBehaviour:
@@ -371,12 +392,12 @@ SpriteRenderer:
   m_SortingLayerID: 1478801985
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 993686658, guid: cc986ac5afef026459a0a0497e477241, type: 3}
+  m_Sprite: {fileID: 72289118, guid: 2df0841e556e3c14d9daf6c89ba63074, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 11, y: 10}
+  m_Size: {x: 4, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

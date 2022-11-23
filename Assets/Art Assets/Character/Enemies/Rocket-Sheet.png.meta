@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 474645af40ba1a143adad24dc7868139
+guid: 6476ffcd9d26a254ea6254919ad85c7d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,127 +117,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rocket_Projectile_0
+      name: Rocket-Sheet_0
       rect:
         serializedVersion: 2
         x: 14
-        y: 13
+        y: 10
         width: 4
         height: 9
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c39af71fc2a9624688dafd271b62b9f
-      internalID: -204578088
+      spriteID: d571da5dcb722f541850f638693ec87e
+      internalID: 1820213078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Projectile_1
+      name: Rocket-Sheet_1
       rect:
         serializedVersion: 2
-        x: 62
-        y: 13
+        x: 46
+        y: 10
         width: 4
-        height: 8
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e47686de51497404e9c1b8aac14cb412
-      internalID: 1193331801
+      spriteID: 5f05755eb0b4789468d48ac7cf1ee3d8
+      internalID: -2021988520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Projectile_2
+      name: Rocket-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 10
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e485a3834a7d8334d883fbd8fc74fd6b
+      internalID: 538811188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocket-Sheet_3
       rect:
         serializedVersion: 2
         x: 110
-        y: 13
+        y: 10
         width: 4
         height: 9
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a8eb1036d1b6cf41872639c545e660e
-      internalID: 904426652
+      spriteID: 58635482485dd8a43bc15acb660542b3
+      internalID: -1744093204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Projectile_3
+      name: Rocket-Sheet_4
       rect:
         serializedVersion: 2
-        x: 158
-        y: 13
-        width: 4
-        height: 8
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae53d1a3494c7e2449db1ff636f125bd
-      internalID: -856434943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Projectile_4
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 13
+        x: 142
+        y: 10
         width: 4
         height: 9
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d00867df74ace24cb92dcce288e3ee5
-      internalID: -1610652876
+      spriteID: 6f8cdb106253aca48bf6315c052a8707
+      internalID: 1764644496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rocket_Projectile_5
+      name: Rocket-Sheet_5
       rect:
         serializedVersion: 2
-        x: 254
-        y: 13
+        x: 174
+        y: 10
         width: 4
-        height: 8
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af24f35d5400a4542a3de88fad868770
-      internalID: 174267855
+      spriteID: 0590804d04ed1ae48b27116393e3f738
+      internalID: 595817393
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rocket_Projectile_1: 1193331801
-      Rocket_Projectile_3: -856434943
-      Rocket_Projectile_5: 174267855
-      Rocket_Projectile_4: -1610652876
-      Rocket_Projectile_2: 904426652
-      Rocket_Projectile_0: -204578088
+      Rocket-Sheet_0: 1820213078
+      Rocket-Sheet_1: -2021988520
+      Rocket-Sheet_3: -1744093204
+      Rocket-Sheet_4: 1764644496
+      Rocket-Sheet_5: 595817393
+      Rocket-Sheet_2: 538811188
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

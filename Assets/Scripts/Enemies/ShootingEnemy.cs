@@ -35,8 +35,7 @@ namespace SkyReach.Enemies
 
         public void ShootBullet()
         {
-            Instantiate(Boolet, transform.position, Quaternion.identity);
-
+            Instantiate(Boolet, transform.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 180));
         }
 
     }

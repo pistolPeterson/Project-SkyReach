@@ -25,15 +25,15 @@ public class GameManager : MonoBehaviour
     private GrapplingHook _grapplingHook;
 
     // exposed properties
-    public GameState State
+    public static GameState State
     {
-        get => _state;
+        get => Instance._state;
         private set
         {
-            _state = value;
+            Instance._state = value;
 
             // call specific events
-            switch (_state)
+            switch (Instance._state)
             {
                 case GameState.Playing:
                     PlayerSpawned?.Invoke(); // only fire start event when done starting
@@ -51,10 +51,11 @@ public class GameManager : MonoBehaviour
                     throw new ArgumentOutOfRangeException();
             }
 
-            StateChanged?.Invoke(_state);
+            StateChanged?.Invoke(Instance._state);
 
         }
     }
+    public static PlayerController Player { get => Instance._playerController; }
 
     // events
     public static event Action<GameState> StateChanged;
@@ -103,13 +104,13 @@ public class GameManager : MonoBehaviour
 
     public static void WinGame()
     {
-        Instance.State = GameState.Won;
+        State = GameState.Won;
         Instance.levelChanger.FadeToLevel(Instance.winSceneIndex);
     }
 
     public static void KillPlayer()
     {
-        Instance.State = GameState.Death;
+        State = GameState.Death;
         Instance.levelChanger.FadeToLevel(SceneManager.GetActiveScene().buildIndex);
     }
 }
