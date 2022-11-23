@@ -10,6 +10,7 @@ public class EndGameTrigger : MonoBehaviour
     {
         if (other.transform.parent.GetComponent<PlayerController>() == null) return;
 
+        Debug.Log("winning game");
         GameManager.WinGame();
     }
 }
