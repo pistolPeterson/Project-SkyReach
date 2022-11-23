@@ -41,7 +41,6 @@ namespace SkyReach.Enemies.Projectiles
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            print("hit");
             if (collision.GetComponentInParent<PlayerController>())
             {
 
