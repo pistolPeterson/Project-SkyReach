@@ -75,14 +75,12 @@ public class StatisticsData : MonoBehaviour
 
     public void SetBestRunTime(float latestRunTime)
     {
-
-        
-
         if (latestRunTime < PlayerPrefs.GetFloat("BestRunTime"))
             PlayerPrefs.SetFloat("BestRunTime", latestRunTime);
 
         Debug.Log(PlayerPrefs.GetFloat("BestRunTime") + " is the new best run time");
     }
+
     void SetJumps()
     {
         jumps++;
