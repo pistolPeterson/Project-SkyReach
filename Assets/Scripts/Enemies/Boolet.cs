@@ -33,7 +33,7 @@ namespace SkyReach.Enemies.Projectiles
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponentInParent<PlayerController>())
+            if (collision.GetComponentInParent<PlayerController>())
             {
                 GameManager.KillPlayer();
                 Destroy(gameObject);

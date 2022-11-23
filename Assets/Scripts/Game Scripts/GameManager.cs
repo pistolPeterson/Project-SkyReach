@@ -88,7 +88,6 @@ public class GameManager : MonoBehaviour
         switch (State)
         {
             case GameState.Starting:
-                EnablePlayer();
                 break;
             case GameState.Playing:
                 break;
@@ -101,17 +100,6 @@ public class GameManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
-    }
-
-    public static void DisablePlayer()
-    {
-        // get playercontroller, grapplinghook, and disable them
-    }
-
-    public static void EnablePlayer()
-    {
-        // get playercontroller, grapplinghook, and enable them
-
     }
 
     public static void WinGame()
