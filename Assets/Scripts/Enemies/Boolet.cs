@@ -12,77 +12,37 @@ namespace SkyReach.Enemies.Projectiles
     /// </summary>
     public class Boolet : MonoBehaviour
     {
-        //speed of the bullet 
         public float Speed = 25f;
+        private float lifeTime = 3.33f;
+        private Rigidbody2D _body;
 
-        //bullet direction enum, make it easier for designers to set direction of the bullet at spawn if needed
-        [SerializeField] private BooletDirection booletDirectionEnum = BooletDirection.Down;
-        //the lifetime in seconds of how long the bullet is alive
-       private float lifeTime = 3.33f; 
-        
+        void Awake()
+        {
+            _body = GetComponent<Rigidbody2D>();
+        }
 
-        private Vector3 booletDirection;
-        // Start is called before the first frame update
         void Start()
         {
-            //default direction is going down
-            booletDirection = -transform.up;
-            InitBooletDirection();
-            
-            //basic code to make the bullet not last infinitely in the level
             Destroy(this.gameObject, lifeTime);
         }
 
-        // Update is called once per frame
         void FixedUpdate()
         {
-            transform.position += booletDirection * Time.deltaTime * Speed;
+            _body.velocity = transform.up * Speed;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponent<PlayerController>())
+            if (collision.gameObject.GetComponentInParent<PlayerController>())
             {
-
                 GameManager.KillPlayer();
-
-                Destroy(gameObject);
-
-            }
-
-            if (collision.gameObject.layer == 3) //ground layer is an int of 3 
-            {
                 Destroy(gameObject);
             }
 
-        }
-
-        //simple switch state to set direction of the bullet based on boolet direction enum
-        private void InitBooletDirection()
-        {
-            switch (booletDirectionEnum)
+            if (collision.gameObject.layer == 3 && _body.velocity.y < 0)
             {
-                case BooletDirection.Up:
-                    booletDirection = transform.up;
-                    break;
-                case BooletDirection.Down:
-                    booletDirection = -transform.up;
-                    break;
-                case BooletDirection.Right:
-                    booletDirection = transform.right;
-                    break;
-                case BooletDirection.Left:
-                    booletDirection = -transform.right;
-                    break;
+                Destroy(gameObject);
             }
-        }
-
-        private enum BooletDirection
-        {
-            Up,
-            Down,
-            Left,
-            Right
 
         }
     }

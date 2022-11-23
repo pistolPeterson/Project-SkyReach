@@ -33,7 +33,7 @@ namespace SkyReach.Enemies.Projectiles
             // rotate 2D towards target
             Vector2 direction = _target.position - _body.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-            _body.MoveRotation(Mathf.LerpAngle(_body.rotation, angle, maxTurnSpeed * Time.fixedDeltaTime));
+            _body.MoveRotation(Mathf.LerpAngle(_body.rotation, angle, maxTurnSpeed * speed * Time.fixedDeltaTime));
 
             _body.velocity = transform.up * speed;
         }
@@ -50,7 +50,7 @@ namespace SkyReach.Enemies.Projectiles
             // Ground layer is an int of 3
             // It can go through semi-solid objects like the player
             // This assumes all semi-solids are in the same direction, solid facing up
-            if (collision.gameObject.layer == 3 && _body.velocity.y > 0)
+            if (collision.gameObject.layer == 3 && _body.velocity.y < 0)
             {
                 Destroy(gameObject);
             }
