@@ -9,7 +9,8 @@ public class EndCreditsAnimation : MonoBehaviour
 {
     //reference to button gameobject 
     [SerializeField] private GameObject returnButton;
-  
+
+    [SerializeField] private GameObject endCreditsPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,10 @@ public class EndCreditsAnimation : MonoBehaviour
            returnButton.SetActive(false);
     }
 
-   
+    public void DisableSelf()
+    {
+        endCreditsPanel.SetActive(false);
+    }
     
     //a method that sets the button gameobject active 
     public void ActivateButton()
