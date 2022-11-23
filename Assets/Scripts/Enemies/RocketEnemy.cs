@@ -17,10 +17,16 @@ namespace SkyReach.Enemies
         void Update()
         {
             if (timer > 0) timer -= Time.deltaTime;
-            else
+            else if (Vector2.Distance(transform.position, GameManager.Player.Body.position) < activationRadius)
             {
-                Instantiate(rocketPrefab, transform.position, Quaternion.identity);
+                timer = timeBetweenShots;
+                ShootRocket();
             }
+        }
+
+        void ShootRocket()
+        {
+            Instantiate(rocketPrefab, transform.position, Quaternion.identity);
         }
     }
 }
