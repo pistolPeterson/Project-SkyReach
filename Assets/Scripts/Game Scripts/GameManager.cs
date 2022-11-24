@@ -67,20 +67,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        // Implementing Singleton
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
 
         // set player controller and grappling hook
-        _playerController = player.GetComponent<PlayerController>();
-        _grapplingHook = player.GetComponent<GrapplingHook>();
+        Instance._playerController = player.GetComponent<PlayerController>();
+        Instance._grapplingHook = player.GetComponent<GrapplingHook>();
     }
 
     private void Update()

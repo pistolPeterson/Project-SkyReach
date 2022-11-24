@@ -14,9 +14,6 @@ public class PlayerAudio : MonoBehaviour
     [SerializeField] private AudioClip hookRappelSfx;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private GrapplingHook hook;
-    private bool lastFrameIsGrounded = false;
-
-    private bool playingGrappleAudio = false;
 
     private void Awake()
     {
