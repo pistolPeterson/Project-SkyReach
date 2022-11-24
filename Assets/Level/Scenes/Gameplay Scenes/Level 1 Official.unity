@@ -3281,7 +3281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 689191715}
-  deathClip: {fileID: 8300000, guid: dc7b7ac09aaf4af4395541f7144b21a1, type: 3}
+  deathClip: {fileID: 8300000, guid: bb18b83bbf61ffd42ba47cf1e00e7e59, type: 3}
 --- !u!82 &689191715
 AudioSource:
   m_ObjectHideFlags: 0
