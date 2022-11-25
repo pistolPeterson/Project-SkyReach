@@ -581,14 +581,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 224106111, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1139424523}
-    - target: {fileID: 224106111, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
-      propertyPath: playerController
-      value: 
-      objectReference: {fileID: 224106108}
     - target: {fileID: 1328089124666387264, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -636,26 +628,6 @@ PrefabInstance:
     - target: {fileID: 1328089124666387265, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_Name
       value: Felipe
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328089125714790669, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
-      propertyPath: m_Size.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328089125714790669, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328089125714790669, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 72289118, guid: 2df0841e556e3c14d9daf6c89ba63074, type: 3}
-    - target: {fileID: 1328089125714790669, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6872090590556937576, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
-      propertyPath: hookMask.m_Bits
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
@@ -1252,17 +1224,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1328089124666387265, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
   m_PrefabInstance: {fileID: 66318657}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &224106108 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4962784487746446040, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
-  m_PrefabInstance: {fileID: 66318657}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224106106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e5858d47ec5c0449c253db537762e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &252891571
 GameObject:
   m_ObjectHideFlags: 0
@@ -5526,36 +5487,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 656914086830532024, guid: 7e89d3af65c1aca4387e30d4c8314517, type: 3}
   m_PrefabInstance: {fileID: 1136711031}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1139424512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1328089123933327733, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
-  m_PrefabInstance: {fileID: 66318657}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1139424513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1328089123933327734, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
   m_PrefabInstance: {fileID: 66318657}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1139424523
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139424512}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 498539f0df7170c418f28f7b5503d3cf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1149653931
 GameObject:
   m_ObjectHideFlags: 0
@@ -7032,7 +6968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1376877828
 Transform:
   m_ObjectHideFlags: 0
