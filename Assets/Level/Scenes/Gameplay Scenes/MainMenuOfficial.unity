@@ -4392,9 +4392,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2035502598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dca3c86d1109b674da912fb83b8d356e, type: 3}
+  m_Script: {fileID: 11500000, guid: 49937f7440bf0784aa0237893443060d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalSprite: {fileID: 224620879, guid: ff7b61702396ef84dacf8f88f402d4ca, type: 3}
+  hoverSprite: {fileID: -2077733088, guid: ff7b61702396ef84dacf8f88f402d4ca, type: 3}
 --- !u!1 &2042268434 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7678719849079753845, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
