@@ -468,6 +468,34 @@ namespace SkyReach
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Pause"",
+            ""id"": ""a1ff2b78-8781-4bda-81eb-118b12a4ab72"",
+            ""actions"": [
+                {
+                    ""name"": ""PauseAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""29446e64-997f-4a03-8ee0-72015fa18e3a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""42896644-b110-4d5f-85aa-7f062503e800"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -505,6 +533,9 @@ namespace SkyReach
             m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
             m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
+            // Pause
+            m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
+            m_Pause_PauseAction = m_Pause.FindAction("PauseAction", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -715,6 +746,39 @@ namespace SkyReach
             }
         }
         public UIActions @UI => new UIActions(this);
+
+        // Pause
+        private readonly InputActionMap m_Pause;
+        private IPauseActions m_PauseActionsCallbackInterface;
+        private readonly InputAction m_Pause_PauseAction;
+        public struct PauseActions
+        {
+            private @Input m_Wrapper;
+            public PauseActions(@Input wrapper) { m_Wrapper = wrapper; }
+            public InputAction @PauseAction => m_Wrapper.m_Pause_PauseAction;
+            public InputActionMap Get() { return m_Wrapper.m_Pause; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(PauseActions set) { return set.Get(); }
+            public void SetCallbacks(IPauseActions instance)
+            {
+                if (m_Wrapper.m_PauseActionsCallbackInterface != null)
+                {
+                    @PauseAction.started -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseAction;
+                    @PauseAction.performed -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseAction;
+                    @PauseAction.canceled -= m_Wrapper.m_PauseActionsCallbackInterface.OnPauseAction;
+                }
+                m_Wrapper.m_PauseActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @PauseAction.started += instance.OnPauseAction;
+                    @PauseAction.performed += instance.OnPauseAction;
+                    @PauseAction.canceled += instance.OnPauseAction;
+                }
+            }
+        }
+        public PauseActions @Pause => new PauseActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -742,6 +806,10 @@ namespace SkyReach
             void OnCancel(InputAction.CallbackContext context);
             void OnSubmit(InputAction.CallbackContext context);
             void OnNavigate(InputAction.CallbackContext context);
+        }
+        public interface IPauseActions
+        {
+            void OnPauseAction(InputAction.CallbackContext context);
         }
     }
 }

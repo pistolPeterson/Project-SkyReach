@@ -444,6 +444,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Pause",
+            "id": "a1ff2b78-8781-4bda-81eb-118b12a4ab72",
+            "actions": [
+                {
+                    "name": "PauseAction",
+                    "type": "Button",
+                    "id": "29446e64-997f-4a03-8ee0-72015fa18e3a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "42896644-b110-4d5f-85aa-7f062503e800",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
