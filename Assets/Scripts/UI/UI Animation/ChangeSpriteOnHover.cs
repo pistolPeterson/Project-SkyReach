@@ -22,6 +22,7 @@ public class ChangeSpriteOnHover : MonoBehaviour
 
     public void ChangeToHoverSprite()
     {
+    Debug.Log("change sprite");
         image.sprite = hoverSprite;
     }
 
