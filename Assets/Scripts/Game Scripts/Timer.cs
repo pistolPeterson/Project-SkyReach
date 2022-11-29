@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using TMPro;
 /// <summary>
-/// Add a class summary here 
+/// This class keeps track of the player's current and fastest game run time.
 /// </summary>
 public class Timer : MonoBehaviour
 {
@@ -12,12 +12,14 @@ public class Timer : MonoBehaviour
     public float currentTime;
 
     private float finalTime;
+    [SerializeField] StatisticsData statsData;
 
     // Start is called before the first frame update
     void Start()
     {
         currentTime = 0;
         timerActive = true;
+        statsData = FindObjectOfType<StatisticsData>();
     }
 
     // Update is called once per frame
@@ -56,9 +58,8 @@ public class Timer : MonoBehaviour
     {
         timerActive = false;
         finalTime = currentTime;
-        var statsData = FindObjectOfType<StatisticsData>();
         if (statsData)
-            statsData.SetBestRunTime(finalTime);
+            statsData.IncrementBestRunTime(finalTime);
     }
 
     public void ResetTimer()

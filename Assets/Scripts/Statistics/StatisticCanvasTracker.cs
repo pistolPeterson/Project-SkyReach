@@ -5,7 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-
+/// <summary>
+/// This class updates UI values based on values found in the StatisticsData class.
+/// </summary>
 public class StatisticCanvasTracker : MonoBehaviour
 {
     public TextMeshProUGUI JumpNumber;
@@ -27,11 +29,6 @@ public class StatisticCanvasTracker : MonoBehaviour
             }
     }
 
-        // Update is called once per frame
-        void Update()
-        {
-            //event is fired off that triggers SetData method
-        }
 
         public void SetData()
         {
