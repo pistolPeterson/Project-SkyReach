@@ -2211,6 +2211,8 @@ GameObject:
   - component: {fileID: 460221143}
   - component: {fileID: 460221142}
   - component: {fileID: 460221141}
+  - component: {fileID: 460221145}
+  - component: {fileID: 460221144}
   m_Layer: 5
   m_Name: Stats Button
   m_TagString: Untagged
@@ -2320,6 +2322,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460221139}
   m_CullTransparentMesh: 1
+--- !u!114 &460221144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460221139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 460221145}
+          m_TargetAssemblyTypeName: ChangeSpriteOnHover, Assembly-CSharp
+          m_MethodName: ChangeToHoverSprite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 460221145}
+          m_TargetAssemblyTypeName: ChangeSpriteOnHover, Assembly-CSharp
+          m_MethodName: returnToNormalSprite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &460221145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460221139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49937f7440bf0784aa0237893443060d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: -592040231, guid: 79a1be0ed49867f49936274393bbf463, type: 3}
+  hoverSprite: {fileID: -1445725768, guid: d0f593142b78d0842ac24784706e0601, type: 3}
 --- !u!1001 &464440084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4916,7 +4977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -321.35504, y: 46.8}
+  m_AnchoredPosition: {x: -320.6, y: -1.8}
   m_SizeDelta: {x: 159.2899, y: 29.2899}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953818153
@@ -4962,7 +5023,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 953818154}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1857481377}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: TogglePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &953818154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7995,8 +8068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314.25, y: -91.2}
-  m_SizeDelta: {x: 173.492, y: 28.5798}
+  m_AnchoredPosition: {x: -312.8622, y: -89.8122}
+  m_SizeDelta: {x: 176.2756, y: 31.3554}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426784911
 MonoBehaviour:
@@ -10823,6 +10896,9 @@ GameObject:
   - component: {fileID: 1960402369}
   - component: {fileID: 1960402368}
   - component: {fileID: 1960402367}
+  - component: {fileID: 1960402370}
+  - component: {fileID: 1960402371}
+  - component: {fileID: 1960402372}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -10847,8 +10923,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -292.95084, y: -175.91463}
-  m_SizeDelta: {x: 216.0984, y: 25.0293}
+  m_AnchoredPosition: {x: -278.043, y: -177.2699}
+  m_SizeDelta: {x: 245.9141, y: 27.7399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1960402367
 MonoBehaviour:
@@ -10893,7 +10969,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1960402368}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1960402372}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1960402368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10932,6 +11020,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960402365}
   m_CullTransparentMesh: 1
+--- !u!114 &1960402370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960402365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49937f7440bf0784aa0237893443060d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: -974273996, guid: ddd3e44c912ba7a46a31297d8ded658c, type: 3}
+  hoverSprite: {fileID: -218833544, guid: 4278e02331325f94ab24fe582c896273, type: 3}
+--- !u!114 &1960402371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960402365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1960402370}
+          m_TargetAssemblyTypeName: ChangeSpriteOnHover, Assembly-CSharp
+          m_MethodName: ChangeToHoverSprite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1960402370}
+          m_TargetAssemblyTypeName: ChangeSpriteOnHover, Assembly-CSharp
+          m_MethodName: returnToNormalSprite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1960402372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960402365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a2aeaebffe15746a5dc60ab83bd589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausePanel: {fileID: 0}
 --- !u!1 &1971704858
 GameObject:
   m_ObjectHideFlags: 0

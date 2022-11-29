@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using Input = SkyReach.Input;
 
 public class Pause : MonoBehaviour, Input.IPauseActions
@@ -43,21 +44,27 @@ public class Pause : MonoBehaviour, Input.IPauseActions
         if (pauseButtonPressed)
         {
 
-            pausePanelOpen = !pausePanelOpen;
-            pausePanel.SetActive(pausePanelOpen);
-
+           TogglePanel();
             pauseButtonPressed = false; 
         }
         
     }
-    
+
+    public void TogglePanel()
+    {
+        pausePanelOpen = !pausePanelOpen;
+        pausePanel.SetActive(pausePanelOpen);
+
+    }
     
     //method to go to main menu 
-    
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     //method to resume back to game 
     public void OnPauseAction(InputAction.CallbackContext context)
     {
-
         pauseButtonPressed = context.ReadValueAsButton();
         //  throw new System.NotImplementedException();
     }
