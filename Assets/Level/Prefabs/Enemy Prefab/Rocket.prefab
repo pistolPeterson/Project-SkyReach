@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3655282225325547150}
   - component: {fileID: 9089994817151041642}
   - component: {fileID: 9089994817151041641}
+  - component: {fileID: 882375748991088563}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -149,3 +150,23 @@ MonoBehaviour:
   speed: 150
   lifeTime: 10
   maxTurnSpeed: 0.02
+--- !u!95 &882375748991088563
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756414240373890828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a40eccc20a17c74b9a896115f3fff98, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 8627057735047882246}
   - component: {fileID: 1821811471392609296}
   - component: {fileID: 8627057735047882247}
+  - component: {fileID: 7841830079270768743}
   m_Layer: 0
   m_Name: RocketEnemy
   m_TagString: Untagged
@@ -198,3 +199,23 @@ MonoBehaviour:
   activationCollider: {fileID: 1346699373}
   rocketPrefab: {fileID: 3756414240373890828, guid: c4ad15b54c8fe2d4aa8fcb18fd4ffe04, type: 3}
   timeBetweenShots: 10
+--- !u!95 &7841830079270768743
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149985197499434967}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 520e8b26c9d0f254ebc1fe55bab7e05f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
