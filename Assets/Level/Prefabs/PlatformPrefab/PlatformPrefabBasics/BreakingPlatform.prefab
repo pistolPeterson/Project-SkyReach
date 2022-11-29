@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2795831522004610736}
   - component: {fileID: -2415942532920955549}
   - component: {fileID: -8451667173510744831}
+  - component: {fileID: 2836302731046982745}
   m_Layer: 3
   m_Name: BreakingPlatform
   m_TagString: Untagged
@@ -146,3 +147,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnTimer: 2
   turnOffTimer: 1.5
+  anim: {fileID: 2836302731046982745}
+--- !u!95 &2836302731046982745
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706600300211737297}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d90852b5788d0e489ad7a03ee11347b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
