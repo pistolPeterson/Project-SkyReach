@@ -4236,9 +4236,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1928920829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4da9cc0f08e6ee4f9fd035fde98567b, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c59e7185bc6bb40ad549b287a8eae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!1 &1945004713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3032186987068068408, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
