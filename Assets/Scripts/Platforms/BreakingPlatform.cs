@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,13 @@ public class BreakingPlatform : MonoBehaviour
 {
     [SerializeField] float respawnTimer = 2.0f;
     [SerializeField] float turnOffTimer = 1.5f;
+
+    [SerializeField] private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     //Turns platform off on collision
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,6 +30,8 @@ public class BreakingPlatform : MonoBehaviour
     //Turns platform off, calls the turn platform on coroutine
     IEnumerator TogglePlatformOff()
     {
+        //call animation 
+        anim.SetTrigger("PlatformGlitchTrigger");
         yield return new WaitForSeconds(turnOffTimer);
         GetComponent<Renderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
