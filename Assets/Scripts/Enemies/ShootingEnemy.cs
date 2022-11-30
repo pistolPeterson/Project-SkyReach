@@ -26,7 +26,7 @@ namespace SkyReach.Enemies
             timer += Time.deltaTime;
             if (timer >= shootTimer)
             {
-                anim.Play("Projectile1Enemy_Attack", -1, 0f);
+                anim.Play("ProjectileEnemy_Attack", -1, 0f);
                 timer = 0;
             }
 

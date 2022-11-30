@@ -5,7 +5,9 @@ using SkyReach.Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// This class is responsible for storing and retrieving data related to the player's performance.
+/// </summary>
 
 public class StatisticsData : MonoBehaviour
 {
@@ -14,7 +16,6 @@ public class StatisticsData : MonoBehaviour
     private int numHooks = 0;
     private int playerDeath = 0;
     private int enemiesKilled = 0;
-    private float bestRunTime = Single.MaxValue;
 
 
     private void Awake()
@@ -58,22 +59,22 @@ public class StatisticsData : MonoBehaviour
     void OnEnable()
     {
         //method that increase jumps
-        PlayerController.Jumped += SetJumps;
-        GrapplingHook.HookPulled += SetHooks;
-        GameManager.PlayerDied += SetDeaths;
+        PlayerController.Jumped += IncrementJumps;
+        GrapplingHook.HookPulled += IncrementHooks;
+        GameManager.PlayerDied += IncrementDeaths;
 
     }
 
     void OnDisable()
     {
         //unsubscribe 
-        PlayerController.Jumped -= SetJumps;
-        GrapplingHook.HookPulled -= SetHooks;
-        GameManager.PlayerDied -= SetDeaths;
+        PlayerController.Jumped -= IncrementJumps;
+        GrapplingHook.HookPulled -= IncrementHooks;
+        GameManager.PlayerDied -= IncrementDeaths;
 
     }
 
-    public void SetBestRunTime(float latestRunTime)
+    public void IncrementBestRunTime(float latestRunTime)
     {
         if (latestRunTime < PlayerPrefs.GetFloat("BestRunTime"))
             PlayerPrefs.SetFloat("BestRunTime", latestRunTime);
@@ -81,47 +82,28 @@ public class StatisticsData : MonoBehaviour
         Debug.Log(PlayerPrefs.GetFloat("BestRunTime") + " is the new best run time");
     }
 
-    void SetJumps()
+    void IncrementJumps()
     {
         jumps++;
         PlayerPrefs.SetInt("Jumps", jumps);
-        //Debug.Log("Jump triggered!");
     }
 
-    void SetDeaths()
+    void IncrementDeaths()
     {
         playerDeath++;
         PlayerPrefs.SetInt("Deaths", playerDeath);
     }
 
-    void SetHooks()
+    void IncrementHooks()
     {
         numHooks++;
         PlayerPrefs.SetInt("Hooks", numHooks);
-        //Debug.Log("Number of times hooked: " + numHooks);
     }
 
-    void SetEnemiesKilled()
+    void IncrementEnemiesKilled()
     {
         enemiesKilled++;
         PlayerPrefs.SetInt("Enemies Killed", enemiesKilled);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            PrefReset();
-        }
-    }
-
-    public void PrefReset()
-    {
-        PlayerPrefs.SetInt("Jumps", 0);
-        PlayerPrefs.SetInt("Deaths", 0);
-        PlayerPrefs.SetInt("Hooks", 0);
-        PlayerPrefs.SetInt("Enemies Killed", 0);
-        PlayerPrefs.SetFloat("BestRunTime", Single.MaxValue);
     }
 }
 
