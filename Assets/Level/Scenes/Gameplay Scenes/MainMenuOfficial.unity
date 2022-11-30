@@ -288,6 +288,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnButton: {fileID: 2035502598}
   endCreditsPanel: {fileID: 1928920829}
+--- !u!114 &529135461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529135449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c59e7185bc6bb40ad549b287a8eae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!1 &618051675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7678719849018026481, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
@@ -4227,19 +4240,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7678719847405237755, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
   m_PrefabInstance: {fileID: 938446918}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1928920832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928920829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c59e7185bc6bb40ad549b287a8eae0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1 &1945004713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3032186987068068408, guid: 9e33cf93d7a36bf4aa506c9b9bfc311f, type: 3}
