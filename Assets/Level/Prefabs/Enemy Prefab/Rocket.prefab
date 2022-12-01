@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 120
-  lifeTime: 10
+  lifeTime: 5
   maxTurnSpeed: 0.02
 --- !u!95 &882375748991088563
 Animator:

@@ -5,11 +5,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Input = SkyReach.Input;
+using UnityEngine.Audio;
 
 public class Pause : MonoBehaviour, Input.IPauseActions
 {
     [SerializeField] private GameObject pausePanel;
-
+    [SerializeField] private float audioTransitionTime = 2f;
+    [SerializeField] private AudioMixerSnapshot normal; 
+    [SerializeField] private AudioMixerSnapshot paused; 
     private Input input;
 
     private bool pauseButtonPressed;
@@ -54,7 +57,17 @@ public class Pause : MonoBehaviour, Input.IPauseActions
     {
         pausePanelOpen = !pausePanelOpen;
         pausePanel.SetActive(pausePanelOpen);
+        if (pausePanelOpen)
+        {
+            paused.TransitionTo(audioTransitionTime * 0.0001f);
+            Debug.Log("hello");
 
+        }
+        else 
+            normal.TransitionTo(audioTransitionTime  * 0.0001f);
+
+        Time.timeScale = pausePanelOpen ? 0.0001f : 1;
+       
     }
     
     //method to go to main menu 
