@@ -583,11 +583,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1328089124666387264, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -156
+      value: -158
       objectReference: {fileID: 0}
     - target: {fileID: 1328089124666387264, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -107
+      value: -87
       objectReference: {fileID: 0}
     - target: {fileID: 1328089124666387264, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -738,6 +738,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &91466339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1330695806, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
+  m_PrefabInstance: {fileID: 689191712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &94164662
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,6 +3187,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1960402372, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 91466339}
     - target: {fileID: 504675052150781685, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 416.8685
@@ -11099,7 +11108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110924527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -156, y: -107, z: -10}
+  m_LocalPosition: {x: -158, y: -87, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
