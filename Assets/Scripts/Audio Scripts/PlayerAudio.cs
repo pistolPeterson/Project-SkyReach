@@ -23,7 +23,6 @@ public class PlayerAudio : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerController.Landed += PlayGroundedSound;
         PlayerController.Jumped += PlayJumpSFX;
         GrapplingHook.HookFired += PlayHookBlast;
         GrapplingHook.HookPulled += StartHookRappel;
@@ -32,7 +31,6 @@ public class PlayerAudio : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerController.Landed -= PlayGroundedSound;
         PlayerController.Jumped -= PlayJumpSFX;
         GrapplingHook.HookFired -= PlayHookBlast;
         GrapplingHook.HookPulled -= StartHookRappel;
