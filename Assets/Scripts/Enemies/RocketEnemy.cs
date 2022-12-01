@@ -11,6 +11,7 @@ namespace SkyReach.Enemies
         [SerializeField] private Collider2D activationCollider;
         [SerializeField] private GameObject rocketPrefab;
         [SerializeField] private float timeBetweenShots = 5f;
+        private Animator anim;
 
         private float timer = 0;
         private Rigidbody2D _body;
@@ -18,6 +19,7 @@ namespace SkyReach.Enemies
 
         void Awake()
         {
+            anim = GetComponent<Animator>();
             _body = GetComponent<Rigidbody2D>();
         }
 
@@ -33,6 +35,7 @@ namespace SkyReach.Enemies
 
         void ShootRocket()
         {
+            anim.Play("RocketEnemy_SHOOT");
             Instantiate(rocketPrefab, _body.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 180));
         }
     }

@@ -14,9 +14,11 @@ namespace SkyReach.Enemies.Projectiles
 
         private Rigidbody2D _body;
         private Rigidbody2D _target;
+        private Animator anim;
 
         private void Awake()
         {
+            anim = GetComponent<Animator>();
             _body = GetComponent<Rigidbody2D>();
         }
 
@@ -44,6 +46,7 @@ namespace SkyReach.Enemies.Projectiles
             {
                 GameManager.KillPlayer();
                 Destroy(gameObject);
+
             }
 
             // Destroy the rocket if it hit the ground
@@ -52,8 +55,27 @@ namespace SkyReach.Enemies.Projectiles
             // This assumes all semi-solids are in the same direction, solid facing up
             if (collision.gameObject.layer == 3 && _body.velocity.y < 0)
             {
-                Destroy(gameObject);
+
+                //play explosion 
+                //wait
+                //destroy
+
+                StartCoroutine(RocketExplode());
+                //Destroy(gameObject);
             }
+        }
+        private IEnumerator RocketExplode() {
+            Debug.Log(anim.GetBool("Dead"));
+            anim.SetBool("Dead", true);
+            Debug.Log(anim.GetBool("Dead"));
+
+            yield return new WaitForSeconds(0.2f);
+            anim.SetBool("Dead", false);
+            Debug.Log(anim.GetBool("Dead"));
+
+
+            Destroy(gameObject);
+
         }
     }
 
