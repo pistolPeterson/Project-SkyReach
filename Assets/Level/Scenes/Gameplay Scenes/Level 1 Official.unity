@@ -3178,6 +3178,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1330695806, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 504675052150781685, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 416.8685
+      objectReference: {fileID: 0}
+    - target: {fileID: 504675052150781685, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.2983017
+      objectReference: {fileID: 0}
     - target: {fileID: 3175774558243548884, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
       propertyPath: m_Name
       value: GameplayCanvas
