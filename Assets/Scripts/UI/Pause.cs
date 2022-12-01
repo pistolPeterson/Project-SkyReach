@@ -73,6 +73,7 @@ public class Pause : MonoBehaviour, Input.IPauseActions
     //method to go to main menu 
     public void ReturnToMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
     //method to resume back to game 
