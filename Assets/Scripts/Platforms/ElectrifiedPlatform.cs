@@ -31,7 +31,6 @@ namespace Platforms
         {
             if (collision.collider.GetComponentInParent<PlayerController>())
             {
-                Debug.Log("time to stun then die");
                 GameManager.KillPlayer();
             }
 

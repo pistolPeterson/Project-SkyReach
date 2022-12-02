@@ -64,15 +64,11 @@ namespace SkyReach.Enemies.Projectiles
                 //Destroy(gameObject);
             }
         }
-        private IEnumerator RocketExplode() {
-            Debug.Log(anim.GetBool("Dead"));
-            anim.SetBool("Dead", true);
-            Debug.Log(anim.GetBool("Dead"));
-
-            yield return new WaitForSeconds(0.2f);
-            anim.SetBool("Dead", false);
-            Debug.Log(anim.GetBool("Dead"));
-
+        private IEnumerator RocketExplode()
+        {
+            anim.SetTrigger("Explode");
+            yield return new WaitForSeconds(0.3f);
+            
 
             Destroy(gameObject);
 
