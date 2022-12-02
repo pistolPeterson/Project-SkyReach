@@ -58,8 +58,17 @@ public class Timer : MonoBehaviour
     {
         timerActive = false;
         finalTime = currentTime;
+        Debug.Log(finalTime);
         if (statsData)
+        {
+            statsData = FindObjectOfType<StatisticsData>();
             statsData.IncrementBestRunTime(finalTime);
+        }
+        else
+        {
+            Debug.Log("bruh still nulls");
+        }
+            
     }
 
     public void ResetTimer()

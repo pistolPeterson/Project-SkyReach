@@ -31,6 +31,7 @@ public class BreakingPlatform : MonoBehaviour
     IEnumerator TogglePlatformOff()
     {
         //call animation 
+        if (anim == null) yield break; 
         anim.SetTrigger("PlatformGlitchTrigger");
         yield return new WaitForSeconds(turnOffTimer);
         GetComponent<Renderer>().enabled = false;
