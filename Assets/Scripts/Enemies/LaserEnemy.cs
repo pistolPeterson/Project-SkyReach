@@ -19,54 +19,51 @@ namespace SkyReach.Enemies
         [Header("References")]
         [SerializeField] private Transform laser;
 
-        private Transform _player;
         private Collider2D _laserCollider;
         private Animator _enemyAnim;
         private Animator _laserAnim;
-        private State _state = State.Idle;
+        private State _state;
         private float _timer = 0f;
 
-        private void Start()
+        private void Awake()
         {
-            _player = GameManager.Player.transform;
             _laserCollider = laser.GetComponent<Collider2D>();
             _enemyAnim = GetComponent<Animator>();
             _laserAnim = laser.GetComponent<Animator>();
+
+            Deactivate();
         }
 
         private void Update()
         {
-            switch(_state)
+            _timer += Time.deltaTime;
+            switch (_state)
             {
                 case State.Idle:
-                    if (Vector2.Distance(transform.position, _player.position) < activationDistance)
+                    if (_timer >= cooldown && Mathf.Abs(GameManager.Player.Body.position.y - transform.position.y) < activationDistance)
                     {
                         StartActivating();
                     }
                     break;
                 case State.Activating:
-                    _timer += Time.deltaTime;
                     if (_timer > activationTime)
                     {
                         Activate();
                     }
                     break;
                 case State.Active:
-                    _timer += Time.deltaTime;
                     if (_timer > fireTime)
                     {
                         StartDeactivating();
                     }
                     break;
                 case State.Deactivating:
-                    _timer += Time.deltaTime;
                     if (_timer > deactivationTime)
                     {
                         Deactivate();
                     }
                     break;
             }
-            
         }
 
         private void StartActivating()
@@ -74,25 +71,30 @@ namespace SkyReach.Enemies
             _state = State.Activating;
             _timer = 0f;
             _enemyAnim.Play("LaserEnemy_MouthOPEN");
-            _laserAnim.Play("owo");
+            _laserAnim.Play("Laser_START");
         }
 
         private void Activate()
         {
             _state = State.Active;
             _timer = 0f;
+            _enemyAnim.Play("LaserEnemy_ACTIVE");
+            _laserAnim.Play("Laser_ACTIVE");
         }
 
         private void StartDeactivating()
         {
             _state = State.Deactivating;
             _timer = 0f;
+            _enemyAnim.Play("LaserEnemy_MouthCLOSE");
+            _laserAnim.Play("Laser_INACTIVE");
         }
 
         private void Deactivate()
         {
             _state = State.Idle;
             _timer = 0f;
+            _enemyAnim.Play("LaserEnemy_IDLE");
         }
 
         enum State
