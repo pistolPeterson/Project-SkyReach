@@ -577,6 +577,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1328089123933327497, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1328089124666387264, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -624,6 +628,10 @@ PrefabInstance:
     - target: {fileID: 1328089124666387265, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
       propertyPath: m_Name
       value: Felipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872090590556937576, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: cooldownLength
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0db940ec57caf747b172d3060b63e54, type: 3}

@@ -78,6 +78,9 @@ public class StatisticsData : MonoBehaviour
     {
         if (latestRunTime < PlayerPrefs.GetFloat("BestRunTime"))
             PlayerPrefs.SetFloat("BestRunTime", latestRunTime);
+        
+        if(PlayerPrefs.GetFloat("BestRunTime") == 0)
+            PlayerPrefs.SetFloat("BestRunTime", latestRunTime);
 
         Debug.Log(PlayerPrefs.GetFloat("BestRunTime") + " is the new best run time");
     }

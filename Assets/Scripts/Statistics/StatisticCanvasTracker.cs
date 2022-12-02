@@ -45,17 +45,14 @@ public class StatisticCanvasTracker : MonoBehaviour
             tempData = playerData.GetEnemiesKilled();
             EnemiesKilled.text = tempData.ToString();
 
-            timer = playerData.GetBestRunTime();
-
+          
+            PersonalBestTime.text = playerData.GetBestRunTime().ToString();
             if (timer == Single.MaxValue)
             {
                 PersonalBestTime.text = "--.--";
             } 
 
-            else
-            {
-                PersonalBestTime.text = timer.ToString("#.##");
-            }
+           
             
         }
 }
