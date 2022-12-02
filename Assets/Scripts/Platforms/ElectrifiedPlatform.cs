@@ -9,86 +9,59 @@ namespace Platforms
 {
     public class ElectrifiedPlatform : MonoBehaviour
     {
-        public float electricityStateTime = 5f; //change electricity state this amount of seconds
+        public float cooldown; // time between deactivation and next activation
+        public float electrifiedTime; // time the platform is electrified for
 
 
         private float timer = 0;
         private Animator anim;
-        public ElectricityState state; //public for debugging purposes
+        private ElectricityState state;
 
-
-
-        // Start is called before the first frame update
-        private void Start()
+        private void Awake()
         {
             anim = GetComponent<Animator>();
-            state = ElectricityState.UnElectrified;
-            anim.enabled = true;
+            Electrify();
         }
 
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.collider.GetComponentInParent<PlayerController>())
-            {
-                Debug.Log("time to stun then die");
-                GameManager.KillPlayer();
-            }
-
-        }
-
-        // Update is called once per frame
         private void Update()
         {
-
             timer += Time.deltaTime;
-            /*
-            if (!(timer > electricityStateTime)) return;
-            
+
             switch (state)
             {
                 case ElectricityState.UnElectrified:
-                    state = ElectricityState.TransitionToElectrified; 
+                    if (timer >= cooldown)
+                    {
+                        Electrify();
+                    }
                     break;
-                    
-                case ElectricityState.TransitionToElectrified:
-                    //play electric platform animation
-                    //play electric platform sfx
-                    anim.enabled = true;
-                    anim.Play("ElectrifiedPlatformAnim");
-                
-
-                    timer = 0; 
-                    state = ElectricityState.Electrified;
-                    break; 
-                    
                 case ElectricityState.Electrified:
-                    state = ElectricityState.TransitionToUnElectrified;
+                    if (timer >= electrifiedTime)
+                    {
+                        UnElectrify();
+                    }
                     break;
-                    
-                case ElectricityState.TransitionToUnElectrified:
-                    //stop play playing animation 
-                    //play anim sfx
-                    anim.enabled = false;
-                    timer = 0; 
-                    state = ElectricityState.UnElectrified;
-                       
-                    break;
-                default:
-                    break;
-
             }
-            */
+        }
 
+        private void UnElectrify()
+        {
+            state = ElectricityState.UnElectrified;
+            timer = 0;
+            anim.Play("ElectrifiedPlatform_Idle");
+        }
 
+        private void Electrify()
+        {
+            state = ElectricityState.Electrified;
+            timer = 0;
+            anim.Play("ElectrifiedPlatform_Active");
         }
     }
 
     public enum ElectricityState //enum to get the states of the electric platform 
     {
         Electrified,
-        UnElectrified,
-        TransitionToElectrified,
-        TransitionToUnElectrified
+        UnElectrified
     }
 }

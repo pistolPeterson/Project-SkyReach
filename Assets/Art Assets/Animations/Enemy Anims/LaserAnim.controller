@@ -57,7 +57,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LaserSTART
+  m_Name: Laser_START
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -83,7 +83,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Empty
+  m_Name: Laser_INACTIVE
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -96,7 +96,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 6e315ae2425c19147ab9fde5f86d61dd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

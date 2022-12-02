@@ -8,8 +8,9 @@ public class EndGameTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponentInParent<PlayerController>() == null) return;
-
-        GameManager.WinGame();
+        if (other.attachedRigidbody == GameManager.Player.Body)
+        {
+            GameManager.WinGame();
+        }
     }
 }
