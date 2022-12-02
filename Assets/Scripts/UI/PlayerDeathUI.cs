@@ -37,11 +37,5 @@ public class PlayerDeathUI : MonoBehaviour
         playerDeathBackgroundPanel.SetActive(true);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            SceneManager.LoadScene(0);
-        }
-    }
+    
 }
