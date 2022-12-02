@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 224106110}
   - component: {fileID: 224106111}
   - component: {fileID: 4209300634715576498}
+  - component: {fileID: 4732039071088472241}
   m_Layer: 0
   m_Name: Felipe
   m_TagString: Untagged
@@ -301,6 +302,23 @@ MonoBehaviour:
   - {fileID: 2062510347, guid: 341356a01c447f141ada826f002b5dc9, type: 3}
   - {fileID: 277175843, guid: 341356a01c447f141ada826f002b5dc9, type: 3}
   sr: {fileID: 7675916154446543954}
+--- !u!114 &4732039071088472241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328089124666387265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0638af15bdbed5048af32c5e3881a9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 1328089123933327499}
+  anim: {fileID: 1139424523}
+  characterSprite:
+  - {fileID: 21300000, guid: bacce84c2c50fc04c993e800f1fda058, type: 3}
+  - {fileID: 21300000, guid: c3194fe0b1ac8bf48a362f63e8eb4f1e, type: 3}
 --- !u!1 &1328089125714790664
 GameObject:
   m_ObjectHideFlags: 0

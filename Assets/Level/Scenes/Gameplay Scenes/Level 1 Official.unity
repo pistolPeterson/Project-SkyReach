@@ -625,6 +625,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Felipe
       objectReference: {fileID: 0}
+    - target: {fileID: 4732039071088472241, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 1306280744}
+    - target: {fileID: 4732039071088472241, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+      propertyPath: characterSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: b9c9cc5fa6811c54ab4a60d210da3455, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
 --- !u!1 &86836400
@@ -3269,7 +3277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3175774558243548884, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3175774558243548886, guid: f14622f0d4950ef41b7d7841a0cb33d0, type: 3}
       propertyPath: m_MatchWidthOrHeight
@@ -6708,6 +6716,11 @@ Transform:
   m_Father: {fileID: 1369980101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1306280744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1328089123933327733, guid: d0db940ec57caf747b172d3060b63e54, type: 3}
+  m_PrefabInstance: {fileID: 66318657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1320584583
 PrefabInstance:
   m_ObjectHideFlags: 0

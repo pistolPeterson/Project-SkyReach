@@ -496,6 +496,45 @@ namespace SkyReach
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Cheat"",
+            ""id"": ""801a7c01-48ae-42a8-8988-3ce9584651d5"",
+            ""actions"": [
+                {
+                    ""name"": ""spriteswitch"",
+                    ""type"": ""Button"",
+                    ""id"": ""183bc162-47e9-4816-817d-5f9c2319edca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""62ff5e03-943f-4593-8240-3f59aa29a596"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""spriteswitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ab04d41-adfd-42c3-90f8-f6a4d44006db"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""spriteswitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -536,6 +575,9 @@ namespace SkyReach
             // Pause
             m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
             m_Pause_PauseAction = m_Pause.FindAction("PauseAction", throwIfNotFound: true);
+            // Cheat
+            m_Cheat = asset.FindActionMap("Cheat", throwIfNotFound: true);
+            m_Cheat_spriteswitch = m_Cheat.FindAction("spriteswitch", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -779,6 +821,39 @@ namespace SkyReach
             }
         }
         public PauseActions @Pause => new PauseActions(this);
+
+        // Cheat
+        private readonly InputActionMap m_Cheat;
+        private ICheatActions m_CheatActionsCallbackInterface;
+        private readonly InputAction m_Cheat_spriteswitch;
+        public struct CheatActions
+        {
+            private @Input m_Wrapper;
+            public CheatActions(@Input wrapper) { m_Wrapper = wrapper; }
+            public InputAction @spriteswitch => m_Wrapper.m_Cheat_spriteswitch;
+            public InputActionMap Get() { return m_Wrapper.m_Cheat; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(CheatActions set) { return set.Get(); }
+            public void SetCallbacks(ICheatActions instance)
+            {
+                if (m_Wrapper.m_CheatActionsCallbackInterface != null)
+                {
+                    @spriteswitch.started -= m_Wrapper.m_CheatActionsCallbackInterface.OnSpriteswitch;
+                    @spriteswitch.performed -= m_Wrapper.m_CheatActionsCallbackInterface.OnSpriteswitch;
+                    @spriteswitch.canceled -= m_Wrapper.m_CheatActionsCallbackInterface.OnSpriteswitch;
+                }
+                m_Wrapper.m_CheatActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @spriteswitch.started += instance.OnSpriteswitch;
+                    @spriteswitch.performed += instance.OnSpriteswitch;
+                    @spriteswitch.canceled += instance.OnSpriteswitch;
+                }
+            }
+        }
+        public CheatActions @Cheat => new CheatActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -810,6 +885,10 @@ namespace SkyReach
         public interface IPauseActions
         {
             void OnPauseAction(InputAction.CallbackContext context);
+        }
+        public interface ICheatActions
+        {
+            void OnSpriteswitch(InputAction.CallbackContext context);
         }
     }
 }

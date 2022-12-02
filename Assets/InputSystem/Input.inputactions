@@ -472,6 +472,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Cheat",
+            "id": "801a7c01-48ae-42a8-8988-3ce9584651d5",
+            "actions": [
+                {
+                    "name": "spriteswitch",
+                    "type": "Button",
+                    "id": "183bc162-47e9-4816-817d-5f9c2319edca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "62ff5e03-943f-4593-8240-3f59aa29a596",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "spriteswitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ab04d41-adfd-42c3-90f8-f6a4d44006db",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "spriteswitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
